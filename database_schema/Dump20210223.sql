@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
 --
--- Host: localhost    Database: internship_project
+-- Host: localhost    Database: mydb
 -- ------------------------------------------------------
 -- Server version	8.0.23
 
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin` (
-  `admin_id` int NOT NULL,
+  `admin_id` int NOT NULL AUTO_INCREMENT,
   `admin_lastname` varchar(25) NOT NULL,
   `admin_firstname` varchar(25) NOT NULL,
   PRIMARY KEY (`admin_id`)
@@ -47,12 +47,22 @@ DROP TABLE IF EXISTS `application`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `application` (
-  `application_number` int NOT NULL,
+  `application_number` int NOT NULL AUTO_INCREMENT,
   `application_status` varchar(10) DEFAULT NULL,
   `application_date` datetime DEFAULT NULL,
   `date_of_approval` datetime DEFAULT NULL,
-  `approved_by` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`application_number`)
+  `approved_by` varchar(25) DEFAULT NULL,
+  `student_id_fk` int DEFAULT NULL,
+  `employer_name_fk` varchar(25) DEFAULT NULL,
+  `offer_letter` longblob,
+  PRIMARY KEY (`application_number`),
+  KEY `student_id_fk_idx` (`student_id_fk`),
+  KEY `employer_name_fk_idx` (`employer_name_fk`),
+  KEY `approved_by_fk_idx` (`approved_by`),
+  KEY `approved_by_idx` (`approved_by`),
+  CONSTRAINT `approved_by` FOREIGN KEY (`approved_by`) REFERENCES `faculty` (`faculty_lastname`),
+  CONSTRAINT `employer_name_fk` FOREIGN KEY (`employer_name_fk`) REFERENCES `internships` (`employer_name`) ON UPDATE CASCADE,
+  CONSTRAINT `student_id_fk` FOREIGN KEY (`student_id_fk`) REFERENCES `student` (`student_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -73,11 +83,12 @@ DROP TABLE IF EXISTS `faculty`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `faculty` (
-  `faculty_id` int NOT NULL,
-  `faculty_firstname` varchar(25) DEFAULT NULL,
-  `faculty_flastname` varchar(25) DEFAULT NULL,
-  `department` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`faculty_id`)
+  `faculty_id` int NOT NULL AUTO_INCREMENT,
+  `faculty_firstname` varchar(25) NOT NULL,
+  `faculty_lastname` varchar(25) NOT NULL,
+  `department` varchar(10) NOT NULL,
+  PRIMARY KEY (`faculty_id`,`faculty_lastname`),
+  KEY `faculty_lastname` (`faculty_lastname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -115,6 +126,35 @@ LOCK TABLES `internships` WRITE;
 /*!40000 ALTER TABLE `internships` DISABLE KEYS */;
 /*!40000 ALTER TABLE `internships` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `student`
+--
+
+DROP TABLE IF EXISTS `student`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `student` (
+  `student_id` int NOT NULL AUTO_INCREMENT,
+  `student_lastname` varchar(25) DEFAULT NULL,
+  `student_firstname` varchar(25) DEFAULT NULL,
+  `student_location` varchar(20) DEFAULT NULL,
+  `major` varchar(25) DEFAULT NULL,
+  `919Number` int DEFAULT NULL,
+  `semester` varchar(10) DEFAULT NULL,
+  `graduation` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student`
+--
+
+LOCK TABLES `student` WRITE;
+/*!40000 ALTER TABLE `student` DISABLE KEYS */;
+/*!40000 ALTER TABLE `student` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -125,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-18 13:32:39
+-- Dump completed on 2021-02-23 15:54:50
