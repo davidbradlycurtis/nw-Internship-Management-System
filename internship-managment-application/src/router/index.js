@@ -22,7 +22,13 @@ const routes = [
     path: '/student-dashboard',
     name: 'StudentDashboard',
     component: () => import(/* webpackChunkName: "studentDash" */'../views/StudentDashboard.vue')
+  },
+  {
+    path: '/student-internship-application',
+    name: 'StudentInternApplication',
+    component: () => import('../views/StudentIntershipApplication.vue')
   }
+
 ]
 
 const router = new VueRouter({

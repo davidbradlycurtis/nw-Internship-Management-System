@@ -1,6 +1,7 @@
 <template>
   <div class="studentDash">
     <h1>Student Dashboard</h1>
+    <router-link to="//student-internship-application">Student Intership Application</router-link>
   </div>
 </template>
 
