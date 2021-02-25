@@ -27,8 +27,12 @@ const routes = [
     path: '/student-internship-application',
     name: 'StudentInternApplication',
     component: () => import('../views/StudentIntershipApplication.vue')
+  },
+  {
+    path: '/student-internship-agreement',
+    name: 'StudentInternAgreement',
+    component: () => import('../views/StudentIntershipAgreement.vue')
   }
-
 ]
 
 const router = new VueRouter({
