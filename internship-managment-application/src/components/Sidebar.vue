@@ -1,5 +1,5 @@
 <template>
-    <div class="sidenav">
+    <div class="side-nav">
             <div class="title">
                 <router-link to="/student-review-status"><img src="@/assets/images/N60-2Stack-W.png" alt="NW 2Stack White"></router-link>
             </div>

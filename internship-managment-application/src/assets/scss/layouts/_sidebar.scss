@@ -1,4 +1,4 @@
-.sidenav{
+.side-nav{
     height: 100vh;
     font-family: $theme-font-family;
     font-weight: 900;
@@ -9,14 +9,10 @@
             width: 140px;
             height: 140px;
         }
-
         .title{
             margin: 40px auto;
         }
-
         .bar-items{
-            //display: flex;
-            //flex-direction: column;
             margin: 40px auto;
             padding: 0;
             text-align: left;
@@ -25,7 +21,6 @@
                 list-style-type: none;
                 margin: 0;
                 background-color: $theme-green;
-                
                 a {
                     color: $theme-white;
                     text-decoration: none;
