@@ -1,12 +1,13 @@
 <template>
     <div class="studentDash">
-      <h1>Student Add Form</h1>
+      <h1>Student Intership Application</h1>
     </div>
 </template>
+
 <script>
 
 export default {
-  name: 'StudentInternshipAddForm',
+  name: 'StudentInternshipApplication.vue',
   components: {
   }
 }

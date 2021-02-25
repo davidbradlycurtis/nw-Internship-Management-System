@@ -1,12 +1,12 @@
 <template>
     <div class="studentDash">
-      <h1>Student Add Form</h1>
+      <h1>Student Intership Agreement</h1>
     </div>
 </template>
-<script>
 
+<script>
 export default {
-  name: 'StudentInternshipAddForm',
+  name: 'StudentInternshipAgreement',
   components: {
   }
 }
