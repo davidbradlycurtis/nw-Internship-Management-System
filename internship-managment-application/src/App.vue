@@ -23,7 +23,7 @@ export default {
   text-align: center;
   color: $theme-black;
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 1.25fr 6.75fr;
 }
 
 #nav {
