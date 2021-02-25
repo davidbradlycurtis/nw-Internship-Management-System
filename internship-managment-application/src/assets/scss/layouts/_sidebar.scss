@@ -1,8 +1,10 @@
 .sidenav{
-    height: 150vh;
+    height: 100vh;
     font-family: $theme-font-family;
     font-weight: 900;
     background-color: $theme-green;
+    position: sticky;
+    top: 0;
         img {
             width: 140px;
             height: 140px;
