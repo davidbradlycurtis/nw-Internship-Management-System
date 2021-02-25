@@ -1,20 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/student-dashboard">Student Dashboard</router-link>
-    </div>
+    <Sidebar/>
     <router-view/>
   </div>
 </template>
 
+<script>
+import Sidebar from '@/components/Sidebar.vue'
+export default {
+  components: {
+    Sidebar
+  }
+}
+</script>
+
 <style lang="scss">
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $theme-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $theme-black;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
 }
 
 #nav {
@@ -22,7 +31,7 @@
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: $theme-black;
 
     &.router-link-exact-active {
       color: #42b983;
