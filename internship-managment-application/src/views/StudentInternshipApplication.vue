@@ -1,14 +1,13 @@
 <template>
-    <div class="home">
-      <router-view/>
+    <div class="studentDash">
+      <h1>Student Intership Application</h1>
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
-  name: 'Home',
+  name: 'StudentInternshipApplication.vue',
   components: {
   }
 }

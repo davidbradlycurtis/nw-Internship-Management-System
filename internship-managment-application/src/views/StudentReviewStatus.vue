@@ -1,14 +1,13 @@
 <template>
-    <div class="home">
-      <router-view/>
+    <div class="studentDash">
+      <h1>Student Review Status</h1>
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
-  name: 'Home',
+  name: 'StudentReviewStatus',
   components: {
   }
 }

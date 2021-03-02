@@ -1,13 +1,22 @@
 <template>
-  <div class="studentDash">
-    <h1>Student Dashboard</h1>
-    <router-link to="/student-internship-application">Student Intership Application</router-link> <br> <br>
-    <router-link to="/student-internship-agreement">Student Intership Agreement</router-link>
+  <div class="sidenav">
+    <Sidebar/>
+    <div class="studentDash">
+      <h1>Student Dashboard</h1>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
+import Sidebar from '@/components/Sidebar.vue'
 
+export default {
+  name: 'StudentDashboard',
+  components: {
+    Sidebar
+  }
 }
 </script>
+
+<style lang="scss">
+</style>

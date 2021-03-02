@@ -26,12 +26,22 @@ const routes = [
   {
     path: '/student-internship-application',
     name: 'StudentInternApplication',
-    component: () => import('../views/StudentIntershipApplication.vue')
+    component: () => import('../views/StudentInternshipApplication.vue')
   },
   {
     path: '/student-internship-agreement',
     name: 'StudentInternAgreement',
-    component: () => import('../views/StudentIntershipAgreement.vue')
+    component: () => import('../views/StudentInternshipAgreement.vue')
+  },
+  {
+    path: '/student-internship-add-form',
+    name: 'StudentInternshipAddForm',
+    component: () => import('../views/StudentInternshipAddForm.vue')
+  },
+  {
+    path: '/student-review-status',
+    name: 'StudentReviewStatus.vue',
+    component: () => import('../views/StudentReviewStatus.vue')
   }
 ]
 

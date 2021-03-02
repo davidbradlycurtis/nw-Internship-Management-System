@@ -1,0 +1,58 @@
+.side-nav{
+    height: 100vh;
+    font-family: $theme-font-family;
+    font-weight: 900;
+    background-color: $theme-green;
+    position: sticky;
+    top: 0;
+        img {
+            width: 140px;
+            height: 140px;
+        }
+        .title{
+            margin: 40px auto;
+        }
+        .bar-items{
+            margin: 40px auto;
+            padding: 0;
+            text-align: left;
+            li {
+                width: 100%;
+                list-style-type: none;
+                margin: 0;
+                background-color: $theme-green;
+                a {
+                    color: $theme-white;
+                    text-decoration: none;
+                    display: block;
+                    padding:15px;
+                }
+                & > .router-link-exact-active {
+                    background-color: $theme-dark-green;
+                }
+                & :hover{
+                    background-color: $theme-dark-green;
+                }
+            }
+        }
+
+        .side-btn{
+            border: none;
+            padding: 5px 0px;
+            cursor: pointer;
+            font-size: 14px;
+            color: white;
+            background-color: transparent;
+
+            :focus{
+                outline: none;
+            }
+            &.router-link-exact-active {
+                background-color: $theme-dark-green;
+                color: white;
+                font-weight: 800;
+            }
+        }
+    
+}
+
