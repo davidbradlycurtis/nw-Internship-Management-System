@@ -15,7 +15,6 @@
                     <li><router-link to="/student-internship-application">Internship Application</router-link></li>
                     <li><router-link to="/student-review-status">Review Status</router-link></li>
                     <li><router-link to="/student-internship-agreement">Internship Agreement</router-link></li> 
-                 
               </ul>
         </div>
     </mdb-container>
