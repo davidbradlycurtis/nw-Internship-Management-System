@@ -45,4 +45,19 @@
             color: $theme-red;
         }
     }
+    p {
+        text-align: left;
+    }
+    ul {
+        text-align: left;
+        li {
+            margin-top: 10px;
+        }
+    }
+}
+.customformgroup {
+    p {
+        color: $theme-green;
+        font-size: 18px;
+    }
 }
