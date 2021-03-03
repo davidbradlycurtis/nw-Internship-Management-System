@@ -2,14 +2,18 @@
   <div id="app">
     <Sidebar/>
     <router-view/>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Sidebar from '@/components/Sidebar.vue'
+import Footer from '@/components/Footer.vue'
+
 export default {
   components: {
-    Sidebar
+    Sidebar,
+    Footer
   }
 }
 </script>
