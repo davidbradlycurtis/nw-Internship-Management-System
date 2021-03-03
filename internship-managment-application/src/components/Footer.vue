@@ -1,4 +1,3 @@
-
 <template>
   <!-- Footer -->
   <mdb-footer color="blue" class="font-small pt-4 mt-4">
@@ -14,7 +13,7 @@
                  <li><router-link to="/student-internship-add-form">Internship Add Form</router-link></li>
                     <li><router-link to="/student-internship-application">Internship Application</router-link></li>
                     <li><router-link to="/student-review-status">Review Status</router-link></li>
-                    <li><router-link to="/student-internship-agreement">Internship Agreement</router-link></li> 
+                    <li><router-link to="/student-internship-agreement">Internship Agreement</router-link></li>
               </ul>
         </div>
     </mdb-container>
