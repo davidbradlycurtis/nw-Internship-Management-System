@@ -1,0 +1,10 @@
+.formgroup {
+    background-color: $theme-light-gray;
+    padding: 30px 40px;
+    margin-top: 40px;
+    .formgrouptitle {
+        color: $theme-green;
+        text-align: left;
+        text-transform: uppercase;
+    }
+}
