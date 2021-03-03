@@ -1,23 +1,25 @@
 .footer{
-    color: white;
-    background-color: #006747;
-    font-size: 25;   
+    width: 100px;
+    height: auto;
+    margin: auto;
+    background: #006747;
+    padding: 10px
 }
 .footer-main-div {
-    width: 421px;
-    height: 24px;
+    width: 100px;
+    height: auto;
     margin: auto;
     margin-top: 20px;
  }
 .footer-main-div ul {
         margin: 0px;
         padding: 0px;
-        text-align: left;  
+        text-align: center;
 }
-.footer-main-div ul li {
+.footer-main-div ul a {
     display: block;
 }
-.footer-main-div ul li {
+.footer-main-div ul a {
     color: white;
     background-color: #006747;
     font-size: 25;
