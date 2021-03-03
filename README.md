@@ -36,12 +36,12 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-### Built With TODO
+### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [MySQL](https://www.mysql.com/)
+* [Express](https://expressjs.com/)
+* [Node.js](https://nodejs.org/en/)
+* [Vue.js](https://vuejs.org/)
 
 
 
@@ -72,9 +72,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contributors
 
 * Team Lead: Caroline Finnerty - caroline@finnerty.org
-* Backend Development/Documentation: David Curtis  - davidbradlycurtis@gmail.com
+* Backend Development: David Curtis  - davidbradlycurtis@gmail.com
 * Frontend Development: Oscar Chavira Flores - oscar715c@gmail.com
-* Backend Development/Communications: Dylan Rongey - dylan.rongey@gmail.com
+* Backend Development: Dylan Rongey - dylan.rongey@gmail.com
 * Backend Development: Lindsay Gillespie - S529464@nwmissouri.edu
 * Frontend Development: Sneha Ojha - osneha5@gmail.com
 * Frontend Development: Thomas Tran - thomastran707@gmail.com
