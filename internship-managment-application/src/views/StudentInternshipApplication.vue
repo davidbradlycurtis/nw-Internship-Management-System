@@ -2,16 +2,20 @@
     <div class="studentDash">
       <h1 class="title">Student Intership Application</h1>
       <InternshipApplicationStudentForm/>
+      <InternshipApplicationEmployeeForm/>
     </div>
 </template>
 
 <script>
 
 import InternshipApplicationStudentForm from '../components/InternshipApplicationStudentForm.vue'
+import InternshipApplicationEmployeeForm from '../components/InternshipApplicationEmployeeForm.vue'
+
 export default {
   name: 'StudentInternshipApplication.vue',
   components: {
-    InternshipApplicationStudentForm
+    InternshipApplicationStudentForm,
+    InternshipApplicationEmployeeForm
   }
 }
 </script>
