@@ -1,5 +1,35 @@
 export default [
   {
+    group_name: 'Student Information',
+    inputs: [
+      {
+        name: 'Street Line 1',
+        type: 'text',
+        width: 'half-width'
+      },
+      {
+        name: 'Street Line 2',
+        type: 'text',
+        width: 'half-width'
+      },
+      {
+        name: 'City',
+        type: 'text',
+        width: 'half-width'
+      },
+      {
+        name: 'ZipCode',
+        type: 'number',
+        width: 'half-width'
+      },
+      {
+        name: 'State',
+        type: 'text',
+        width: 'half-width'
+      }
+    ]
+  },
+  {
     group_name: 'Organization Information',
     inputs: [
       {
