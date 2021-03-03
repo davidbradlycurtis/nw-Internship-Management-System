@@ -50,6 +50,11 @@ export default [
     group_name: 'Verify Email Addresses!',
     inputs: [],
     note: 'Double check the email addresses you have provided for accuracy. This form will automatically be routed to the email.'
+  },
+  {
+    group_name: 'Student Acknowledgment of Responsibility',
+    inputs: [],
+    note: ''
   }
 
 ]

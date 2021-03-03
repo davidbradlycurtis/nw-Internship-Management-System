@@ -1,0 +1,9 @@
+.buttongroup {
+    padding:40px;
+    .formbutton{
+        margin-right: 100px;
+        &:last-of-type {
+            margin-right: 10px;
+        }
+    }
+}

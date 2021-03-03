@@ -2,7 +2,12 @@
     <div class="formgroup">
         <h3 class="formgrouptitle">{{groupname}}</h3>
         <!-- once we get the backend setup, replace the hard code with a for-loop -->
-        <div v-for="label in input" :key="label.name" :class="label.width"><label :for="label.name">{{label.name}}: <input :type="label.type"></label></div>
+        <div v-for="label in input" :key="label.name" :class="label.width">
+            <label :for="label.name">
+                {{label.name}}:
+            </label>
+            <input :type="label.type">
+        </div>
         <p v-if="note" class="note">{{note}}</p>
     </div>
 </template>

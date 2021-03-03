@@ -2,9 +2,47 @@
     background-color: $theme-light-gray;
     padding: 30px 40px;
     margin-top: 40px;
+    display: grid;
+    grid-template-columns: auto auto;
     .formgrouptitle {
         color: $theme-green;
         text-align: left;
         text-transform: uppercase;
+        font-size: 20px;
+        grid-column: 1/ span 2;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    .half-width, .full-width {
+        width: 100%;
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 25fr 65fr;
+        label {
+            float: left;
+            text-align: right;
+            font-size: 14px;
+            margin-right: 15px;
+            text-transform: uppercase;
+        }
+        input {
+            text-align: left;
+            &:focus {
+                border: 2px solid $theme-green;
+            }
+        }
+    }
+    .full-width {
+        grid-column: 1/ span 2;
+        grid-template-columns: 15fr 85fr;
+    }
+    .note {
+        grid-column: 1/ span 2;
+        text-align: left;
+        margin-bottom: 0;
+        &::before {
+            content: "NOTE: ";
+            color: $theme-red;
+        }
     }
 }

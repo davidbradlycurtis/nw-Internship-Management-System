@@ -1,0 +1,17 @@
+.formbutton{
+    background-color: $theme-green;
+    color: $theme-white;
+    font-family: $theme-font-family;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    min-width: 300px;
+    margin: 5px 10px;
+    &:hover {
+        @include hover-animation;
+        background-color: $theme-dark-green;
+    }
+}
