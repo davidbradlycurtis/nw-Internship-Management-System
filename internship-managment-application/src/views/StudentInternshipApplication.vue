@@ -1,5 +1,5 @@
 <template>
-    <div class="studentDash">
+    <div class="studentDash form">
       <h1 class="title">Student Internship Application</h1>
       <FormGroup  v-for="group in ApplicationForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
       <ButtonGroup v-bind:ButtonList="ButtonList" />
