@@ -37,11 +37,6 @@ const routes = [
     path: '/student-internship-add-form',
     name: 'StudentInternshipAddForm',
     component: () => import('../views/StudentInternshipAddForm.vue')
-  },
-  {
-    path: '/student-review-status',
-    name: 'StudentReviewStatus.vue',
-    component: () => import('../views/StudentReviewStatus.vue')
   }
 ]
 
