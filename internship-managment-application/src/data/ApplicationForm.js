@@ -5,7 +5,7 @@ export default [
       {
         name: 'Street Line 1',
         type: 'text',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'Street Line 2',
@@ -35,22 +35,22 @@ export default [
       {
         name: 'Organization Name',
         type: 'text',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'Department of Org',
         type: 'text',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'Street Line 1',
         type: 'text',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'City',
         type: 'text',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'ZipCode',
@@ -65,33 +65,43 @@ export default [
       {
         name: 'International Country(NOT USA)',
         type: 'text',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'Site Supervisor Name',
         type: 'text',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'Site Supervisor Email',
         type: 'text',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'Site phone',
         type: 'number',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'International Phone',
         type: 'number',
-        width: 'half-width'
+        width: 'full-width'
       },
       {
         name: 'Start Date',
         type: 'date',
         width: 'half-width'
+      },
+      {
+        name: 'End Date',
+        type: 'date',
+        width: 'half-width'
       }
     ]
+  },
+  {
+    group_name: 'Offer Letter',
+    inputs: [],
+    note: 'If you have been given an offer letter from your internship, please attatch a PDF version of it down below.'
   }
 ]
