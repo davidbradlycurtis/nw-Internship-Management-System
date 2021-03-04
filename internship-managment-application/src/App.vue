@@ -28,6 +28,7 @@ export default {
   color: $theme-black;
   display: grid;
   grid-template-columns: 1.25fr 6.75fr;
+  grid-template-rows: auto auto;
 }
 
 #nav {
