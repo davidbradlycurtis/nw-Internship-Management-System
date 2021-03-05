@@ -1,0 +1,57 @@
+.dashgroup {
+    background-color: $theme-light-gray;
+    padding: 0px 20px 0px 20px;
+    margin-top: 54px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: grid;
+    grid-template-columns: auto;
+    .internshiptitle {
+        color: $theme-green;
+        text-align: left;
+        font-family: $theme-font-family;
+        font-weight: 900;
+        font-size: 48px;
+        border-bottom: 4px solid $theme-green;
+    }
+    .formtitle {
+        color: $theme-green;
+        text-align: left;
+        text-transform: uppercase;
+        font-family: $theme-font-family;
+        font-size: 36px;
+    }
+    .status {
+        color: $theme-green;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $theme-font-family;
+        font-size: 36px;
+        border-bottom: 4px solid $theme-green;
+    }
+        .formstatus {
+            color: $theme-green;
+            text-align: center;
+            text-transform: lowercase;
+            margin-top: -55px;
+            font-family: $theme-font-family;
+            font-size: 36px;
+         }
+    .flex-blocks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+    
+        .col {
+            flex-grow: 1;
+            width: 45%;
+            padding: 0 20px 0 20px;
+        }
+        
+        .filling-empty-space {
+            width:50%;
+            height:0; /*Important! for the divs to collapse should they fall in a new row*/
+        }
+    }
+    
+}
