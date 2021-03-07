@@ -5,6 +5,8 @@
     background-color: $theme-green;
     position: sticky;
     top: 0;
+    grid-column: 1;
+    grid-row: 1 /span 3;
         img {
             width: 140px;
             height: 140px;

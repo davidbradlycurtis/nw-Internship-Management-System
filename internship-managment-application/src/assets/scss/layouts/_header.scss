@@ -1,0 +1,19 @@
+.header {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: $theme-white;
+    padding: 40px;
+    filter: drop-shadow(5px -10px 10px black);
+    position: sticky;
+    top: 0;
+    h1 {
+        border-top: 4px solid $theme-green;
+        border-bottom: 4px solid $theme-green;
+        color: $theme-green;
+        text-transform: uppercase;
+        font-weight: bold;
+        max-width: 900px;
+        text-align: center;
+        margin: auto;
+    }
+}

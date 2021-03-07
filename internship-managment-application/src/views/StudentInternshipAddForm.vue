@@ -1,6 +1,5 @@
 <template>
-    <div class="studentDash">
-      <h1>Student Add Form</h1>
+    <div class="">
     </div>
 </template>
 <script>

@@ -1,15 +1,24 @@
 <template>
   <div id="app">
     <Sidebar/>
+    <CustomHeader />
     <router-view/>
   </div>
 </template>
 
 <script>
 import Sidebar from '@/components/Sidebar.vue'
+import CustomHeader from '@/components/Header.vue'
+
 export default {
   components: {
+    CustomHeader,
     Sidebar
+  },
+  watch: {
+    '$route' (to, from) {
+      document.title = to.meta.title || 'NW Internship Management Application'
+    }
   }
 }
 </script>
@@ -24,6 +33,7 @@ export default {
   color: $theme-black;
   display: grid;
   grid-template-columns: 1.25fr 6.75fr;
+  grid-template-rows: 125px auto auto;
 }
 
 #nav {
