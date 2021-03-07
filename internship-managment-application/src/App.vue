@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <Sidebar/>
-    <CustomHeader />
-    <router-view/>
+    <main>
+      <CustomHeader />
+      <router-view/>
+    </main>
   </div>
 </template>
 
@@ -33,7 +35,7 @@ export default {
   color: $theme-black;
   display: grid;
   grid-template-columns: 1.25fr 6.75fr;
-  grid-template-rows: 125px auto auto;
+  grid-template-rows: auto;
 }
 
 #nav {

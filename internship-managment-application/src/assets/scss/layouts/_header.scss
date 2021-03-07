@@ -12,8 +12,20 @@
         color: $theme-green;
         text-transform: uppercase;
         font-weight: bold;
+        font-size: 2em;
         max-width: 900px;
         text-align: center;
         margin: auto;
+    }
+}
+
+//Tablet
+@media (max-width: $breakpoint-tablet){
+    .header {
+        padding: 20px;
+        h1 {
+            font-size: 1.5em;
+            max-width: 500px;
+        }
     }
 }
