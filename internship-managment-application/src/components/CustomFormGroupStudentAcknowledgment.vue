@@ -12,9 +12,7 @@
             <li>I understand that I must go into CatPAWS by the first day of the term and verify that I intend to attend the courses in which I am enrolled, or my enrollment will be cancelled.</li>
           </ul>
         </div>
-        <div>
-          <ClickToSign />
-        </div>
+        <ClickToSign />
     </div>
 </template>
 <script>

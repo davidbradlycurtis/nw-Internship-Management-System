@@ -1,5 +1,6 @@
 //Mixins
-@mixin  hover-animation {
+@mixin  hover-animation($color) {
     transition-timing-function: ease-in;
     transition: 0.3s;
+    background-color: scale-color($color, $lightness: -40%);
 }
