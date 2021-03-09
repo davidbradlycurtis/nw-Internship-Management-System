@@ -1,0 +1,20 @@
+.formsubmittedpop{
+    margin: 40px;
+    display: grid;
+    grid-template-rows: 40fr 30fr 30fr;
+    h2 {
+        color: $theme-green;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 48px;
+        grid-row: 2;
+    }
+    a {
+        color: $theme-green;
+        font-size: 32px;
+        grid-row: 3;
+        &:visited {
+            color: $theme-dark-green;
+        }
+    }
+}

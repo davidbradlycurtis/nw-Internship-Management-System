@@ -1,17 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
-    meta: {
-      title: 'Student Dashboard'
-    }
+    redirect: '/student-dashboard'
   },
   {
     path: '/about',
@@ -47,18 +42,10 @@ const routes = [
   },
   {
     path: '/student-internship-add-form',
-    name: 'Internship Course Add Form',
+    name: 'Internship Add Form',
     component: () => import('../views/StudentInternshipAddForm.vue'),
     meta: {
-      title: 'Internship Course Add Form'
-    }
-  },
-  {
-    path: '/student-review-status',
-    name: 'Student Dashboard',
-    component: () => import('../views/StudentReviewStatus.vue'),
-    meta: {
-      title: 'Student Dashboard'
+      title: 'Internship Add Form'
     }
   }
 ]
@@ -68,5 +55,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+// router.replace({ path: '/', redirect: '/student-dashboard' })
 export default router
