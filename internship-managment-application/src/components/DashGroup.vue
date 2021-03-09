@@ -17,7 +17,10 @@
 export default {
   // Place holders
   data: () => ({
+    // This will be where the season, year, and company of the internship, currently a place holders
     title: 'Insert season, year - Company',
+    // Title of the form title should be fine to stay
+    // The status is just a place holder for the mean time
     blocks: [
       { title: 'Internship course enrollment', status: 'approved' },
       { title: 'Internship application', status: 'prending review' },

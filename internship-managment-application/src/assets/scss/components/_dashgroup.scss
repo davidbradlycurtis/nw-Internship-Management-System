@@ -11,7 +11,9 @@
         text-align: left;
         font-family: $theme-font-family;
         font-weight: 900;
-        font-size: 48px;
+        font-size: 40px;
+        margin-left: 100px;
+        margin-right: 100px;
         border-bottom: 4px solid $theme-green;
     }
     .formtitle {
@@ -19,14 +21,18 @@
         text-align: left;
         text-transform: uppercase;
         font-family: $theme-font-family;
-        font-size: 36px;
+        font-size: 28px;
+        margin-left: 151.75px;
+        margin-right: 180.25px;
     }
     .status {
         color: $theme-green;
         text-align: center;
         text-transform: uppercase;
         font-family: $theme-font-family;
-        font-size: 36px;
+        font-size: 28px;
+        margin-left: 151.75px;
+        margin-right: 80px;
         border-bottom: 4px solid $theme-green;
     }
         .formstatus {
@@ -34,8 +40,10 @@
             text-align: center;
             text-transform: lowercase;
             margin-top: -55px;
+            margin-left: 151.75px;
+            margin-right: 80px;
             font-family: $theme-font-family;
-            font-size: 36px;
+            font-size: 28px;
          }
     .flex-blocks {
         display: flex;
