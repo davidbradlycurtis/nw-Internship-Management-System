@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/student-dashboard'
   },
   {
     path: '/about',
@@ -37,11 +35,6 @@ const routes = [
     path: '/student-internship-add-form',
     name: 'StudentInternshipAddForm',
     component: () => import('../views/StudentInternshipAddForm.vue')
-  },
-  {
-    path: '/student-review-status',
-    name: 'StudentReviewStatus.vue',
-    component: () => import('../views/StudentReviewStatus.vue')
   }
 ]
 
@@ -50,5 +43,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+// router.replace({ path: '/', redirect: '/student-dashboard' })
 export default router
