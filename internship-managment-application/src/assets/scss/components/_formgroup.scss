@@ -61,6 +61,20 @@
         color: $theme-green;
         font-size: 18px;
     }
+    li {
+        font-size: 20px;
+    }
+    .other {
+        label {
+            text-align: left;
+        }
+        input {
+            top: 1840px;
+            left: 600px;
+            width: 800px;
+            height: 110px;
+        }
+    }
 }
 
 //Tablet
