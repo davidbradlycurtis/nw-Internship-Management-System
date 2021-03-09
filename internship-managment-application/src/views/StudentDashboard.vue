@@ -1,9 +1,7 @@
 <template>
-  <div class="sidenav">
     <div class="studentDash">
       <h1>Student Dashboard</h1>
     </div>
-  </div>
 </template>
 
 <script>
