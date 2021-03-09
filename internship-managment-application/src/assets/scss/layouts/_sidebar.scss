@@ -31,7 +31,7 @@
                     background-color: $theme-dark-green;
                 }
                 & :hover{
-                    background-color: $theme-dark-green;
+                    @include hover-animation($theme-green);
                 }
             }
         }

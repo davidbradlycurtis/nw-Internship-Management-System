@@ -1,5 +1,5 @@
 <template>
-    <div class="studentDash">
+    <div class="studentinternshipagreement form">
       <h1>Student Intership Agreement</h1>
     </div>
 </template>

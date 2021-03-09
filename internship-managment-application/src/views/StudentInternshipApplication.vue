@@ -1,5 +1,5 @@
 <template>
-    <div class="studentDash">
+    <div class="studentinternshipapplication form">
       <h1>Student Intership Application</h1>
     </div>
 </template>

@@ -7,6 +7,12 @@ $theme-light-green: #008F62;
 $theme-light-gray: #e0e0e0;
 $theme-black: #000000;
 $theme-white: #ffff;
+$theme-red: #FF0000;
 
 //Fonts
 $theme-font-family: Futura, Arial, sans-serif;
+
+//Breakpoints 
+$breakpoint-laptop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 425px;
