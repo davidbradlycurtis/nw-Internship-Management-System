@@ -1,15 +1,19 @@
 <template>
   <div id="app">
     <Sidebar/>
-    <router-view/>
+    <router-view> </router-view>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Sidebar from '@/components/Sidebar.vue'
+import Footer from '@/components/Footer.vue'
+
 export default {
   components: {
-    Sidebar
+    Sidebar,
+    Footer
   }
 }
 </script>
@@ -24,6 +28,7 @@ export default {
   color: $theme-black;
   display: grid;
   grid-template-columns: 1.25fr 6.75fr;
+  grid-template-rows: auto auto auto;
 }
 
 #nav {
