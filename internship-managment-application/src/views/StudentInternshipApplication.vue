@@ -1,12 +1,12 @@
 <template>
     <div class="studentDash form">
-      <!--<div class="form" v-if="!submitted">-->
+      <div v-if="!submitted">
         <FormGroup  v-for="group in ApplicationForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
         <div class="buttongroup">
           <Button v-bind:buttontext="'Save Progress'"/>
           <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
         </div>
-      <!--</div>-->
+      </div>
       <FormSubmittedPop v-if="submitted"/>
     </div>
 </template>
