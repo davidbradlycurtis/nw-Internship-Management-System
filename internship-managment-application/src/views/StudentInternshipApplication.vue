@@ -1,6 +1,5 @@
 <template>
-    <div class="studentinternshipapplication form">
-      <h1>Student Intership Application</h1>
+    <div class="">
     </div>
 </template>
 

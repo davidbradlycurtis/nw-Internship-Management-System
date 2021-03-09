@@ -1,0 +1,18 @@
+main {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr auto;
+}
+
+//Tablet
+@media (max-width: $breakpoint-tablet){
+
+}
+
+//Phone
+@media (max-width: $breakpoint-phone){
+    main {
+        grid-column: 1 /span 2;
+    }
+}
