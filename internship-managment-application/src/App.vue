@@ -4,6 +4,7 @@
     <main>
       <CustomHeader />
       <router-view/>
+      <Footer />
     </main>
   </div>
 </template>
@@ -11,11 +12,13 @@
 <script>
 import Sidebar from '@/components/Sidebar.vue'
 import CustomHeader from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   components: {
     CustomHeader,
-    Sidebar
+    Sidebar,
+    Footer
   },
   watch: {
     '$route' (to, from) {
