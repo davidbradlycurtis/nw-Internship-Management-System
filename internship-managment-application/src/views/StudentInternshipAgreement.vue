@@ -1,6 +1,7 @@
 <template>
     <div class="studentinternshipagreement form">
       <div class="form" v-if="!submitted">
+        <CustomFormGroupAgreeToDates/>
         <FormGroup v-for="group in AgreementForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
         <CustomFormGroupStudentAgreementPanel/>
         <CustomFormGroupSponsorAgreementPanel/>
@@ -16,6 +17,7 @@
 
 <script>
 // Components
+import CustomFormGroupAgreeToDates from '@/components/CustomFormGroupAgreeToDates.vue'
 import FormGroup from '@/components/FormGroup.vue'
 import Button from '@/components/Button.vue'
 import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
@@ -29,6 +31,7 @@ import AgreementForm from '@/data/AgreementForm.js'
 export default {
   name: 'StudentInternshipAgreement',
   components: {
+    CustomFormGroupAgreeToDates,
     FormGroup,
     Button,
     FormSubmittedPop,
