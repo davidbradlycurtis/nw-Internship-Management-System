@@ -43,7 +43,7 @@ export default [
         width: 'full-width'
       },
       {
-        name: 'Street Line 1',
+        name: 'Street Line',
         type: 'text',
         width: 'full-width'
       },
@@ -74,17 +74,17 @@ export default [
       },
       {
         name: 'Site Supervisor Email',
-        type: 'text',
+        type: 'email',
         width: 'full-width'
       },
       {
         name: 'Site phone',
-        type: 'number',
+        type: 'tel',
         width: 'full-width'
       },
       {
         name: 'International Phone',
-        type: 'number',
+        type: 'tel',
         width: 'full-width'
       },
       {
@@ -96,9 +96,13 @@ export default [
         name: 'End Date',
         type: 'date',
         width: 'half-width'
+      },
+      {
+        name: 'Please list additional employer information',
+        type: 'textarea',
+        width: 'full-textarea'
       }
-    ],
-    textarea: 'Please list additional employer information:'
+    ]
   },
   {
     group_name: 'Offer Letter',
