@@ -55,6 +55,15 @@
             margin-top: 10px;
         }
     }
+    .other {
+        label {
+            text-align: left;
+            font-size: 14px;
+        }
+    }
+    .nowrap {
+        white-space: nowrap;
+    }
 }
 .customformgroup {
     p {
@@ -63,17 +72,6 @@
     }
     li {
         font-size: 20px;
-    }
-    .other {
-        label {
-            text-align: left;
-        }
-        input {
-            top: 1840px;
-            left: 600px;
-            width: 800px;
-            height: 110px;
-        }
     }
 }
 

@@ -55,7 +55,7 @@ export default [
       {
         name: 'Other Arrangements',
         type: 'text',
-        width: 'full-width other'
+        width: 'full-width nowrap'
       }
     ]
   }
