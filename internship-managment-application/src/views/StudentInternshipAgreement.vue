@@ -2,7 +2,9 @@
     <div class="studentinternshipagreement form">
       <div class="form" v-if="!submitted">
         <CustomFormGroupAgreeToDates/>
+        <!-- Form group for buisness information needs css alteration to make 'other arrangements' input box the right size -->
         <FormGroup v-for="group in AgreementForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
+        <!-- .other css class needs work to make input box correct size -->
         <CustomFormGroupStudentAgreementPanel/>
         <CustomFormGroupSponsorAgreementPanel/>
         <CustomFormGroupSupervisorAgreementPanel/>

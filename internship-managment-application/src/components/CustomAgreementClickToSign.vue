@@ -1,3 +1,4 @@
+<!-- This component will need to be altered to allow only the correct signature to be signed for their given role -->
 <template>
     <div class="clicktosign">
       <div class="signature">
