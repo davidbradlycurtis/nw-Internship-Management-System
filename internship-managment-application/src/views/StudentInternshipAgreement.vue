@@ -6,6 +6,7 @@
         <CustomFormGroupStudentAgreementPanel/>
         <CustomFormGroupSponsorAgreementPanel/>
         <CustomFormGroupSupervisorAgreementPanel/>
+        <CustomFormGroupAgreementSignature/>
         <div class="buttongroup">
           <Button v-bind:buttontext="'Save Progress'"/>
           <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
@@ -24,6 +25,7 @@ import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
 import CustomFormGroupStudentAgreementPanel from '@/components/CustomFormGroupStudentAgreementPanel.vue'
 import CustomFormGroupSponsorAgreementPanel from '@/components/CustomFormGroupSponsorAgreementPanel.vue'
 import CustomFormGroupSupervisorAgreementPanel from '@/components/CustomFormGroupSupervisorAgreementPanel.vue'
+import CustomFormGroupAgreementSignature from '@/components/CustomFormGroupAgreementSignature.vue'
 // Data
 import AgreementForm from '@/data/AgreementForm.js'
 // import AgreementPanel from '@/data/AgreementPanel.js'
@@ -37,7 +39,8 @@ export default {
     FormSubmittedPop,
     CustomFormGroupStudentAgreementPanel,
     CustomFormGroupSponsorAgreementPanel,
-    CustomFormGroupSupervisorAgreementPanel
+    CustomFormGroupSupervisorAgreementPanel,
+    CustomFormGroupAgreementSignature
   },
   data () {
     return {
