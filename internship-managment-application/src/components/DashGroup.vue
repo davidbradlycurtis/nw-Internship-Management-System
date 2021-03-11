@@ -1,5 +1,6 @@
 <template>
     <div class="dashgroup">
+      <!-- Later down the line, this can be replaced with a for loop -->
       <h3 class="internshiptitle">{{title}}</h3>
       <div class="flex-blocks">
         <div class="col" v-for="block in blocks" :key="block.title">
@@ -23,7 +24,7 @@ export default {
     // The status is just a place holder for the mean time
     blocks: [
       { title: 'Internship course enrollment', status: 'approved' },
-      { title: 'Internship application', status: 'prending review' },
+      { title: 'Internship application', status: 'pending review' },
       { title: 'Internship agreement', status: 'under review' }
     ]
   })

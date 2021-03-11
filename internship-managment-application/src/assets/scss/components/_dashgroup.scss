@@ -18,12 +18,12 @@
     }
     .formtitle {
         color: $theme-green;
-        text-align: left;
+        text-align: center;
         text-transform: uppercase;
         font-family: $theme-font-family;
         font-size: 28px;
         margin-left: 151.75px;
-        margin-right: 180.25px;
+        margin-right: 74px;
     }
     .status {
         color: $theme-green;
@@ -32,16 +32,16 @@
         font-family: $theme-font-family;
         font-size: 28px;
         margin-left: 151.75px;
-        margin-right: 80px;
+        margin-right: 74px;
         border-bottom: 4px solid $theme-green;
     }
         .formstatus {
             color: $theme-green;
             text-align: center;
             text-transform: lowercase;
-            margin-top: -55px;
+            margin-top: -50px;
             margin-left: 151.75px;
-            margin-right: 80px;
+            margin-right: 74px;
             font-family: $theme-font-family;
             font-size: 28px;
          }
