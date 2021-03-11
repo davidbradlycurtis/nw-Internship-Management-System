@@ -97,7 +97,8 @@ export default [
         type: 'date',
         width: 'half-width'
       }
-    ]
+    ],
+    textarea: 'Please list additional employer information:'
   },
   {
     group_name: 'Offer Letter',

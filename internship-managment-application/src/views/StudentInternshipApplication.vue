@@ -1,7 +1,8 @@
 <template>
     <div class="studentDash form">
       <div v-if="!submitted">
-        <FormGroup  v-for="group in ApplicationForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
+        <FormGroup  v-for="group in ApplicationForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note" v-bind:textarea="group.textarea"/>
+        <OfferLetter />
         <div class="buttongroup">
           <Button v-bind:buttontext="'Save Progress'"/>
           <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
@@ -12,10 +13,12 @@
 </template>
 
 <script>
-
+// Componenets
 import FormGroup from '@/components/FormGroup.vue'
 import Button from '@/components/Button.vue'
 import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
+import OfferLetter from '@/components/OfferLetter.vue'
+// Data
 import ApplicationForm from '@/data/ApplicationForm.js'
 
 export default {
@@ -23,7 +26,8 @@ export default {
   components: {
     FormGroup,
     Button,
-    FormSubmittedPop
+    FormSubmittedPop,
+    OfferLetter
   },
   data () {
     return {

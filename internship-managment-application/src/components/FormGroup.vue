@@ -9,10 +9,14 @@
             <input :type="label.type">
         </div>
         <p v-if="note" class="note">{{note}}</p>
+        <p v-if="textarea" class="textarea">{{textarea}}<p>
+        <div v-if="textarea">
+                <textarea rows="5" cols="74"></textarea>
+        </div>
     </div>
 </template>
 <script>
 export default {
-  props: ['groupname', 'input', 'note']
+  props: ['groupname', 'input', 'note', 'textarea']
 }
 </script>

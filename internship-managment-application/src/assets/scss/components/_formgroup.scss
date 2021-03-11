@@ -45,4 +45,20 @@
             color: $theme-red;
         }
     }
+    .textarea {
+        white-space: pre-wrap;
+        font-size: 14px;
+        text-align: left;
+            &:focus {
+                border: 2px solid $theme-green;
+            }
+    }
+}
+
+
+.customformgroup {
+    p {
+        color: $theme-green;
+        font-size: 18px;
+    }
 }
