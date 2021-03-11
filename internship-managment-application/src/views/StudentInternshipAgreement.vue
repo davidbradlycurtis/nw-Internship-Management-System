@@ -1,5 +1,5 @@
 <template>
-    <div class="studentinternshipagreement form">
+    <div class="studentinternshipagreement">
       <div class="form" v-if="!submitted">
         <CustomFormGroupAgreeToDates/>
         <!-- Form group for buisness information needs css alteration to make 'other arrangements' input box the right size -->
