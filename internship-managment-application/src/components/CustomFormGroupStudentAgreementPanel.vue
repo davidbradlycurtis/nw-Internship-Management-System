@@ -10,9 +10,9 @@
           <li>Keep records of the work experience and complete all reports the school and employer require.</li>
           <li>Report to the University Supervisor any problem, in regard to the training, prior to any termination.</li>
         </ul>
-        <div class="full-width other">
-          <label>Other:</label><br>
-          <input type="text">
+        <div class="full-textarea">
+          <label>Other:</label>
+          <textarea  cols="30" rows="10"></textarea>
         </div>
     </div>
 </template>

@@ -54,8 +54,8 @@ export default [
       },
       {
         name: 'Other Arrangements',
-        type: 'text',
-        width: 'full-width nowrap'
+        type: 'textarea',
+        width: 'full-textarea'
       }
     ]
   }

@@ -8,9 +8,9 @@
           <li>Consult with the University Internship Supervisor if the trainee is no longer desired in the business.</li>
           <li>Notify the employer prior to any absence.</li>
         </ul>
-        <div class="full-width other">
-          <label>Other:</label><br>
-          <input type="text">
+        <div class="full-textarea">
+          <label>Other:</label>
+          <textarea  cols="30" rows="10"></textarea>
         </div>
     </div>
 </template>
