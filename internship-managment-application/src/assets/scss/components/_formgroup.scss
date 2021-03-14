@@ -13,6 +13,21 @@
         margin: 0;
         margin-bottom: 5px;
     }
+    .full-textarea {
+        grid-column: 1 /span 2;
+        width: 100%;
+        margin: 10px;
+        display: grid;
+        resize: none;
+        label {
+            float: left;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        textarea{
+            resize: none;
+        }
+    }
     .half-width, .full-width {
         width: 100%;
         margin: 10px;
@@ -54,15 +69,6 @@
         li {
             margin-top: 10px;
         }
-    }
-    .other {
-        label {
-            text-align: left;
-            font-size: 14px;
-        }
-    }
-    .nowrap {
-        white-space: nowrap;
     }
 }
 .customformgroup {

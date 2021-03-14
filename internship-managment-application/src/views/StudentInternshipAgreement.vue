@@ -2,9 +2,7 @@
     <div class="studentinternshipagreement">
       <div class="form" v-if="!submitted">
         <CustomFormGroupAgreeToDates/>
-        <!-- Form group for buisness information needs css alteration to make 'other arrangements' input box the right size -->
         <FormGroup v-for="group in AgreementForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
-        <!-- .other css class needs work to make input box correct size -->
         <CustomFormGroupStudentAgreementPanel/>
         <CustomFormGroupSponsorAgreementPanel/>
         <CustomFormGroupSupervisorAgreementPanel/>
@@ -30,7 +28,6 @@ import CustomFormGroupSupervisorAgreementPanel from '@/components/CustomFormGrou
 import CustomFormGroupAgreementSignature from '@/components/CustomFormGroupAgreementSignature.vue'
 // Data
 import AgreementForm from '@/data/AgreementForm.js'
-// import AgreementPanel from '@/data/AgreementPanel.js'
 
 export default {
   name: 'StudentInternshipAgreement',
@@ -47,7 +44,6 @@ export default {
   data () {
     return {
       AgreementForm: AgreementForm,
-      // AgreementPanel: AgreementPanel,
       ButtonList: ['Save Progress', 'Submit Form'],
       submitted: false
     }
