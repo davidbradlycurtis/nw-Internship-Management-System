@@ -3,9 +3,9 @@
         <g id="Layer_2" data-name="Layer 2">
             <g id="Layer_1-2" data-name="Layer 1">
                 <path class="cls-4 bg" d="M27.09,165.49a100.74,100.74,0,1,1,173.64-2.28"/>
-                <path class="cls-1 meter" d="M27.09,165.49a100.74,100.74,0,1,1,173.64-2.28"/>
-                <path class="cls-2 meter" d="M27.09,165.49A100.76,100.76,0,0,1,198.25,59.15"/>
-                <path class="cls-3 meter" d="M27.09,166.21a100.83,100.83,0,0,1,1-106.12"/>
+                <path class="cls-1 meter" d="M27.09,165.49a100.74,100.74,0,1,1,173.64-2.28" stroke-dasharray="420" stroke-dashoffset="420"/>
+                <path class="cls-2 meter" d="M27.09,165.49A100.76,100.76,0,0,1,198.25,59.15" stroke-dasharray="314" stroke-dashoffset="314"/>
+                <path class="cls-3 meter" d="M27.09,166.21a100.83,100.83,0,0,1,1-106.12" stroke-dasharray="111" stroke-dashoffset="111"/>
             </g>
         </g>
         <text transform="matrix(1 0 0 1 43.4153 123.5525)" class="st3 percentage">{{datavalue}}%</text>
@@ -31,7 +31,6 @@ export default {
         for (var i = 0; i < diff; i++) {
           setTimeout(function () {
             startvalue += step
-            console.log(startvalue)
             text.innerHTML = startvalue + '%'
           }, 15 * i)
         }
@@ -41,6 +40,7 @@ export default {
       const meters = document.querySelectorAll('path.meter')
       meters.forEach(path => {
         var length = path.getTotalLength()
+        console.log(length)
         path.style.strokeDashoffset = length
         path.style.strokeDasharray = length
         var value = parseInt(path.parentNode.parentNode.parentNode.getAttribute('data-value'))
