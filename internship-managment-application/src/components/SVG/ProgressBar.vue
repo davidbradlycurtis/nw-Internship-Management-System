@@ -8,7 +8,7 @@
                 <path class="cls-3 meter" d="M27.09,166.21a100.83,100.83,0,0,1,1-106.12" stroke-dasharray="111" stroke-dashoffset="111"/>
             </g>
         </g>
-        <text transform="matrix(1 0 0 1 43.4153 123.5525)" class="st3 percentage">{{datavalue}}%</text>
+        <text transform="matrix(1 0 0 1 39 123.5525)" class="st3 percentage">{{datavalue}}%</text>
     </svg>
 </template>
 <script>
@@ -60,7 +60,6 @@ export default {
     this.counterani()
   }
 }
-
 </script>
 <style scoped>
     svg path {
@@ -89,8 +88,7 @@ export default {
     }
     .percentage {
         font-family: 'Futura-Medium';
-        font-size: 65px;
+        font-size: 60px;
         fill: #006747;
     }
-
 </style>
