@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.48 178.71"><defs><style>.cls-1,.cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:25px;}.cls-1{stroke:#008f62;}.cls-2{stroke:#006747;}.cls-3{stroke:#003d2a;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M27.09,165.49a100.74,100.74,0,1,1,173.64-2.28"/><path class="cls-2" d="M27.09,165.49A100.76,100.76,0,0,1,198.25,59.15"/><path class="cls-3" d="M27.09,166.21a100.83,100.83,0,0,1,1-106.12"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 226.5 178.7" style="enable-background:new 0 0 226.5 178.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#008F62;stroke-width:25;stroke-linecap:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#006747;stroke-width:25;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#003D2A;stroke-width:25;stroke-linecap:round;stroke-miterlimit:10;}
+	.st3{fill:#016747;}
+	.st4{font-family:'Futura-Medium';}
+	.st5{font-size:64.9413px;}
+</style>
+<g id="Layer_2_1_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M27.1,165.5C-1.7,117.9,13.4,56,61,27.1S170.6,13.5,199.4,61c19,31.3,19.5,70.4,1.3,102.2"/>
+		<path class="st1" d="M27.1,165.5C-1.7,117.8,13.6,55.9,61.2,27.1c46.8-28.3,107.6-14.1,137,32"/>
+		<path class="st2" d="M27.1,166.2c-19.8-32.7-19.4-73.8,1-106.1"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 43.4153 123.5525)" class="st3 st4 st5">40%</text>
+</svg>

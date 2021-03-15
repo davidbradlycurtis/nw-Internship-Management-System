@@ -1,9 +1,9 @@
 <template>
     <div class="internshipstatusgroup">
       <!-- Later down the line, this can be replaced with a for loop -->
-      <h3 class="internshiptitle">{{title}}</h3>
+      <h3 class="internshiptitle">{{semester}} {{year}} - {{employer_name}}</h3>
       <div class="statusgroup">
-        <InternshipStatusBlock v-for="internship in blocks" :key="internship.title" v-bind:title="internship.title" v-bind:status="internship.status"/>
+        <InternshipStatusBlock v-for="form in internship" :key="form.form_name" v-bind:title="form.form_name" v-bind:status="form.application_status" v-bind:progressamount="getprogress(form)"/>
       </div>
     </div>
 </template>
@@ -16,20 +16,20 @@ export default {
   components: {
     InternshipStatusBlock
   },
-  // Place holders
-  data: () => ({
-    // This will be where the season, year, and company of the internship, currently a place holders
-    title: 'Insert season, year - Company',
-    // Title of the form title should be fine to stay
-    // The status is just a place holder for the mean time
-    blocks: [
-      { title: 'Internship course enrollment', status: 'approved' },
-      { title: 'Internship application', status: 'pending review' },
-      { title: 'Internship agreement', status: 'under review' }
-    ]
-  })
+  props: ['employer_name', 'semester', 'year', 'internship'],
+  methods: {
+    // Need to define steps and how to store, this will do for now
+    getprogress: function (form) {
+      var totalpoints = 0
+      var totalsteps = 4
+      if (form.submitted) {
+        totalpoints += 1
+      }
+      if (form.approved_by) {
+        totalpoints += 1
+      }
+      return (totalpoints / totalsteps) * 100
+    }
+  }
 }
 </script>
-
-<style lang="scss">
-</style>

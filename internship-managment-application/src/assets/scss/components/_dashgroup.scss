@@ -1,7 +1,7 @@
 .internshipstatusgroup {
     background-color: $theme-light-gray;
     padding: 0px 50px 0px 50px;
-    margin: 40px 100px 0px;
+    margin: 40px 100px;
     .internshiptitle {
         color: $theme-green;
         text-align: left;
@@ -15,7 +15,9 @@
     .statusgroup {
         padding-bottom: 40px;
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(2, 40fr);
+        column-gap: 10fr;
+        row-gap: 10fr;
         .internshipstatusblock {
             color: $theme-green;
             text-align: center;
@@ -26,6 +28,7 @@
                 font-family: $theme-font-family;
                 font-weight: 100;
                 max-width: 420px;
+                min-height: 70px;
             }
             .status {
                 font-weight: 100;
@@ -36,7 +39,21 @@
             .formstatus {
                 margin: 0;
                 font-size: 20px;
+                text-transform: lowercase;
+            }
+            .progressbar {
+                max-width: 300px;
             }
         }
     }
+}
+
+// Tablet
+@media (max-width: $breakpoint-tablet){
+
+}
+
+// Phone
+@media (max-width: $breakpoint-phone){
+    
 }
