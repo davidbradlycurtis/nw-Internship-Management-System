@@ -20,35 +20,44 @@ export default {
       default: 0
     }
   },
+  methods: {
+    counterani: function () {
+      const percentages = document.querySelectorAll('text.percentage')
+      percentages.forEach(text => {
+        var stopvalue = parseInt(text.parentNode.getAttribute('data-value'))
+        var startvalue = 0
+        var diff = stopvalue - startvalue
+        var step = (diff > 0 ? 1 : -1)
+        for (var i = 0; i < diff; i++) {
+          setTimeout(function () {
+            startvalue += step
+            console.log(startvalue)
+            text.innerHTML = startvalue + '%'
+          }, 15 * i)
+        }
+      })
+    },
+    barani: function () {
+      const meters = document.querySelectorAll('path.meter')
+      meters.forEach(path => {
+        var length = path.getTotalLength()
+        path.style.strokeDashoffset = length
+        path.style.strokeDasharray = length
+        var value = parseInt(path.parentNode.parentNode.parentNode.getAttribute('data-value'))
+        if (!value || value <= 0) {
+          value = 100
+        }
+        var to = length * ((100 - value) / 100)
+        path.getBoundingClientRect()
+        path.style.strokeDashoffset = Math.max(0, to)
+      })
+    }
+  },
   mounted () {
     // bar
-    const meters = document.querySelectorAll('path.meter')
-    meters.forEach(path => {
-      var length = path.getTotalLength()
-      path.style.strokeDashoffset = length
-      path.style.strokeDasharray = length
-      var value = parseInt(path.parentNode.parentNode.parentNode.getAttribute('data-value'))
-      if (!value || value <= 0) {
-        value = 100
-      }
-      var to = length * ((100 - value) / 100)
-      path.getBoundingClientRect()
-      path.style.strokeDashoffset = Math.max(0, to)
-    })
+    this.barani()
     // number
-    const percentages = document.querySelectorAll('text.percentage')
-    percentages.forEach(text => {
-      var stopvalue = this.datavalue
-      var startvalue = 0
-      var diff = stopvalue - startvalue
-      var step = (diff > 0 ? 1 : -1)
-      for (var i = 0; i < diff; i++) {
-        setTimeout(function () {
-          startvalue += step
-          text.innerHTML = startvalue + '%'
-        }, 25 * i)
-      }
-    })
+    this.counterani()
   }
 }
 
