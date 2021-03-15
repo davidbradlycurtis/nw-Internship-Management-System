@@ -16,6 +16,40 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `add_forms`
+--
+
+DROP TABLE IF EXISTS `add_forms`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `add_forms` (
+  `form_id` int NOT NULL AUTO_INCREMENT,
+  `student_lastname` varchar(25) DEFAULT NULL,
+  `student_firstname` varchar(25) DEFAULT NULL,
+  `uid` varchar(10) DEFAULT NULL,
+  `student_email` varchar(45) DEFAULT NULL,
+  `faculty_lastname` varchar(25) DEFAULT NULL,
+  `faculty_firstname` varchar(25) DEFAULT NULL,
+  `faculty_email` varchar(25) DEFAULT NULL,
+  `signature` varchar(25) DEFAULT NULL,
+  `internship_application_number` int NOT NULL,
+  PRIMARY KEY (`form_id`),
+  KEY `fk_add_internship1_idx` (`internship_application_number`),
+  CONSTRAINT `fk_add_internship1` FOREIGN KEY (`internship_application_number`) REFERENCES `application` (`application_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `add_forms`
+--
+
+LOCK TABLES `add_forms` WRITE;
+/*!40000 ALTER TABLE `add_forms` DISABLE KEYS */;
+INSERT INTO `add_forms` VALUES (3,'Curtis','David','919567732','s531274@nwmissouri.edu','Eloe','Nathan','nathan@nwmissouri.edu','David Curtis',13);
+/*!40000 ALTER TABLE `add_forms` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `admin`
 --
 
@@ -27,7 +61,7 @@ CREATE TABLE `admin` (
   `admin_lastname` varchar(25) NOT NULL,
   `admin_firstname` varchar(25) NOT NULL,
   PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +70,48 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,'Curtis','David');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `agreements`
+--
+
+DROP TABLE IF EXISTS `agreements`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `agreements` (
+  `agreement_id` int NOT NULL AUTO_INCREMENT,
+  `student_name` varchar(45) DEFAULT NULL,
+  `student_address` varchar(45) DEFAULT NULL,
+  `sid` varchar(10) DEFAULT NULL,
+  `organization_name` varchar(25) DEFAULT NULL,
+  `organization_address` varchar(45) DEFAULT NULL,
+  `supervisor_name` varchar(45) DEFAULT NULL,
+  `supervisor_email` varchar(45) DEFAULT NULL,
+  `arrangements` varchar(250) DEFAULT NULL,
+  `organization_phone` varchar(15) DEFAULT NULL,
+  `student_other` varchar(250) DEFAULT NULL,
+  `sponser_other` varchar(250) DEFAULT NULL,
+  `supervisor_other` varchar(250) DEFAULT NULL,
+  `student_signature` varchar(45) DEFAULT NULL,
+  `sponser_signature` varchar(45) DEFAULT NULL,
+  `internship_application_number` int NOT NULL,
+  PRIMARY KEY (`agreement_id`),
+  KEY `fk_agreement_internship1_idx` (`internship_application_number`),
+  CONSTRAINT `fk_agreement_internship1` FOREIGN KEY (`internship_application_number`) REFERENCES `application` (`application_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `agreements`
+--
+
+LOCK TABLES `agreements` WRITE;
+/*!40000 ALTER TABLE `agreements` DISABLE KEYS */;
+INSERT INTO `agreements` VALUES (2,'David Curtis','123 Maryville','s531274','Garmin','123 Kansas City','Mark Car','mark@garmin.com',NULL,'816-239-9800',NULL,NULL,NULL,'David Curtis','Nathan Eloe',14);
+/*!40000 ALTER TABLE `agreements` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -48,22 +123,19 @@ DROP TABLE IF EXISTS `application`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `application` (
   `application_number` int NOT NULL AUTO_INCREMENT,
-  `application_status` varchar(10) DEFAULT NULL,
-  `application_date` datetime DEFAULT NULL,
-  `date_of_approval` datetime DEFAULT NULL,
+  `application_status` varchar(25) DEFAULT NULL,
+  `application_date` date DEFAULT NULL,
+  `date_of_approval` date DEFAULT NULL,
   `approved_by` varchar(25) DEFAULT NULL,
-  `student_id_fk` int DEFAULT NULL,
-  `employer_name_fk` varchar(25) DEFAULT NULL,
-  `offer_letter` longblob,
+  `submitted` tinyint DEFAULT NULL,
+  `student_id` int NOT NULL,
   PRIMARY KEY (`application_number`),
-  KEY `student_id_fk_idx` (`student_id_fk`),
-  KEY `employer_name_fk_idx` (`employer_name_fk`),
   KEY `approved_by_fk_idx` (`approved_by`),
   KEY `approved_by_idx` (`approved_by`),
+  KEY `fk_internship_student1_idx` (`student_id`),
   CONSTRAINT `approved_by` FOREIGN KEY (`approved_by`) REFERENCES `faculty` (`faculty_lastname`),
-  CONSTRAINT `employer_name_fk` FOREIGN KEY (`employer_name_fk`) REFERENCES `internships` (`employer_name`) ON UPDATE CASCADE,
-  CONSTRAINT `student_id_fk` FOREIGN KEY (`student_id_fk`) REFERENCES `student` (`student_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `fk_internship_student1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,6 +144,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
+INSERT INTO `application` VALUES (13,'approved','2021-03-12','2021-03-13','Eloe',1,1),(14,'approved','2020-03-14','2022-03-20','Eloe',1,1),(15,'approved','2021-02-25',NULL,NULL,0,1);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,9 +160,9 @@ CREATE TABLE `faculty` (
   `faculty_firstname` varchar(25) NOT NULL,
   `faculty_lastname` varchar(25) NOT NULL,
   `department` varchar(10) NOT NULL,
-  PRIMARY KEY (`faculty_id`,`faculty_lastname`),
+  PRIMARY KEY (`faculty_id`),
   KEY `faculty_lastname` (`faculty_lastname`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,6 +171,7 @@ CREATE TABLE `faculty` (
 
 LOCK TABLES `faculty` WRITE;
 /*!40000 ALTER TABLE `faculty` DISABLE KEYS */;
+INSERT INTO `faculty` VALUES (1,'Nathan','Eloe','CSIS');
 /*!40000 ALTER TABLE `faculty` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,13 +183,28 @@ DROP TABLE IF EXISTS `internships`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `internships` (
-  `employer_name` varchar(25) NOT NULL,
+  `employer_name` varchar(25) DEFAULT NULL,
   `duration` varchar(10) DEFAULT NULL,
-  `start_date` datetime DEFAULT NULL,
-  `end_date` datetime DEFAULT NULL,
-  `employer_location` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`employer_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `street_line_1` varchar(25) DEFAULT NULL,
+  `street_line_2` varchar(25) DEFAULT NULL,
+  `city` varchar(25) DEFAULT NULL,
+  `zip_code` varchar(10) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `state` varchar(25) DEFAULT NULL,
+  `supervisor_name` varchar(45) DEFAULT NULL,
+  `supervisor_email` varchar(45) DEFAULT NULL,
+  `site_phone` varchar(15) DEFAULT NULL,
+  `international_phone` varchar(25) DEFAULT NULL,
+  `notes` varchar(250) DEFAULT NULL,
+  `internship_id` int NOT NULL AUTO_INCREMENT,
+  `offer_letter` longblob,
+  `internship_application_number` int NOT NULL,
+  PRIMARY KEY (`internship_id`),
+  KEY `fk_internships_internship1_idx` (`internship_application_number`),
+  CONSTRAINT `fk_internships_internship1` FOREIGN KEY (`internship_application_number`) REFERENCES `application` (`application_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,6 +213,7 @@ CREATE TABLE `internships` (
 
 LOCK TABLES `internships` WRITE;
 /*!40000 ALTER TABLE `internships` DISABLE KEYS */;
+INSERT INTO `internships` VALUES ('Garmin','10 Weeks','2022-05-20','2022-08-20','123 Street',NULL,'Kansas City','66030','Aviation','Missouri','Mark Car','mark@garmin.com','816-239-9800',NULL,NULL,1,NULL,14);
 /*!40000 ALTER TABLE `internships` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,11 +257,11 @@ CREATE TABLE `student` (
   `student_firstname` varchar(25) DEFAULT NULL,
   `student_location` varchar(20) DEFAULT NULL,
   `major` varchar(25) DEFAULT NULL,
-  `sid_number` int DEFAULT NULL,
+  `sid_number` varchar(10) DEFAULT NULL,
   `semester` varchar(10) DEFAULT NULL,
   `graduation` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,6 +270,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
+INSERT INTO `student` VALUES (1,'Curtis','David','Gardner','Computer Science','s531274','Spring','2021'),(2,'Gillespie','Lindsay','Maryville','Computer Science','s529464','Spring','2021'),(3,'Rongey','Dylan','Kansas City','Computer Science','s526522','Spring','2021');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,7 +285,7 @@ CREATE TABLE `users` (
   `email` varchar(40) NOT NULL,
   `password` varchar(45) NOT NULL,
   `role` varchar(10) NOT NULL,
-  `user_id` varchar(45) NOT NULL,
+  `user_id` int NOT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -205,8 +296,17 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('admin@nwmissouri.edu','admin','admin',1),('nathan@nwmissouri.edu','welcome','faculty',1),('s526522@nwmissouri.edu','welcome','student',3),('s529464@nwmissouri.edu','welcome','student',2),('s531274@nwmissouri.edu','welcome','student',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'mydb'
+--
+
+--
+-- Dumping routines for database 'mydb'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -217,4 +317,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-25 13:49:21
+-- Dump completed on 2021-03-14 21:46:15
