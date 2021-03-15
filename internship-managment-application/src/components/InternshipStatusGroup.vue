@@ -1,21 +1,21 @@
 <template>
-    <div class="dashgroup">
+    <div class="internshipstatusgroup">
       <!-- Later down the line, this can be replaced with a for loop -->
       <h3 class="internshiptitle">{{title}}</h3>
-      <div class="flex-blocks">
-        <div class="col" v-for="block in blocks" :key="block.title">
-          <h4 class="formtitle">{{block.title}}</h4>
-          <h5 class="status">Status</h5>
-          <p class="formstatus">{{block.status}}</p>
-        </div>
-        <div class="filling-empty-space">
-        </div>
+      <div class="statusgroup">
+        <InternshipStatusBlock v-for="internship in blocks" :key="internship.title" v-bind:title="internship.title" v-bind:status="internship.status"/>
       </div>
     </div>
 </template>
 
 <script>
+import InternshipStatusBlock from '@/components/InternshipStatusBlock'
+
 export default {
+  name: 'InternshipStatusGroup',
+  components: {
+    InternshipStatusBlock
+  },
   // Place holders
   data: () => ({
     // This will be where the season, year, and company of the internship, currently a place holders

@@ -1,17 +1,17 @@
 <template>
     <div class="studentDash">
       <h1>Student Dashboard</h1>
-      <DashGroup/>
+      <InternshipStatusGroup />
   </div>
 </template>
 <script>
 
-import DashGroup from '@/components/DashGroup.vue'
+import InternshipStatusGroup from '@/components/InternshipStatusGroup.vue'
 
 export default {
   name: 'StudentDashboard',
   components: {
-    DashGroup
+    InternshipStatusGroup
   }
 }
 </script>
