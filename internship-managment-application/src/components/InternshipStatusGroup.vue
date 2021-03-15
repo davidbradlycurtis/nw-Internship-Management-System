@@ -1,7 +1,7 @@
 <template>
     <div class="internshipstatusgroup">
       <!-- Later down the line, this can be replaced with a for loop -->
-      <h3 class="internshiptitle">{{semester}} {{year}} - {{employer_name}}</h3>
+      <h3 class="internshiptitle">{{semester}} {{year}} -<wbr> {{employer_name}}</h3>
       <div class="statusgroup">
         <InternshipStatusBlock v-for="form in internship" :key="form.form_name" v-bind:title="form.form_name" v-bind:status="form.application_status" v-bind:progressamount="getprogress(form)"/>
       </div>

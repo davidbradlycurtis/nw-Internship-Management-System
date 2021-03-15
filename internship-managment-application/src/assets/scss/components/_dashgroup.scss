@@ -58,6 +58,13 @@
 
 // Tablet
 @media (max-width: $breakpoint-tablet){
+    .internshipstatusgroup {
+        padding: 0 20px;
+        margin: 40px 25px;
+        .statusgroup {
+            column-gap: 10px;
+        }
+    }
 
 }
 
