@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/student-dashboard'
   },
   {
     path: '/about',
@@ -20,28 +18,35 @@ const routes = [
   },
   {
     path: '/student-dashboard',
-    name: 'StudentDashboard',
-    component: () => import(/* webpackChunkName: "studentDash" */'../views/StudentDashboard.vue')
+    name: 'Student Dashboard',
+    component: () => import(/* webpackChunkName: "studentDash" */'../views/StudentDashboard.vue'),
+    meta: {
+      title: 'Student Dashboard'
+    }
   },
   {
     path: '/student-internship-application',
-    name: 'StudentInternApplication',
-    component: () => import('../views/StudentInternshipApplication.vue')
+    name: 'Internship Application Form',
+    component: () => import('../views/StudentInternshipApplication.vue'),
+    meta: {
+      title: 'Internship Application Form'
+    }
   },
   {
     path: '/student-internship-agreement',
-    name: 'StudentInternAgreement',
-    component: () => import('../views/StudentInternshipAgreement.vue')
+    name: 'Internship Agreement',
+    component: () => import('../views/StudentInternshipAgreement.vue'),
+    meta: {
+      title: 'Internship Agreement'
+    }
   },
   {
     path: '/student-internship-add-form',
-    name: 'StudentInternshipAddForm',
-    component: () => import('../views/StudentInternshipAddForm.vue')
-  },
-  {
-    path: '/student-review-status',
-    name: 'StudentReviewStatus.vue',
-    component: () => import('../views/StudentReviewStatus.vue')
+    name: 'Internship Add Form',
+    component: () => import('../views/StudentInternshipAddForm.vue'),
+    meta: {
+      title: 'Internship Add Form'
+    }
   }
 ]
 
@@ -50,5 +55,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+// router.replace({ path: '/', redirect: '/student-dashboard' })
 export default router

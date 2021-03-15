@@ -1,0 +1,21 @@
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: $theme-white;
+  background-color: $theme-dark-green;
+  text-align: center;
+  grid-row: 3;
+  div {
+    margin: 40px;
+    nav {
+      a {
+        color: $theme-white;
+        text-transform: uppercase;
+        &:visited {
+          color: $theme-white;
+        }
+      }
+    }
+  }
+}
