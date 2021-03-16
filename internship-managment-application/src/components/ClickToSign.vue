@@ -21,6 +21,9 @@ export default {
   methods: {
     signed: function (event) {
       this.signature = prompt('To sign your name on this document, please type your name in the input box below. By signing this document, you are insuring that all information on this form is true to your knowledge.').toUpperCase()
+      while (this.signature === '') {
+        this.signature = prompt('Oops, we didnt quite catch that. Please type your name in the input box below to sign this doucment')
+      }
     }
   }
 }
