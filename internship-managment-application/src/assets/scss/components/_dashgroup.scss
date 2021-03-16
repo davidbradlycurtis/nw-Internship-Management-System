@@ -16,8 +16,8 @@
     .statusgroup {
         padding-bottom: 40px;
         display: grid;
-        grid-template-columns: repeat(2, 40fr);
-        column-gap: 150px;
+        grid-template-columns: repeat(3, 40fr);
+        column-gap: 125px;
         row-gap: 100px;
         .internshipstatusblock {
             color: $theme-green;
@@ -57,6 +57,17 @@
     }
 }
 
+// Smaller Laptop
+@media (max-width: $breakpoint-laptop){
+    .internshipstatusgroup {
+        .statusgroup {
+            grid-template-columns: repeat(2, 40fr);
+            column-gap: 150px;
+            row-gap: 100px;
+        }
+    }
+}
+
 // Tablet
 @media (max-width: $breakpoint-tablet){
     .internshipstatusgroup {
@@ -80,7 +91,6 @@
             padding: 10px;
         }
         .statusgroup {
-            display: grid;
             grid-template-columns: 100fr;
             row-gap: 5px;
         }

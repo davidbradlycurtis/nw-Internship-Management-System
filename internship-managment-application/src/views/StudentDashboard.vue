@@ -1,18 +1,26 @@
 <template>
-    <div class="studentDash">
+    <div class="studentDash" v-if="FormData.length > 0">
       <InternshipStatusGroup v-for="internship in FormData" :key="internship.employer_name" v-bind:employer_name="internship.employer_name" v-bind:semester="getsemester(internship.start_date)" v-bind:year="getyear(internship.start_date)" v-bind:internship="internship.forms"/>
+    </div>
+    <div class="studentDash" v-else>
+      <NoInternshipStatusGroup />
+      <router-link to="/student-internship-add-form"><Button v-bind:buttontext="'Get Started'"/></router-link>
     </div>
 </template>
 <script>
 // Components
 import InternshipStatusGroup from '@/components/InternshipStatusGroup.vue'
+import NoInternshipStatusGroup from '@/components/NoInternshipStatusGroup.vue'
+import Button from '@/components/Button.vue'
 // Data
 import FormData from '@/data/FormStatus.js'
 
 export default {
   name: 'StudentDashboard',
   components: {
-    InternshipStatusGroup
+    InternshipStatusGroup,
+    NoInternshipStatusGroup,
+    Button
   },
   data () {
     return {
