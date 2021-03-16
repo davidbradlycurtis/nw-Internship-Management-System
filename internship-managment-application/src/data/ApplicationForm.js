@@ -103,10 +103,5 @@ export default [
         width: 'full-textarea'
       }
     ]
-  },
-  {
-    group_name: 'Offer Letter',
-    inputs: [],
-    note: 'If you have been given an offer letter from your internship, please attatch a PDF version of it down below.'
   }
 ]

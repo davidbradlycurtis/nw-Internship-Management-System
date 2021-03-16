@@ -78,3 +78,39 @@
         font-size: 18px;
     }
 }
+.offerformgroup {
+    p1 {
+        color: $theme-black;
+        font-size: 18px;
+        text-align: left;
+        margin-left: -150px;
+    }
+    p2 {
+        color: $theme-dash-gray;
+        font-size: 20px;
+        text-align: left;
+        margin-left: -730px;
+    }
+    p4 {
+        white-space: pre-wrap;
+        color: $theme-black;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 400px;
+    }
+    p5 {
+        white-space: pre-wrap;
+        color: $theme-black;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 473px;
+        margin-right: 0px;
+    }
+    p6 {
+        white-space: pre-wrap;
+        color: $theme-green;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 432px;
+    }
+}
