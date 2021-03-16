@@ -1,5 +1,7 @@
 <template>
-    <div1 class="filedrop">
+    <div class="filedrop">
+        <div class="icon-arrow"></div>
+        <div class="icon-arrow2"></div>
         <div>
             <input type="file" accept=".pdf" class="input-file">
             <p4>Drag and Drop here</p4>
@@ -8,7 +10,7 @@
             <br />
             <p6> Browse files </p6>
         </div>
-    </div1>
+    </div>
 </template>
 
 <script>
@@ -20,9 +22,9 @@ export default {
 div {
     text-align: left;
 }
-div1 {
-    outline: 3px dashed $theme-dash-gray; /* the dash box */
-    border-radius: 21px;
+.filedrop {
+    border: 3px dashed $theme-dash-gray; /* the dash box */
+    border-radius: 10px;
     outline-offset: -10px;
     background: $theme-light-gray;
     color: $theme-black;
@@ -41,5 +43,43 @@ div1 {
   }
   .filedrop:hover {
     background: $theme-light-gray; /* when mouse over to the drop zone, change color */
+  }
+  .icon-arrow {
+      width: 6px;
+      height: 50px;
+      background-color: $theme-green;
+      position: relative;
+      top: -14px;
+      left: 482px;
+  }
+  .icon-arrow:after {
+      content: "";
+      display: inline-block;
+      width: 34px;
+      height: 6px;
+      background-color: $theme-green;
+      transform: rotate(45deg);
+      position: absolute;
+      right: -25px;
+      bottom: 36px;
+  }
+    .icon-arrow:before {
+      content: "";
+      display: inline-block;
+      width: 34px;
+      height: 6px;
+      background-color: $theme-green;
+      transform: rotate(-45deg);
+      position: absolute;
+      right: -4px;
+      bottom: 36px;
+  }
+  .icon-arrow2 {
+      width: 47px;
+      height: 6px;
+      background-color: $theme-green;
+      position: relative;
+      top: -20px;
+      left: 462px;
   }
 </style>
