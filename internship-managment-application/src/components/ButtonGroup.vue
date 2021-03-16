@@ -1,6 +1,6 @@
 <template>
     <div class="buttongroup">
-        <Button v-for="button in ButtonList" :key="button" v-bind:buttontext="button"/>
+        <Button v-for="button in ButtonList" :key="button" v-bind:buttontext="button" v-bind:type="type"/>
     </div>
 </template>
 <script>

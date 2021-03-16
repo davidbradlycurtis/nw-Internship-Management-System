@@ -1,13 +1,13 @@
 <template>
     <div class="studentinternshipaddform">
-      <div class="form" v-if="!submitted">
+      <form class="form" v-if="!submitted" @submit="checkForm">
         <FormGroup  v-for="group in CourseAddForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
         <CustomFormGroupStudentAcknowledgment />
         <div class="buttongroup">
-          <Button v-bind:buttontext="'Save Progress'"/>
-          <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
+          <Button v-bind:buttontext="'Save Progress'" v-bind:type="'button'"/>
+          <Button v-bind:buttontext="'Submit Form'" v-bind:type="'button'" @click.native="checkForm"/>
         </div>
-      </div>
+      </form>
       <FormSubmittedPop v-if="submitted"/>
     </div>
 </template>
@@ -28,14 +28,28 @@ export default {
     FormSubmittedPop,
     CustomFormGroupStudentAcknowledgment
   },
+  methods: {
+    checkForm: function (event) {
+      const inputs = document.querySelectorAll('input')
+      var okay = true
+      inputs.forEach((input) => {
+        if (input.value.length <= 0) {
+          okay = false
+        }
+      })
+      if (okay && document.getElementsByClassName('signature')[0].firstChild.innerText !== '(Click to sign)') {
+        this.submitted = true
+      } else {
+        // Put UhOh notice here when student dashboard gets pulled into main
+      }
+    }
+  },
   data () {
     return {
       CourseAddForm: CourseAddForm,
       ButtonList: ['Save Progress', 'Submit Form'],
       submitted: false
     }
-  },
-  methods: {
   }
 }
 </script>
