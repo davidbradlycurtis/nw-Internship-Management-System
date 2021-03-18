@@ -5,7 +5,8 @@ const morgan = require('morgan')
 const mysql = require('mysql')
 const app = express()
 app.use(morgan('combined'))
-app.use(bodyParser.json())
+app.use(express.json());
+
 app.use(cors())
 
 
@@ -13,15 +14,11 @@ app.use(cors())
 
 
 app.get('/test', (req, res) => {
-    
-
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: 'password',
     })
-
-
      // just an example of a query
     connection.query("select * from newschema.admin", (err, rows, fields) => {
     console.log('Hello?')
@@ -32,7 +29,16 @@ app.get('/test', (req, res) => {
 
 
 
+
 })
+
+app.post('/student-internship-add-form', (req, res) => {
+    res.send({
+        
+    })
+
+})
+
 
 
 app.listen(process.env.PORT || 8081)

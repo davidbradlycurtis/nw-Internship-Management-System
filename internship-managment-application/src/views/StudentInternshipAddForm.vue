@@ -5,7 +5,7 @@
         <CustomFormGroupStudentAcknowledgment />
         <div class="buttongroup">
           <Button v-bind:buttontext="'Save Progress'"/>
-          <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
+          <Button v-bind:buttontext="'Submit Form'" @click.native="sendInternship(); submittedValue() "/>
         </div>
       </div>
       <FormSubmittedPop v-if="submitted"/>
@@ -19,6 +19,7 @@ import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
 import CustomFormGroupStudentAcknowledgment from '@/components/CustomFormGroupStudentAcknowledgment.vue'
 // Data
 import CourseAddForm from '@/data/CourseAddForm.js'
+import StudentService from '@/services/StudentService'
 
 export default {
   name: 'StudentInternshipAddForm',
@@ -32,10 +33,21 @@ export default {
     return {
       CourseAddForm: CourseAddForm,
       ButtonList: ['Save Progress', 'Submit Form'],
-      submitted: false
+      submitted: false,
     }
   },
   methods: {
+    async sendInternship () {
+      const response = await StudentService.AddFormSubmit({
+        
+
+      })
+      
+    },
+    submittedValue () {
+      this.submitted = !this.submitted
+    }
+
   }
 }
 </script>
