@@ -47,7 +47,7 @@ const routes = [
         name: 'Internship Agreement',
         component: () => import('../views/StudentAgreementFormPast.vue'),
         meta: {
-          title: 'Internship Application - Past Forms'
+          title: 'Internship Agreement - Past Forms'
         }
       }
     ]
