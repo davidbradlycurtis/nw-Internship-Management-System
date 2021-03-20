@@ -9,14 +9,6 @@ const routes = [
     redirect: '/student-dashboard'
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
     path: '/student-dashboard',
     name: 'Student Dashboard',
     component: () => import(/* webpackChunkName: "studentDash" */'../views/StudentDashboard.vue'),
@@ -30,7 +22,17 @@ const routes = [
     component: () => import('../views/StudentInternshipApplication.vue'),
     meta: {
       title: 'Internship Application Form'
-    }
+    },
+    children: [
+      {
+        path: 'past-forms',
+        name: 'Internship Application Form',
+        component: () => import('../views/StudentApplicationFormPast.vue'),
+        meta: {
+          title: 'Internship Application Form - Past Forms'
+        }
+      }
+    ]
   },
   {
     path: '/student-internship-agreement',
@@ -38,7 +40,17 @@ const routes = [
     component: () => import('../views/StudentInternshipAgreement.vue'),
     meta: {
       title: 'Internship Agreement'
-    }
+    },
+    children: [
+      {
+        path: 'past-forms',
+        name: 'Internship Agreement',
+        component: () => import('../views/StudentAgreementFormPast.vue'),
+        meta: {
+          title: 'Internship Application - Past Forms'
+        }
+      }
+    ]
   },
   {
     path: '/student-internship-add-form',
@@ -46,7 +58,17 @@ const routes = [
     component: () => import('../views/StudentInternshipAddForm.vue'),
     meta: {
       title: 'Internship Add Form'
-    }
+    },
+    children: [
+      {
+        path: 'past-forms',
+        name: 'Internship Add Form',
+        component: () => import('../views/StudentAddFormPast.vue'),
+        meta: {
+          title: 'Internship Add Form - Past Forms'
+        }
+      }
+    ]
   }
 ]
 
