@@ -58,3 +58,12 @@
     
 }
 
+// Tablet
+@media (max-width: $breakpoint-tablet){
+    .side-nav {
+        padding: -10px 10px;
+        .title {
+            padding: 0px 10px;
+        }
+    }
+}
