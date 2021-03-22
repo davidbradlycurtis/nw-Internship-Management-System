@@ -4,6 +4,7 @@ export default {
   groups: [
     {
       legend: 'Student Information',
+      styleClasses: 'formgroup',
       fields: [
         {
           type: 'input',
@@ -11,7 +12,8 @@ export default {
           label: 'First Name',
           model: 'first_name',
           required: true,
-          validator: ['string', 'required']
+          validator: ['string', 'required'],
+          styleClasses: 'half-width'
         },
         {
           type: 'input',
@@ -19,7 +21,8 @@ export default {
           label: 'Last Name',
           model: 'last_name',
           required: true,
-          validator: ['string', 'required']
+          validator: ['string', 'required'],
+          styleClasses: 'half-width'
         },
         {
           type: 'input',
@@ -27,7 +30,8 @@ export default {
           label: 'User ID (919#)',
           model: 'u_num',
           required: true,
-          validator: ['integer', 'required']
+          validator: ['integer', 'required'],
+          styleClasses: 'half-width'
         },
         {
           type: 'input',
@@ -35,12 +39,14 @@ export default {
           label: 'Student Email',
           model: 'email',
           required: true,
-          validator: ['email', 'required']
+          validator: ['email', 'required'],
+          styleClasses: 'half-width'
         }
       ]
     },
     {
       legend: 'Course Instructor Information',
+      styleClasses: 'formgroup',
       fields: [
         {
           type: 'input',
@@ -48,7 +54,8 @@ export default {
           label: 'First Name',
           model: 'faculty_first_name',
           required: true,
-          validator: ['string', 'required']
+          validator: ['string', 'required'],
+          styleClasses: 'half-width'
         },
         {
           type: 'input',
@@ -56,7 +63,8 @@ export default {
           label: 'Last Name',
           model: 'faculty_last_name',
           required: true,
-          validator: ['string', 'required']
+          validator: ['string', 'required'],
+          styleClasses: 'half-width'
         },
         {
           type: 'input',
@@ -64,7 +72,8 @@ export default {
           label: 'Email',
           model: 'faculty_email',
           required: true,
-          validator: ['email', 'required']
+          validator: ['email', 'required'],
+          styleClasses: 'half-width'
         },
         {
           type: 'label',
@@ -76,6 +85,7 @@ export default {
     },
     {
       legend: 'Verify Email Addresses!',
+      styleClasses: 'formgroup',
       fields: [
         {
           type: 'label',

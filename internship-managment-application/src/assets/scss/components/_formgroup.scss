@@ -1,11 +1,11 @@
-fieldset {
+.formgroup {
     background-color: $theme-light-gray;
     padding: 30px 40px;
     margin-top: 40px;
     border: none;
     display: grid;
     grid-template-columns: auto auto;
-    legend {
+    legend, .formgrouptitle {
         color: $theme-green;
         text-align: left;
         text-transform: uppercase;
@@ -17,7 +17,7 @@ fieldset {
         background-color: $theme-light-gray;
         float: left;
     }
-    .form-group {
+    .half-width, .full-width {
         width: 100%;
         margin: 10px;
         display: flex;
