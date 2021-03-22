@@ -23,26 +23,30 @@ div {
     text-align: left;
 }
 .filedrop {
-    border: 3px dashed $theme-dash-gray; /* the dash box */
+    border: 3px dashed $theme-dash-gray;
     border-radius: 10px;
     outline-offset: -10px;
     background: $theme-light-gray;
     color: $theme-black;
-    padding: 100px 10px;
-    min-height: 50px; /* minimum height */
+    padding: 55px 10px;
+    min-height: 50px;
     width: 1000px;
+    margin-top: 30px;
+    margin-bottom: 2px;
     position: relative;
     cursor: pointer;
 }
+.filedrop:hover {
+  background: $theme-hover-gray;
+}
   .input-file {
-    opacity: 0; /* invisible but it's there! */
-    width: 98%;
-    height: 200px;
+    opacity: 0;
+    width: 101%;
+    height: 285px;
+    margin-top: -135px;
+    margin-left: -15px;
     position: absolute;
     cursor: pointer;
-  }
-  .filedrop:hover {
-    background: $theme-light-gray; /* when mouse over to the drop zone, change color */
   }
   .icon-arrow {
       width: 6px;
