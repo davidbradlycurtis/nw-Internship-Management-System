@@ -38,10 +38,10 @@ app.get('/test', (req, res) => {
     })
 })
 
-app.post('/student-internship-add-form-submit', (req, res) => {
+app.post('/form-submit', (req, res) => {
     sendQuery
     res.send({
-        message: 'Add Form was submitted'
+        message: `Hello ${req.body.email}! Add Form was submitted`,
     })
 
 })
