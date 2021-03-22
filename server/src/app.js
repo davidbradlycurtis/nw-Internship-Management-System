@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(cors())
 
-sendQuery (information) {
+function sendQuery (information) {
     app.get('/test', (req, res) => {
         const connection = mysql.createConnection({
             host: 'localhost',
