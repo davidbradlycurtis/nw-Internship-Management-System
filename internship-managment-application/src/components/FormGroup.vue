@@ -6,7 +6,7 @@
             <label :for="label.name">
                 {{label.name}}:
             </label>
-            <input :type="label.type">
+            <input :ref="label.id" :id="label.id" :type="label.type">
         </div>
         <p v-if="note" class="note">{{note}}</p>
     </div>

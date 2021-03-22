@@ -4,8 +4,8 @@
         <FormGroup  v-for="group in CourseAddForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
         <CustomFormGroupStudentAcknowledgment />
         <div class="buttongroup">
-          <Button v-bind:buttontext="'Save Progress'"/>
-          <Button v-bind:buttontext="'Submit Form'" @click.native="sendInternship(); submittedValue() "/>
+          <Button v-bind:buttontext="'Save Progress'" @click.native="sendForm(); submittedValue() "/>
+          <Button v-bind:buttontext="'Submit Form'" @click.native="sendForm(); submittedValue() "/>
         </div>
       </div>
       <FormSubmittedPop v-if="submitted"/>
@@ -33,21 +33,30 @@ export default {
     return {
       CourseAddForm: CourseAddForm,
       ButtonList: ['Save Progress', 'Submit Form'],
-      submitted: false,
+      submitted: false
     }
   },
   methods: {
     async sendInternship () {
+      // INPUT HERE should be replaced with the correct field value
       const response = await StudentService.AddFormSubmit({
-        
-
+        student_id: 'INPUT HERE',
+        studentLastname: 'INPUT HERE',
+        studentFirstname: 'INPUT HERE',
+        uid: 'INPUT HERE',
+        studentEmail: 'INPUT HERE',
+        facultyLastname: 'INPUT HERE',
+        facultyFirstname: 'INPUT HERE',
+        facultyEmail: 'INPUT HERE',
+        studentSignature: 'INPUT HERE',
+        applicationDate: 'INPUT HERE',
+        submitted: this.submitted
       })
-      
+      console.log(response.data)
     },
     submittedValue () {
       this.submitted = !this.submitted
     }
-
   }
 }
 </script>

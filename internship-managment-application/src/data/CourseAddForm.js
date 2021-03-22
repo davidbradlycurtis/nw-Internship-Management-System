@@ -5,22 +5,26 @@ export default [
       {
         name: 'First Name',
         type: 'text',
-        width: 'half-width'
+        width: 'half-width',
+        id: 'studentFirstname'
       },
       {
         name: 'Last Name',
         type: 'text',
-        width: 'half-width'
+        width: 'half-width',
+        id: 'studentLastname'
       },
       {
         name: 'User ID (919#)',
         type: 'number',
-        width: 'half-width'
+        width: 'half-width',
+        id: '919'
       },
       {
         name: 'Student Email',
         type: 'email',
-        width: 'half-width'
+        width: 'half-width',
+        id: 'studentEmail'
       }
     ],
     note: ''
@@ -31,17 +35,20 @@ export default [
       {
         name: 'First Name',
         type: 'text',
-        width: 'half-width'
+        width: 'half-width',
+        id: 'instructorFirstname'
       },
       {
         name: 'Last Name',
         type: 'text',
-        width: 'half-width'
+        width: 'half-width',
+        id: 'instructorLastname'
       },
       {
         name: 'Email',
         type: 'email',
-        width: 'half-width'
+        width: 'half-width',
+        id: 'instructorEmail'
       }
     ],
     note: 'If the instructor name is Staff, please use the email for the appropriate Department Chair or School Director in place of instructor.'
