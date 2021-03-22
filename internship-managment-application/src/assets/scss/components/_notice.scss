@@ -1,0 +1,16 @@
+.notice {
+    background-color: $theme-light-gray;
+    padding: 30px 40px;
+    margin: 40px 100px;
+    .noticetitle {
+        color: $theme-green;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 24px;
+    }
+    .noticetext {
+        text-align: left;
+        font-size: 16px;
+        color: $theme-black;
+    }
+}

@@ -5,6 +5,7 @@
     filter: drop-shadow(5px -10px 10px black);
     position: sticky;
     top: 0;
+    z-index: 100;
     h1 {
         border-top: 4px solid $theme-green;
         border-bottom: 4px solid $theme-green;

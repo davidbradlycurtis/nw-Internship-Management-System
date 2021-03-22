@@ -6,8 +6,12 @@
             <label  :for="label.name">
                 {{label.name}}:
             </label>
-            <input v-if="label.type != 'textarea'" :type="label.type">
-            <textarea v-if="label.type == 'textarea'" :name="label.name"  cols="30" rows="10"></textarea>
+           <!-- commented out for merging. This is from the Agreement branch-->
+           <!-- <input v-if="label.type != 'textarea'" :type="label.type"> -->
+           <!-- <textarea v-if="label.type == 'textarea'" :name="label.name"  cols="30" rows="10"></textarea> -->
+           
+            <!-- This is from the main branch -->
+            <input :type="label.type" :name="label.name" required="required">
         </div>
         <p v-if="note" class="note">{{note}}</p>
     </div>
