@@ -13,6 +13,21 @@
         margin: 0;
         margin-bottom: 5px;
     }
+    .full-textarea {
+        grid-column: 1 /span 2;
+        width: 100%;
+        margin: 10px;
+        display: grid;
+        resize: none;
+        label {
+            float: left;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        textarea{
+            resize: none;
+        }
+    }
     .half-width, .full-width {
         width: 100%;
         margin: 10px;
@@ -67,6 +82,9 @@
     p {
         color: $theme-green;
         font-size: 18px;
+    }
+    li {
+        font-size: 20px;
     }
 }
 
