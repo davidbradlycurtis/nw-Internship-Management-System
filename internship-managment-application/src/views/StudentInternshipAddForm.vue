@@ -41,13 +41,19 @@ export default {
         validateAfterChanged: true
       },
       ButtonList: ['Save Progress', 'Submit Form'],
-      submitted: false
+      submitted: false,
+      edit: false
     }
   },
   methods: {
     async sendInternship () {
-      const response = await StudentService.AddFormSubmit(this.model)
-      console.log(response.data)
+      if (this.edit) {
+        const response = await StudentService.EditAddForm(this.model)
+        console.log(response.data)
+      } else {
+        const response = await StudentService.AddFormSubmit(this.model)
+        console.log(response)
+      }
     }
   }
 }
