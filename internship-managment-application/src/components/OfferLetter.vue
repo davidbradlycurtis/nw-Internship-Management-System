@@ -2,7 +2,7 @@
     <div class="offerformgroup formgroup">
         <h3 class="formgrouptitle">Offer Letter</h3>
         <div>
-          <p1>If you have been given an offer letter from your internship, please attatch a PDF version of it down below.</p1>
+          <p class="offerletterp">If you have been given an offer letter from your internship, please attatch a PDF version of it down below.</p>
         </div>
         <div>
             <p></p>
@@ -11,7 +11,7 @@
         <div>
         </div>
         <div>
-            <p2>Accepted File Types: PDF Only</p2>
+            <p class="filetype">Accepted File Types: PDF Only</p>
         </div>
     </div>
 </template>
