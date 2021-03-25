@@ -4,25 +4,9 @@ export default {
       styleClasses: 'formgroup',
       fields: [
         {
-          type: 'pikaday',
-          label: 'To provide a basis of understanding and to promote working relationships, this agreement is established on',
-          model: 'agreement-sign-date',
-          validator: ['date'],
-          pikadayOptions: {
-            yearRange: [2020, 2021]
-          }
-        },
-        {
-          type: 'pikaday',
-          label: 'This work experience will start on',
-          model: 'internship-start-date',
-          validator: ['date']
-        },
-        {
-          type: 'pikaday',
-          label: ', and will end on or before',
-          model: 'internship-end-date',
-          validator: ['date']
+          type: 'integratedinput',
+          cinputType: 'date',
+          text: 'To provide a basis of understanding and to promote working relationships, this agreement is established on INPUT'
         }
       ]
     },
