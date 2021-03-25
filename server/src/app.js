@@ -10,12 +10,11 @@ app.use(express.json());
 
 app.use(cors())
 
-/*
-    Establishes a connection to the database
-    
-    Arguements: None
 
-    Returns: (mysql connection)
+/**
+* Establishes a connection to the database
+* @param    None
+* @return   {Connection}         mysql connection
 */
 function get_connection () {
     return mysql.createConnection({
@@ -35,12 +34,10 @@ app.get('/test', (req, res) => {
     })
 })
 
-/*
-    Inserts a new course add form into the database
-    
-    Arguements: req (json containing form data)
-
-    Returns: message (String)
+/**
+* Inserts a new course add form into the database
+* @param    {req}            (json containing form data)
+* @return   {String}         message
 */
 app.post('/add-form-submit', (req, res) => {
     const connection = get_connection()
@@ -57,12 +54,10 @@ app.post('/add-form-submit', (req, res) => {
     })
 })
 
-/*
-    Updates an existing course add form in the database
-    
-    Arguements: req (json containing form data)
-
-    Returns: message (String)
+/**
+* Updates an existing course add form in the database
+* @param    {req}            (json containing form data)
+* @return   {String}         message
 */
 app.post('/add-form-edit', (req, res) => {
     const connection = get_connection()
@@ -79,12 +74,10 @@ app.post('/add-form-edit', (req, res) => {
     })
 })
 
-/*
-    Updates an existing course add form status in the database
-    
-    Arguements: req (json containing form data)
-
-    Returns: message (String)
+/**
+* Updates an existing course add form status in the database
+* @param    {req}            (json containing form data)
+* @return   {String}         message
 */
 app.post('/add-form-change-status', (req, res) => {
     const connection = get_connection()
@@ -101,12 +94,10 @@ app.post('/add-form-change-status', (req, res) => {
     })
 })
 
-/*
-    Retrieves all existing course add forms in the database for the provided student_id
-    
-    Arguements: req (json containing student_id)
-
-    Returns: message (String)
+/**
+* Retrieves all existing course add forms in the database for the provided student_id
+* @param    {req}            (json containing student_id)
+* @return   {String}         message
 */
 app.post('/add-form-get-forms', (req, res) => {
     const connection = get_connection()
