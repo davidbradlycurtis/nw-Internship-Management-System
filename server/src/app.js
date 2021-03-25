@@ -10,29 +10,40 @@ app.use(express.json());
 
 app.use(cors())
 
+/*
+    Establishes a connection to the database
+    
+    Arguements: None
 
-app.get('/test', (req, res) => {
-    const connection = mysql.createConnection({
+    Returns: (mysql connection)
+*/
+function get_connection () {
+    return mysql.createConnection({
         host: config.host,
         user: config.user,
         password: config.password,
         database: config.database
     })
-     // just an example of a query
+}
+
+// Test database call
+app.get('/test', (req, res) => {
+    const connection = get_connection()
     connection.query("SELECT * FROM users;", (err, rows, fields) => {
-    console.log('Hello?')
     console.log(rows)
     res.json(rows)
     })
 })
 
+/*
+    Inserts a new course add form into the database
+    
+    Arguements: req (json containing form data)
+
+    Returns: message (String)
+*/
 app.post('/add-form-submit', (req, res) => {
-    const connection = mysql.createConnection({
-        host: config.host,
-        user: config.user,
-        password: config.password,
-        database: config.database
-    })
+    const connection = get_connection()
     var query = `CALL create_add_form('${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.signature}','${req.body.date}',${req.body.submitted},${req.body.uid});`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
@@ -46,13 +57,15 @@ app.post('/add-form-submit', (req, res) => {
     })
 })
 
+/*
+    Updates an existing course add form in the database
+    
+    Arguements: req (json containing form data)
+
+    Returns: message (String)
+*/
 app.post('/add-form-edit', (req, res) => {
-    const connection = mysql.createConnection({
-        host: config.host,
-        user: config.user,
-        password: config.password,
-        database: config.database
-    })
+    const connection = get_connection()
     var query = `CALL edit_add_form('${req.body.form_id}','${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.signature}','${req.body.date}',${req.body.submitted},${req.body.uid});`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
@@ -63,6 +76,50 @@ app.post('/add-form-edit', (req, res) => {
     })
     res.send({
         message: `Hello ${req.body.email}! Add Form was editted`,
+    })
+})
+
+/*
+    Updates an existing course add form status in the database
+    
+    Arguements: req (json containing form data)
+
+    Returns: message (String)
+*/
+app.post('/add-form-change-status', (req, res) => {
+    const connection = get_connection()
+    var query = `CALL change_add_form_status('${req.body.form_id}', '${req.body.date}', '${req.body.approved_by}', '${req.body.status}');`
+    console.log("Database call: ",query)
+    connection.query(query, (err, rows, fields) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(rows);
+    })
+    res.send({
+        message: `Add Form editted successfully`,
+    })
+})
+
+/*
+    Retrieves all existing course add forms in the database for the provided student_id
+    
+    Arguements: req (json containing student_id)
+
+    Returns: message (String)
+*/
+app.post('/add-form-get-forms', (req, res) => {
+    const connection = get_connection()
+    var query = `CALL get_add_forms_by_id('${req.body.student_id}');`
+    console.log("Database call: ",query)
+    connection.query(query, (err, rows, fields) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(rows);
+    })
+    res.send({
+        message: `Add Forms recieved successfully`,
     })
 })
 
