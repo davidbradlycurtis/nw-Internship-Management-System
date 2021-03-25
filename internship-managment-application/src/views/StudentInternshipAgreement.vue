@@ -1,45 +1,41 @@
 <template>
-    <div class="studentinternshipagreement">
-      <div class="form" v-if="!submitted">
-        <CustomFormGroupAgreeToDates/>
-        <FormGroup v-for="group in AgreementForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
-        <CustomFormGroupAgreementPanel  v-for="group in PanelForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:other="group.other"/>
-        <CustomFormGroupAgreementSignature/>
+    <div class="studentinternshipagreement form">
+      <form action="">
+        <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
         <div class="buttongroup">
           <Button v-bind:buttontext="'Save Progress'"/>
           <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
         </div>
-      </div>
+      </form>
       <FormSubmittedPop v-if="submitted"/>
     </div>
 </template>
 
 <script>
 // Components
-import CustomFormGroupAgreeToDates from '@/components/CustomFormGroupAgreeToDates.vue'
-import FormGroup from '@/components/FormGroup.vue'
 import Button from '@/components/Button.vue'
 import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
-import CustomFormGroupAgreementPanel from '@/components/CustomFormGroupAgreementPanel.vue'
-import CustomFormGroupAgreementSignature from '@/components/CustomFormGroupAgreementSignature.vue'
-// Data
-import AgreementForm from '@/data/AgreementForm.js'
-import PanelForm from '@/data/PanelForm.js'
+// import CustomFormGroupAgreementSignature from '@/components/CustomFormGroupAgreementSignature.vue'
+// Schema
+import AgreementFormSchema from '@/forms/AgreementFormSchema.js'
 
 export default {
   name: 'StudentInternshipAgreement',
   components: {
-    CustomFormGroupAgreeToDates,
-    FormGroup,
     Button,
-    FormSubmittedPop,
-    CustomFormGroupAgreementPanel,
-    CustomFormGroupAgreementSignature
+    FormSubmittedPop
   },
   data () {
     return {
-      AgreementForm: AgreementForm,
-      PanelForm: PanelForm,
+      model: {
+        agreement_sign_date: '',
+        internship_start_date: '',
+        internship_end_date: ''
+      },
+      schema: AgreementFormSchema,
+      formOptions: {
+        validateAfterChanged: true
+      },
       ButtonList: ['Save Progress', 'Submit Form'],
       submitted: false
     }
