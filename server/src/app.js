@@ -34,6 +34,14 @@ app.get('/test', (req, res) => {
     })
 })
 
+
+/**
+ * 
+ * Course Add Form Database Calls
+ * 
+ */
+
+
 /**
 * Inserts a new course add form into the database
 * @param    {req}            (json containing form data)
@@ -108,9 +116,7 @@ app.post('/add-form-get-forms', (req, res) => {
             return console.error(err.message);
         }
         console.log(rows);
-    })
-    res.send({
-        message: `Add Forms recieved successfully`,
+        res.send(rows)
     })
 })
 
