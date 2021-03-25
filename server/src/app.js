@@ -35,9 +35,34 @@ app.post('/add-form-submit', (req, res) => {
     })
     var query = `CALL create_add_form('${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.signature}','${req.body.date}',${req.body.submitted},${req.body.uid});`
     console.log("Database call: ",query)
-    connection.query(query, (err, rows, fields) => {})
+    connection.query(query, (err, rows, fields) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(rows);
+    })
     res.send({
         message: `Hello ${req.body.email}! Add Form was submitted`,
+    })
+})
+
+app.post('/add-form-edit', (req, res) => {
+    const connection = mysql.createConnection({
+        host: config.host,
+        user: config.user,
+        password: config.password,
+        database: config.database
+    })
+    var query = `CALL edit_add_form('${req.body.form_id}','${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.signature}','${req.body.date}',${req.body.submitted},${req.body.uid});`
+    console.log("Database call: ",query)
+    connection.query(query, (err, rows, fields) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(rows);
+    })
+    res.send({
+        message: `Hello ${req.body.email}! Add Form was editted`,
     })
 })
 

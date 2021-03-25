@@ -6,6 +6,6 @@ export default {
   },
 
   EditAddForm (information) {
-    return Api().post('/edit-add-form-submit', information)
+    return Api().post('/add-form-edit', information)
   }
 }
