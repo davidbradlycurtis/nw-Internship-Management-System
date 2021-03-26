@@ -47,7 +47,7 @@ app.get('/test', (req, res) => {
 * @param    {req}            (json containing form data)
 * @return   {String}         message
 */
-app.post('/add-form-submit', (req, res) => {
+app.post('/add-form-create', (req, res) => {
     const connection = get_connection()
     var query = `CALL create_add_form('${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.signature}','${req.body.date}',${req.body.submitted},${req.body.uid});`
     console.log("Database call: ",query)
@@ -58,7 +58,7 @@ app.post('/add-form-submit', (req, res) => {
         console.log(rows);
     })
     res.send({
-        message: `Hello ${req.body.email}! Add Form was submitted`,
+        message: `Hello ${req.body.email}! Add Form was created`,
     })
 })
 
@@ -117,6 +117,34 @@ app.post('/add-form-get-forms', (req, res) => {
         }
         console.log(rows);
         res.send(rows)
+    })
+})
+
+
+/**
+ * 
+ * Agreement Form Database Calls
+ * 
+ */
+
+
+/**
+* Inserts a new agreement form into the database
+* @param    {req}            (json containing form data)
+* @return   {String}         message
+*/
+app.post('/agreement-form-create', (req, res) => {
+    const connection = get_connection()
+    var query = `CALL create_agreement_form('${req.body.student_name}', '${req.body.student_address}', '${req.body.s_num}', '${req.body.student_phone}', '${req.body.org_name}', '${req.body.org_address}', '${req.body.sup_name}', '${req.body.sup_email}', '${req.body.arrangements}', '${req.body.org_phone}', '${req.body.student_other}', '${req.body.sponsor_other}', '${req.body.sup_other}', '${req.body.signature}', '${req.body.date}', ${req.body.student_id}, '${req.body.submitted}');`
+    console.log("Database call: ",query)
+    connection.query(query, (err, rows, fields) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(rows);
+    })
+    res.send({
+        message: `Hello ${req.body.email}! Agreement Form was created`,
     })
 })
 

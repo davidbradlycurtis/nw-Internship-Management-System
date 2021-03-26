@@ -51,7 +51,7 @@ export default {
         const response = await StudentService.EditAddForm(this.model)
         console.log(response.data)
       } else {
-        const response = await StudentService.AddFormSubmit(this.model)
+        const response = await StudentService.AddFormCreate(this.model)
         console.log(response)
       }
     },
