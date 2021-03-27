@@ -1,7 +1,7 @@
 export default {
   groups: [
     {
-      styleClasses: 'formgroup',
+      styleClasses: 'formgroup paragraphformgroup',
       fields: [
         {
           type: 'integratedinput',

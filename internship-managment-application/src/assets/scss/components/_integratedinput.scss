@@ -1,9 +1,9 @@
-.formgroup {
+.paragraphformgroup {
+    display: inline;
+    text-align: left;
     .field-integratedinput {
-        grid-column: 1 /span 2;
         display: inline-block;
         .wrapper {
-            float: left;
             & > * {
                 display: inline;
             }
