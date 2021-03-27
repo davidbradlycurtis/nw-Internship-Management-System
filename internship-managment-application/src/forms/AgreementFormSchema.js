@@ -6,7 +6,22 @@ export default {
         {
           type: 'integratedinput',
           cinputType: 'date',
-          text: 'To provide a basis of understanding and to promote working relationships, this agreement is established on INPUT'
+          beforeText: 'To provide a basis of understanding and to promote working relationships, this agreement is established on ',
+          afterText: '.',
+          model: 'agreement_date'
+        },
+        {
+          type: 'integratedinput',
+          cinputType: 'date',
+          beforeText: 'This work experience will start on ',
+          afterText: ', and will end on or before',
+          model: 'start_date'
+        },
+        {
+          type: 'integratedinput',
+          cinputType: 'date',
+          afterText: ' unless the agreement becomes unsatisfactory to any party involved.',
+          model: 'end_date'
         }
       ]
     },
