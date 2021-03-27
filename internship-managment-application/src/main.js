@@ -23,6 +23,7 @@ Vue.component('field-listlabel', ListLabel)
 Vue.component('field-clicktosign', ClickToSign)
 Vue.component('field-integratedinput', IntegratedInput)
 
+
 Vue.config.productionTip = false
 
 new Vue({
