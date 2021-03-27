@@ -1,22 +1,27 @@
+<!-- This component will need to be altered to allow only the correct signature to be signed for their given role -->
 <template>
-  <div>
-    <div class="clicktosign" v-for="label in this.schema.label" :key="label">
+    <div class="clicktosign">
       <div class="signature">
         <p v-on:click="signed">{{ signature }}</p>
-        <p class="clicklabel">{{label}}</p>
+        <p class="clicklabel">Student Signature</p>
       </div>
       <div class="date">
         <p>{{ new Date() | moment("MM-DD-YYYY") }}</p>
         <p class="clicklabel">Date</p>
       </div>
+      <div class="signature">
+        <p></p>
+        <p class="clicklabel">Intern Sponspr Signature</p>
+      </div>
+      <div class="date">
+        <p></p>
+        <p class="clicklabel">Date</p>
+      </div>
     </div>
-  </div>
 </template>
 <script>
-import { abstractField } from 'vue-form-generator'
 export default {
-  name: 'ClickToSign',
-  mixins: [abstractField],
+  name: 'CustomAgreementClickToSign',
   data: function () {
     return {
       signature: '(Click to sign)'
@@ -25,9 +30,6 @@ export default {
   methods: {
     signed: function (event) {
       this.signature = prompt('To sign your name on this document, please type your name in the input box below. By signing this document, you are insuring that all information on this form is true to your knowledge.').toUpperCase()
-      while (this.signature === '') {
-        this.signature = prompt('Oops, we didnt quite catch that. Please type your name in the input box below to sign this doucment')
-      }
     }
   }
 }

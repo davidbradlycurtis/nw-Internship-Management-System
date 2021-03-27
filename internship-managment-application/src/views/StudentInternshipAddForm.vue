@@ -25,6 +25,22 @@ export default {
     // Button,
     CustomFormGroupStudentAcknowledgment
   },
+  methods: {
+    checkForm: function (event) {
+      const inputs = document.querySelectorAll('input')
+      var okay = true
+      inputs.forEach((input) => {
+        if (input.value.length <= 0) {
+          okay = false
+        }
+      })
+      if (okay && document.getElementsByClassName('signature')[0].firstChild.innerText !== '(Click to sign)') {
+        this.submitted = true
+      } else {
+        // Put UhOh notice here when student dashboard gets pulled into main
+      }
+    }
+  },
   data () {
     return {
       model: {

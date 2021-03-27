@@ -17,12 +17,34 @@
         background-color: $theme-light-gray;
         float: left;
     }
+    label {
+        float: left;
+        text-align: right;
+        font-size: 14px;
+        margin: auto 10px;
+        text-transform: uppercase;
+        span::after {
+            content: ':';
+        }
+    }
+    .full-textarea  {
+        grid-column: 1 /span 2;
+        width: 100%;
+        margin: 10px;
+        resize: none;
+        .field-wrap textarea{
+            resize: none;
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
     .half-width, .full-width {
         width: 100%;
         margin: 10px;
         display: flex;
         grid-template-columns: 25fr 65fr;
-        label {
+        .field-wrap {
+            flex: 1;
             float: left;
             text-align: right;
             font-size: 14px;
@@ -31,6 +53,23 @@
             text-transform: uppercase;
             &::after {
                 content: ':';
+            }
+            .wrapper {
+                display: flex;
+                input {
+                    text-align: left;
+                    flex: 1;
+                    &:focus {
+                        border: 2px solid $theme-green;
+                        outline: none;
+                    }
+                    &:required {
+                        border: 2px solid $theme-red;
+                        &:valid {
+                            border: 2px solid $theme-dark-gray;
+                        }
+                    }
+                }
             }
         }
         .field-wrap {
@@ -71,7 +110,6 @@
         grid-column: 1/ span 2;
         grid-template-columns: 15fr 85fr;
     }
-    
     p {
         text-align: left;
     }
@@ -86,6 +124,9 @@
     p {
         color: $theme-green;
         font-size: 18px;
+    }
+    li {
+        font-size: 20px;
     }
 }
 
