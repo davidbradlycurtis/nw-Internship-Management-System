@@ -39,6 +39,25 @@ export default {
       } else {
         // Put UhOh notice here when student dashboard gets pulled into main
       }
+    },
+    async sendInternship () {
+      console.log('Model: ', this.model)
+      if (this.edit) {
+        const response = await StudentService.EditAddForm(this.model)
+        console.log(response.data)
+      } else {
+        const response = await StudentService.AddFormCreate(this.model)
+        console.log(response)
+      }
+    },
+    submit () {
+      this.model.submitted = 1
+    },
+    save () {
+      this.model.date = new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0') + '-' + String(new Date().getDate()).padStart(2, '0')
+      this.model.signature = this.model.first_name + ' ' + this.model.last_name
+      // Hardcoded uid will need to be changed
+      this.model.uid = 1
     }
   },
   data () {
@@ -58,27 +77,6 @@ export default {
       },
       // ButtonList: ['Save Progress', 'Submit Form'],
       edit: false
-    }
-  },
-  methods: {
-    async sendInternship () {
-      console.log('Model: ', this.model)
-      if (this.edit) {
-        const response = await StudentService.EditAddForm(this.model)
-        console.log(response.data)
-      } else {
-        const response = await StudentService.AddFormCreate(this.model)
-        console.log(response)
-      }
-    },
-    submit () {
-      this.model.submitted = 1
-    },
-    save () {
-      this.model.date = new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0') + '-' + String(new Date().getDate()).padStart(2, '0')
-      this.model.signature = this.model.first_name + ' ' + this.model.last_name
-      // Hardcoded uid will need to be changed
-      this.model.uid = 1
     }
   }
 }

@@ -51,9 +51,6 @@
             margin-right: 15px;
             margin-left: 10px;
             text-transform: uppercase;
-            &::after {
-                content: ':';
-            }
             .wrapper {
                 display: flex;
                 input {
@@ -93,10 +90,13 @@
         grid-column: 1/ span 2;
         text-align: left;
         margin-bottom: 0;
-        &::before {
+        span::before {
             content: "NOTE: ";
             color: $theme-red;
             font-size: 14px;
+        }
+        span::after {
+            content: "";
         }
         label {
             text-transform: unset;
@@ -104,7 +104,9 @@
                 content: "";
             }
         }
-        
+        .field-wrap {
+            display: none;
+        }
     }
     .full-width {
         grid-column: 1/ span 2;
