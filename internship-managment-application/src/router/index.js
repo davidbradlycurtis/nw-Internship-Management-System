@@ -10,7 +10,7 @@ const routes = [
   },
   {
     path: '/student-dashboard',
-    name: 'Student Dashboard',
+    name: 'student-dashboard',
     component: () => import(/* webpackChunkName: "studentDash" */'../views/StudentDashboard.vue'),
     meta: {
       title: 'Student Dashboard'
@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: '/student-internship-application',
-    name: 'Internship Application Form',
+    name: 'internship-application-form',
     component: () => import('../views/StudentInternshipApplication.vue'),
     meta: {
       title: 'Internship Application Form'
@@ -26,7 +26,7 @@ const routes = [
     children: [
       {
         path: 'past-forms',
-        name: 'Internship Application Form',
+        name: 'internship-application-past-forms',
         component: () => import('../views/StudentApplicationFormPast.vue'),
         meta: {
           title: 'Internship Application Form - Past Forms'
@@ -36,7 +36,7 @@ const routes = [
   },
   {
     path: '/student-internship-agreement',
-    name: 'Internship Agreement',
+    name: 'internship-agreement',
     component: () => import('../views/StudentInternshipAgreement.vue'),
     meta: {
       title: 'Internship Agreement'
@@ -44,7 +44,7 @@ const routes = [
     children: [
       {
         path: 'past-forms',
-        name: 'Internship Agreement',
+        name: 'internship-agreement-past-forms',
         component: () => import('../views/StudentAgreementFormPast.vue'),
         meta: {
           title: 'Internship Agreement - Past Forms'
@@ -54,7 +54,7 @@ const routes = [
   },
   {
     path: '/student-internship-add-form',
-    name: 'Internship Add Form',
+    name: 'internship-add-form',
     component: () => import('../views/StudentInternshipAddForm.vue'),
     meta: {
       title: 'Internship Add Form'
@@ -62,7 +62,7 @@ const routes = [
     children: [
       {
         path: 'past-forms',
-        name: 'Internship Add Form',
+        name: 'internship-add-form-past-forms',
         component: () => import('../views/StudentAddFormPast.vue'),
         meta: {
           title: 'Internship Add Form - Past Forms'
