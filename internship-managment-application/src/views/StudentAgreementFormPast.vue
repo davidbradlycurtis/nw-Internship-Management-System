@@ -1,6 +1,6 @@
 <template>
-    <div class="pastform">
-    <PastFormNotice/>
+    <div class="pastform form">
+      <PastFormNotice/>
     </div>
 </template>
 
