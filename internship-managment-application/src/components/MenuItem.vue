@@ -1,11 +1,11 @@
 <template>
     <div>
-        <li v-if="isVisible" class="nav-items">
+        <li v-if="isVisible" class="nav-item">
             <router-link :to="{name: route.name}" class="nav-link">{{name}}</router-link>
+            <div v-if="route.children && route.children.length">
+                <MenuItem v-for="(r,i) in route.children" :key="i" :route="r" class="children"/>
+            </div>
         </li>
-        <div v-if="route.children && route.children.length">
-            <MenuItem v-for="(r,i) in route.children" :key="i" :route="r" class="children"/>
-        </div>
     </div>
 </template>
 <script>
@@ -26,6 +26,8 @@ export default {
     name () {
       if (this.route.name.includes('past-forms')) {
         return 'Past Forms'
+      } else if (this.route.name.includes('new-form')) {
+        return 'Start New Form'
       }
       return this.route.name.toLowerCase().split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')
     }

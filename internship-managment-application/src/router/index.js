@@ -6,7 +6,10 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/student-dashboard'
+    redirect: '/student-dashboard',
+    meta: {
+      visible: false
+    }
   },
   {
     path: '/student-dashboard',
@@ -31,6 +34,14 @@ const routes = [
         meta: {
           title: 'Internship Application Form - Past Forms'
         }
+      },
+      {
+        path: 'start-new-form',
+        name: 'internship-application-start-new-form',
+        redirect: '/student-internship-application',
+        meta: {
+          title: 'Start New Form'
+        }
       }
     ]
   },
@@ -49,6 +60,14 @@ const routes = [
         meta: {
           title: 'Internship Agreement - Past Forms'
         }
+      },
+      {
+        path: 'start-new-form',
+        name: 'internship-agreement-start-new-form',
+        redirect: '/student-internship-agreement',
+        meta: {
+          title: 'Start New Form'
+        }
       }
     ]
   },
@@ -66,6 +85,14 @@ const routes = [
         component: () => import('../views/StudentAddFormPast.vue'),
         meta: {
           title: 'Internship Add Form - Past Forms'
+        }
+      },
+      {
+        path: 'start-new-form',
+        name: 'internship-add-start-new-form',
+        redirect: '/student-internship-add-form',
+        meta: {
+          title: 'Start New Form'
         }
       }
     ]
