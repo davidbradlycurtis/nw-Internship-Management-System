@@ -1,3 +1,13 @@
+#app {
+    font-family: $theme-font-family;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $theme-black;
+    display: grid;
+    grid-template-columns: 1.25fr 6.75fr;
+    grid-template-rows: auto;
+  }
 main {
     grid-column: 2;
     display: grid;
@@ -7,7 +17,19 @@ main {
 
 //Tablet
 @media (max-width: $breakpoint-tablet){
-
+    #app {
+        grid-template-columns: auto;
+        grid-template-rows: 50px auto;
+    }
+    main {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .side-nav {
+        grid-row: 1;
+        grid-column: 1;
+        z-index: 80;
+    }
 }
 
 //Phone

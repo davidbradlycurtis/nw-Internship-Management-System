@@ -23,6 +23,8 @@
 @media (max-width: $breakpoint-tablet){
     .header {
         padding: 20px;
+        z-index: 50;
+        top: 50px;
         h1 {
             font-size: 1.5em;
             max-width: 500px;

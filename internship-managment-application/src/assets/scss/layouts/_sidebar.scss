@@ -8,12 +8,17 @@
     top: 0;
     grid-column: 1;
     grid-row: 1 /span 3;
+    #menu-icon {
+        display: none;
+    }
     .title {
         margin: 40px auto;
-        img {
-            width: 140px;
-            height: 140px;
-        }
+        background-image: url("./assets/images/nw-logo.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 200px;
     }
     .nav {
         margin: 40px auto;
@@ -65,23 +70,81 @@
 // Tablet
 @media (max-width: $breakpoint-tablet){
     .side-nav {
-        padding: -10px 10px;
+        width: 100vw;
+        height: 100%;
+        background-color: $theme-green;
+        position: sticky;
+        top: 0;
+        #menu-icon {
+            display: block;
+            position: fixed;
+            right: 60px;
+            top: 0px;
+            height: 50px;
+            width: 40px;
+            z-index: 99;
+            &:hover {
+                cursor: pointer;
+            }
+            #hamburger {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                height: 4px;
+                width: 40px;
+                background-color: $theme-white;
+                transition: all .3s;
+                &.active {
+                    background-color: rgba(0, 0, 0, 0);
+                    &::before {
+                        transform: rotate(45deg);
+                        top: 0px;
+                    }
+                    &::after {
+                        transform: rotate(135deg);
+                        top: 0px;
+                    }
+                }
+                &::before {
+                    position: absolute;
+                    content: '';
+                    height: 4px;
+                    width: 40px;
+                    top: -10px;
+                    margin-left: -20px;
+                    background-color: $theme-white;
+                    transition: all .3s;
+                }
+                &::after {
+                    position: absolute;
+                    content: '';
+                    height: 4px;
+                    width: 40px;
+                    top: 10px;
+                    margin-left: -20px;
+                    background-color: $theme-white;
+                    transition: all .3s;
+                }
+            }
+        }
         .title {
-            padding: 0px 10px;
+            display: none;
+        }
+        .nav {
+            position: fixed;
+            height: 400px;
+            width: 100vw;
+            top: -400px;
+            transition: all .5s;
+            &.show {
+                top: 5px;
+            }
         }
     }
 }
 
 //Phone
 @media (max-width: $breakpoint-phone){
-    .side-nav {
-        left: -140px;
-    }
-    #hamburger-toggle {
-        &:checked {
-            & ~ .side-nav {
-                left: 0px;
-            }
-        }
-    }
+  
 }

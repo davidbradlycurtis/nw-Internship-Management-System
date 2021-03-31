@@ -1,5 +1,5 @@
 <template>
-    <nav class="nav bar-items">
+    <nav class="nav bar-items" id="navigation">
         <MenuItem v-for="(r,i) in routes" :key="i" :route="r" />
     </nav>
 </template>
