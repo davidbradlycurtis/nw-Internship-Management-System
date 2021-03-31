@@ -88,6 +88,7 @@
     .required::before{
         content: "*";
         color:red;
+        margin-right: -8px;
     }
     .note {
         grid-column: 1/ span 2;
