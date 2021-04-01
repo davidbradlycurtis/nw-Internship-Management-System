@@ -1,43 +1,74 @@
 <template>
     <div class="studentinternshipagreement form">
-      <form action="">
+      <form action="" @submit.prevent="sendInternship">
         <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
         <div class="buttongroup">
-          <Button v-bind:buttontext="'Save Progress'"/>
-          <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
+          <button class="formbutton" type="submit" @click="save()">Save Progress</button>
+          <button class="formbutton" type="submit" @click="save(); submit()">Submit</button>
         </div>
       </form>
-      <FormSubmittedPop v-if="submitted"/>
     </div>
 </template>
 
 <script>
+// Services
+import StudentService from '@/services/StudentService.js'
 // Components
-import Button from '@/components/Button.vue'
-import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
-// import CustomFormGroupAgreementSignature from '@/components/CustomFormGroupAgreementSignature.vue'
 // Schema
 import AgreementFormSchema from '@/forms/AgreementFormSchema.js'
 
 export default {
   name: 'StudentInternshipAgreement',
   components: {
-    Button,
-    FormSubmittedPop
+  },
+  methods: {
+    async sendInternship () {
+      console.log('Model: ', this.model)
+      if (this.edit) {
+        const response = await StudentService.EditAgreementForm(this.model)
+        console.log(response.data)
+      } else {
+        const response = await StudentService.AgreementFormCreate(this.model)
+        console.log(response)
+      }
+    },
+    submit () {
+      // This gets called on Save Progress???
+      this.model.submitted = 1
+    },
+    save () {
+      this.model.date = new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0') + '-' + String(new Date().getDate()).padStart(2, '0')
+    }
   },
   data () {
     return {
       model: {
-        agreement_sign_date: '',
-        internship_start_date: '',
-        internship_end_date: ''
+        agreement_date: '',
+        start_date: '',
+        end_date: '',
+        first_name: '',
+        last_name: '',
+        student_address: '',
+        student_phone_number: '',
+        business_address: '',
+        supervisor_email: '',
+        student_id: '',
+        business_name: '',
+        supervisor_name: '',
+        business_arrangements: '',
+        supervisor_phone_number: '',
+        other_student_agreements: '',
+        other_supervisor_agreements: '',
+        other_university_agreements: '',
+        submitted: 0,
+        // Hardcoded uid will need to be changed
+        uid: 1
       },
       schema: AgreementFormSchema,
       formOptions: {
         validateAfterChanged: true
       },
-      ButtonList: ['Save Progress', 'Submit Form'],
-      submitted: false
+      edit: false
     }
   }
 }

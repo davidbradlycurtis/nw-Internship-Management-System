@@ -49,7 +49,7 @@ app.get('/test', (req, res) => {
 */
 app.post('/add-form-create', (req, res) => {
     const connection = get_connection()
-    var query = `CALL create_add_form('${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.signature}','${req.body.date}',${req.body.submitted},${req.body.uid});`
+    var query = `CALL create_add_form('${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.date}',${req.body.uid}, ${req.body.submitted});`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {
@@ -58,7 +58,7 @@ app.post('/add-form-create', (req, res) => {
         console.log(rows);
     })
     res.send({
-        message: `Hello ${req.body.email}! Add Form was created`,
+        message: `Hello ${req.body.first_name}! Add Form was created`,
     })
 })
 
@@ -69,7 +69,7 @@ app.post('/add-form-create', (req, res) => {
 */
 app.post('/add-form-edit', (req, res) => {
     const connection = get_connection()
-    var query = `CALL edit_add_form('${req.body.form_id}','${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.signature}','${req.body.date}',${req.body.submitted},${req.body.uid});`
+    var query = `CALL edit_add_form('${req.body.form_id}','${req.body.last_name}', '${req.body.first_name}', ${req.body.u_num}, '${req.body.email}', '${req.body.faculty_last_name}', '${req.body.faculty_first_name}', '${req.body.faculty_email}', '${req.body.date}',${req.body.uid}, ${req.body.submitted});`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {
@@ -135,7 +135,7 @@ app.post('/add-form-get-forms', (req, res) => {
 */
 app.post('/agreement-form-create', (req, res) => {
     const connection = get_connection()
-    var query = `CALL create_agreement_form('${req.body.student_name}', '${req.body.student_address}', '${req.body.s_num}', '${req.body.student_phone}', '${req.body.org_name}', '${req.body.org_address}', '${req.body.sup_name}', '${req.body.sup_email}', '${req.body.arrangements}', '${req.body.org_phone}', '${req.body.student_other}', '${req.body.sponsor_other}', '${req.body.sup_other}', '${req.body.signature}', '${req.body.date}', ${req.body.student_id}, '${req.body.submitted}');`
+    var query = `CALL create_agreement_form('${req.body.first_name}', '${req.body.last_name}', '${req.body.student_address}', '${req.body.student_id}', '${req.body.student_phone_number}','${req.body.business_name}', '${req.body.business_address}', '${req.body.supervisor_name}', '${req.body.supervisor_email}', '${req.body.business_arrangements}', '${req.body.supervisor_phone_number}', '${req.body.other_student_agreements}', '${req.body.other_supervisor_agreements}', '${req.body.other_university_agreements}','${req.body.date}', ${req.body.uid}, ${req.body.submitted}, '${req.body.start_date}', '${req.body.end_date}');`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {
@@ -144,7 +144,65 @@ app.post('/agreement-form-create', (req, res) => {
         console.log(rows);
     })
     res.send({
-        message: `Hello ${req.body.email}! Agreement Form was created`,
+        message: `Hello ${req.body.first_name}! Agreement Form was created`,
+    })
+})
+
+/**
+* Updates an existing agreement form in the database
+* @param    {req}            (json containing form data)
+* @return   {String}         message
+*/
+app.post('/agreement-form-edit', (req, res) => {
+    const connection = get_connection()
+    var query = `CALL edit_add_form('${req.body.form_id}','${req.body.first_name}', '${req.body.last_name}', '${req.body.student_address}', '${req.body.student_id}', '${req.body.student_phone_number}','${req.body.business_name}', '${req.body.business_address}', '${req.body.supervisor_name}', '${req.body.supervisor_email}', '${req.body.business_arrangements}', '${req.body.supervisor_phone_number}', '${req.body.other_student_agreements}', '${req.body.other_supervisor_agreements}', '${req.body.other_university_agreements}','${req.body.date}', ${req.body.uid}, ${req.body.submitted}, '${req.body.start_date}', '${req.body.end_date}');`
+    console.log("Database call: ",query)
+    connection.query(query, (err, rows, fields) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(rows);
+    })
+    res.send({
+        message: `Hello ${req.body.first_name}! Agreement Form was editted`,
+    })
+})
+
+/**
+* Updates an existing agreement form status in the database
+* @param    {req}            (json containing form data)
+* @return   {String}         message
+*/
+app.post('/agreement-form-change-status', (req, res) => {
+    const connection = get_connection()
+    var query = `CALL change_agreement_form_status('${req.body.form_id}', '${req.body.date}', '${req.body.approved_by}', '${req.body.status}');`
+    console.log("Database call: ",query)
+    connection.query(query, (err, rows, fields) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(rows);
+    })
+    res.send({
+        message: `Agreement Form editted successfully`,
+    })
+})
+
+/**
+* Retrieves all existing course add forms in the database for the provided student_id
+* @param    {req}            (json containing student_id)
+* @return   {String}         message
+*/
+app.post('/agreement-form-get-forms', (req, res) => {
+    const connection = get_connection()
+    var query = `CALL get_agreement_forms_by_id('${req.body.student_id}');`
+    console.log("Database call: ",query)
+    connection.query(query, (err, rows, fields) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(rows);
+        res.send(rows)
     })
 })
 

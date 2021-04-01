@@ -5,7 +5,7 @@
           <CustomFormGroupStudentAcknowledgment />
           <div class="buttongroup">
             <button class="formbutton" type="submit" @click="save()">Save Progress</button>
-            <button class="formbutton" type="submit" @click="submit(); save()">Submit</button>
+            <button class="formbutton" type="submit" @click="save(); submit()">Submit</button>
           </div>
         </form>
     </div>
@@ -14,7 +14,6 @@
 // Services
 import StudentService from '@/services/StudentService.js'
 // Components
-// import Button from '@/components/Button.vue'
 import CustomFormGroupStudentAcknowledgment from '@/components/CustomFormGroupStudentAcknowledgment.vue'
 // Schema
 import CourseAddFormSchema from '@/forms/CourseAddFormSchema.js'
@@ -22,7 +21,6 @@ import CourseAddFormSchema from '@/forms/CourseAddFormSchema.js'
 export default {
   name: 'StudentInternshipAddForm',
   components: {
-    // Button,
     CustomFormGroupStudentAcknowledgment
   },
   methods: {
@@ -55,9 +53,6 @@ export default {
     },
     save () {
       this.model.date = new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0') + '-' + String(new Date().getDate()).padStart(2, '0')
-      this.model.signature = this.model.first_name + ' ' + this.model.last_name
-      // Hardcoded uid will need to be changed
-      this.model.uid = 1
     }
   },
   data () {
@@ -69,13 +64,15 @@ export default {
         email: '',
         faculty_first_name: '',
         faculty_last_name: '',
-        faculty_email: ''
+        faculty_email: '',
+        submitted: 0,
+        // Hardcoded uid will need to be changed
+        uid: 1
       },
       schema: CourseAddFormSchema,
       formOptions: {
         validateAfterChanged: true
       },
-      // ButtonList: ['Save Progress', 'Submit Form'],
       edit: false
     }
   }

@@ -66,7 +66,7 @@ export default {
         {
           type: 's-number-input',
           label: 'S-Number',
-          model: 'student-id',
+          model: 'student_id',
           required: true,
           validator: ['required'],
           styleClasses: 'half-width'
