@@ -71,7 +71,7 @@
 }
 
 //Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     .formgroup {
         padding: 20px;
         .half-width, .full-width {
@@ -86,7 +86,7 @@
 }
 
 //Phone
-@media (max-width: $breakpoint-phone){
+@media (max-width: $breakpoint-phone-max){
     .formgroup {
         .half-width, .full-width {
             grid-template-columns: 35fr 60fr;

@@ -7,6 +7,7 @@ const routes = [
   {
     path: '/',
     redirect: '/student-dashboard',
+    name: 'Home',
     meta: {
       visible: false
     }

@@ -58,7 +58,7 @@
 }
 
 // Smaller Laptop
-@media (max-width: $breakpoint-laptop){
+@media (max-width: $breakpoint-small-laptop-max){
     .internshipstatusgroup {
         .statusgroup {
             grid-template-columns: repeat(2, 40fr);
@@ -69,7 +69,7 @@
 }
 
 // Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     .internshipstatusgroup {
         padding: 0 20px;
         margin: 40px 25px;
@@ -81,7 +81,7 @@
 }
 
 // Phone
-@media (max-width: $breakpoint-phone){
+@media (max-width: $breakpoint-phone-max){
     .internshipstatusgroup {
         margin: 40px 20px;
         padding: 10px;

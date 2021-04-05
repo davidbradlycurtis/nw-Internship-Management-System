@@ -5,7 +5,7 @@
     text-align: center;
     color: $theme-black;
     display: grid;
-    grid-template-columns: 1.25fr 6.75fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-rows: auto;
   }
 main {
@@ -15,8 +15,10 @@ main {
     grid-template-rows: auto 1fr auto;
 }
 
+* {box-sizing: border-box;}
+
 //Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     #app {
         grid-template-columns: auto;
         grid-template-rows: 50px auto;
@@ -33,7 +35,7 @@ main {
 }
 
 //Phone
-@media (max-width: $breakpoint-phone){
+@media (max-width: $breakpoint-phone-max){
     main {
         grid-column: 1 /span 2;
     }

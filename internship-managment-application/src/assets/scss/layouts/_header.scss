@@ -20,7 +20,7 @@
 }
 
 //Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     .header {
         padding: 20px;
         z-index: 50;

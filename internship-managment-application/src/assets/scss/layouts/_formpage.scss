@@ -4,14 +4,14 @@
 }
 
 //Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     .form {
         margin: 30px;
     }
 }
 
 //Phone
-@media (max-width: $breakpoint-phone){
+@media (max-width: $breakpoint-phone-max){
     .form {
         margin: 15px;
     }
