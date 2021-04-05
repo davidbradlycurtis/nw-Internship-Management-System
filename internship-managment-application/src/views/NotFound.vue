@@ -1,11 +1,13 @@
 <template>
   <div class="notfound">
+    <div class="imagewrapper">
       <img src="@/assets/images/N60-2Stack-W.png" alt="NW 2Stack White">
-      <h2>Sorry, the page you are trying to reach does not exist.</h2>
-      <h2>Try going back to home and repeating your action. Or, contact IT services for support.</h2>
-      <div>
-          <p><router-link to="/">Go Home</router-link></p>
-      </div>
+    </div>
+    <p>Sorry, the page you are trying to reach does not exist.</p>
+    <p>Try going back to home and repeating your action. Or, contact IT services for support.</p>
+    <div>
+      <button class="formbutton"><router-link to="/">Go Home</router-link></button>
+    </div>
   </div>
 </template>
 
@@ -14,6 +16,3 @@ export default {
   name: 'NotFound'
 }
 </script>
-
-<style lang="scss">
-</style>
