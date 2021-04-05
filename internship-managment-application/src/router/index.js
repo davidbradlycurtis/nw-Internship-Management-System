@@ -36,21 +36,33 @@ const routes = [
   },
   {
     path: '/student-internship-agreement',
+    redirect: { name: 'Internship Agreement' },
+    children: [
+      {
+        path: 'past-forms',
+        redirect: { name: 'Internship Agreement - Past Forms' }
+      },
+      {
+        path: 'start-new-form',
+        redirect: { name: 'Internship Agreement' }
+      }
+    ]
+  },
+  {
+    path: '/student-internship-agreement/past-forms',
+    name: 'Internship Agreement - Past Forms',
+    component: () => import('../views/StudentAgreementFormPast.vue'),
+    meta: {
+      title: 'Internship Agreement - Past Forms'
+    }
+  },
+  {
+    path: '/student-internship-agreement/start-new-form',
     name: 'Internship Agreement',
     component: () => import('../views/StudentInternshipAgreement.vue'),
     meta: {
       title: 'Internship Agreement'
-    },
-    children: [
-      {
-        path: 'past-forms',
-        name: 'Internship Agreement',
-        component: () => import('../views/StudentAgreementFormPast.vue'),
-        meta: {
-          title: 'Internship Agreement - Past Forms'
-        }
-      }
-    ]
+    }
   },
   {
     path: '/student-internship-add-form',

@@ -8,7 +8,7 @@
                 <li><router-link to="/student-internship-application">Internship Application</router-link></li>
                 <li><router-link to="/student-dashboard">Student Dashboard</router-link></li>
                 <li><router-link to="/student-internship-agreement">Internship Agreement</router-link></li>
-                <li><router-link to="/student-internship-application/past-forms">:(</router-link></li>
+                <li><router-link to="/student-internship-agreement/past-forms">:(</router-link></li>
             </ul>
     </div>
 </template>
