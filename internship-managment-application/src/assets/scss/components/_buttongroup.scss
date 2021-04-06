@@ -11,7 +11,7 @@
 }
 
 //Smaller Laptop
-@media (max-width: $breakpoint-laptop){
+@media (max-width: $breakpoint-small-laptop-max){
     .buttongroup {
         .formbutton {
         }
@@ -19,7 +19,7 @@
 }
 
 //Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     .buttongroup {
         padding: 20px;
         .formbutton {
@@ -29,7 +29,7 @@
 }
 
 //Phone
-@media (max-width: $breakpoint-phone){
+@media (max-width: $breakpoint-phone-max){
     .buttongroup {
         .formbutton {
             grid-column: 1 /span 2;

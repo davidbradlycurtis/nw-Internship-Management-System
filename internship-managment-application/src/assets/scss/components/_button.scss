@@ -16,14 +16,14 @@
 }
 
 //Smaller Laptop
-@media (max-width: $breakpoint-laptop){
+@media (max-width: $breakpoint-small-laptop-max){
     .formbutton {
         min-width: 250px;
     }
 }
 
 //Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     .formbutton {
         padding: 20px 15px;
         min-width: 200px;
@@ -31,7 +31,7 @@
 }
 
 //Phone
-@media (max-width: $breakpoint-phone){
+@media (max-width: $breakpoint-phone-max){
     .formbutton {
         padding: 20px 30px;
         min-width: 350px;

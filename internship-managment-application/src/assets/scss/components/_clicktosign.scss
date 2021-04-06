@@ -16,3 +16,12 @@
         border-bottom: none;
     }
 }
+
+// Large Laptop
+@media(max-width: $breakpoint-large-laptop-max){
+    .clicktosign {
+        p {
+            font-size: 85%;
+        }
+    }
+}
