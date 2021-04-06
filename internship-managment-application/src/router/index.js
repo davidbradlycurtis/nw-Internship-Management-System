@@ -69,6 +69,14 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: '404 Error',
+    component: () => import(/* webpackChunkName: "notFound" */'../views/NotFound.vue'),
+    meta: {
+      title: '404 Error'
+    }
   }
 ]
 
