@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="clicktosign" v-for="label in this.schema.label" :key="label">
+  <div class="wrapper">
+    <div class="clicktosign" >
       <div class="signature">
         <p v-on:click="signed">{{ signature }}</p>
-        <p class="clicklabel">{{label}}</p>
+        <p class="clicklabel">{{this.schema.labelText}}</p>
       </div>
       <div class="date">
         <p>{{ new Date() | moment("MM-DD-YYYY") }}</p>

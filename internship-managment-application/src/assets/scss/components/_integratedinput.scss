@@ -1,0 +1,13 @@
+.paragraphformgroup {
+    display: inline;
+    text-align: left;
+    .field-integratedinput {
+        display: inline-block;
+        .wrapper {
+            & > * {
+                display: inline;
+            }
+        }
+    }
+}
+

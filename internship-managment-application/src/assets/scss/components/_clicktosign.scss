@@ -1,9 +1,21 @@
-.clicktosign{
+.form-group.field-clicktosign {
     grid-column: 1 /span 2;
-    display: grid;
-    grid-template-columns: auto auto;
-    .signature, .date {
-        margin: 20px;
+    .clicktosign{
+        display: grid;
+        grid-template-columns: auto auto;
+        .signature, .date {
+            margin: 20px;
+        }
+        p {
+            color: $theme-black;
+            border-bottom: 2px solid $theme-black;
+            margin: 0;
+        }
+        .clicklabel {
+            color: $theme-green;
+            text-transform: uppercase;
+            border-bottom: none;
+        }
     }
     p {
         color: $theme-black;

@@ -1,31 +1,26 @@
 <template>
-    <div class="studentinternshipaddform">
-      <form class="form" v-if="!submitted" @submit="checkForm">
-        <FormGroup  v-for="group in CourseAddForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
-        <CustomFormGroupStudentAcknowledgment />
-        <div class="buttongroup">
-          <Button v-bind:buttontext="'Save Progress'" v-bind:type="'button'"/>
-          <Button v-bind:buttontext="'Submit Form'" v-bind:type="'button'" @click.native="checkForm"/>
-        </div>
-      </form>
-      <FormSubmittedPop v-if="submitted"/>
+    <div class="studentinternshipaddform form">
+        <form action="" @submit.prevent="sendInternship" >
+          <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
+          <CustomFormGroupStudentAcknowledgment />
+          <div class="buttongroup">
+            <button class="formbutton" type="submit" @click="save()">Save Progress</button>
+            <button class="formbutton" type="submit" @click="save(); submit()">Submit</button>
+          </div>
+        </form>
     </div>
 </template>
 <script>
+// Services
+import StudentService from '@/services/StudentService.js'
 // Components
-import FormGroup from '@/components/FormGroup.vue'
-import Button from '@/components/Button.vue'
-import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
 import CustomFormGroupStudentAcknowledgment from '@/components/CustomFormGroupStudentAcknowledgment.vue'
-// Data
-import CourseAddForm from '@/data/CourseAddForm.js'
+// Schema
+import CourseAddFormSchema from '@/forms/CourseAddFormSchema.js'
 
 export default {
   name: 'StudentInternshipAddForm',
   components: {
-    FormGroup,
-    Button,
-    FormSubmittedPop,
     CustomFormGroupStudentAcknowledgment
   },
   methods: {
@@ -42,13 +37,43 @@ export default {
       } else {
         // Put UhOh notice here when student dashboard gets pulled into main
       }
+    },
+    async sendInternship () {
+      console.log('Model: ', this.model)
+      if (this.edit) {
+        const response = await StudentService.EditAddForm(this.model)
+        console.log(response.data)
+      } else {
+        const response = await StudentService.AddFormCreate(this.model)
+        console.log(response)
+      }
+    },
+    submit () {
+      this.model.submitted = 1
+    },
+    save () {
+      this.model.date = new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0') + '-' + String(new Date().getDate()).padStart(2, '0')
     }
   },
   data () {
     return {
-      CourseAddForm: CourseAddForm,
-      ButtonList: ['Save Progress', 'Submit Form'],
-      submitted: false
+      model: {
+        first_name: '',
+        last_name: '',
+        u_num: '',
+        email: '',
+        faculty_first_name: '',
+        faculty_last_name: '',
+        faculty_email: '',
+        submitted: 0,
+        // Hardcoded uid will need to be changed
+        uid: 1
+      },
+      schema: CourseAddFormSchema,
+      formOptions: {
+        validateAfterChanged: true
+      },
+      edit: false
     }
   }
 }

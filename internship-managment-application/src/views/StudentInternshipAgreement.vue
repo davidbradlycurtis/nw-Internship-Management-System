@@ -1,47 +1,74 @@
 <template>
-    <div class="studentinternshipagreement">
-      <div class="form" v-if="!submitted">
-        <CustomFormGroupAgreeToDates/>
-        <FormGroup v-for="group in AgreementForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note"/>
-        <CustomFormGroupAgreementPanel  v-for="group in PanelForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:other="group.other"/>
-        <CustomFormGroupAgreementSignature/>
+    <div class="studentinternshipagreement form">
+      <form action="" @submit.prevent="sendInternship">
+        <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
         <div class="buttongroup">
-          <Button v-bind:buttontext="'Save Progress'"/>
-          <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
+          <button class="formbutton" type="submit" @click="save()">Save Progress</button>
+          <button class="formbutton" type="submit" @click="save(); submit()">Submit</button>
         </div>
-      </div>
-      <FormSubmittedPop v-if="submitted"/>
+      </form>
     </div>
 </template>
 
 <script>
+// Services
+import StudentService from '@/services/StudentService.js'
 // Components
-import CustomFormGroupAgreeToDates from '@/components/CustomFormGroupAgreeToDates.vue'
-import FormGroup from '@/components/FormGroup.vue'
-import Button from '@/components/Button.vue'
-import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
-import CustomFormGroupAgreementPanel from '@/components/CustomFormGroupAgreementPanel.vue'
-import CustomFormGroupAgreementSignature from '@/components/CustomFormGroupAgreementSignature.vue'
-// Data
-import AgreementForm from '@/data/AgreementForm.js'
-import PanelForm from '@/data/PanelForm.js'
+// Schema
+import AgreementFormSchema from '@/forms/AgreementFormSchema.js'
 
 export default {
   name: 'StudentInternshipAgreement',
   components: {
-    CustomFormGroupAgreeToDates,
-    FormGroup,
-    Button,
-    FormSubmittedPop,
-    CustomFormGroupAgreementPanel,
-    CustomFormGroupAgreementSignature
+  },
+  methods: {
+    async sendInternship () {
+      console.log('Model: ', this.model)
+      if (this.edit) {
+        const response = await StudentService.EditAgreementForm(this.model)
+        console.log(response.data)
+      } else {
+        const response = await StudentService.AgreementFormCreate(this.model)
+        console.log(response)
+      }
+    },
+    submit () {
+      // This gets called on Save Progress???
+      this.model.submitted = 1
+    },
+    save () {
+      this.model.date = new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0') + '-' + String(new Date().getDate()).padStart(2, '0')
+    }
   },
   data () {
     return {
-      AgreementForm: AgreementForm,
-      PanelForm: PanelForm,
-      ButtonList: ['Save Progress', 'Submit Form'],
-      submitted: false
+      model: {
+        agreement_date: '',
+        start_date: null,
+        end_date: null,
+        first_name: '',
+        last_name: '',
+        student_address: '',
+        student_phone_number: null,
+        business_address: '',
+        supervisor_email: '',
+        student_id: null,
+        business_name: '',
+        supervisor_name: '',
+        business_arrangements: null,
+        supervisor_phone_number: null,
+        other_student_agreements: null,
+        other_supervisor_agreements: null,
+        other_university_agreements: null,
+        submitted: 0,
+        // Hardcoded uid will need to be changed
+        uid: 1
+      },
+      schema: AgreementFormSchema,
+      formOptions: {
+        validateAfterChanged: true
+      },
+      edit: false
     }
   }
 }
