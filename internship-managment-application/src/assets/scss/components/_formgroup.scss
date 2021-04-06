@@ -16,14 +16,16 @@
     .half-width, .full-width {
         width: 100%;
         margin: 10px;
-        display: grid;
-        grid-template-columns: 25fr 65fr;
+        display: flex;
         label {
             float: left;
             text-align: right;
             font-size: 14px;
             margin-right: 15px;
             text-transform: uppercase;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         input {
             text-align: left;
@@ -67,6 +69,32 @@
     p {
         color: $theme-green;
         font-size: 18px;
+    }
+}
+
+//Large Laptop
+@media (max-width: $breakpoint-large-laptop-max){
+    .formgroup {
+        .formgrouptitle {
+            font-size: 90%;
+        }
+        .half-width, .full-width {
+            label {
+                font-size: 75%;
+            }
+            input {
+                font-size: 75%;
+            }
+        }
+        .note {
+            font-size: 80%;
+        }
+    }
+    p {
+        font-size: 70%;
+    }
+    ul {
+        font-size: 85%;
     }
 }
 

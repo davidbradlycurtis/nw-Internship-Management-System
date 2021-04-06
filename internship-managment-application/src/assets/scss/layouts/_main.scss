@@ -5,7 +5,7 @@
     text-align: center;
     color: $theme-black;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 300px 4fr;
     grid-template-rows: auto;
   }
 main {
@@ -16,6 +16,26 @@ main {
 }
 
 * {box-sizing: border-box;}
+
+// Large Laptop
+@media (max-width: $breakpoint-large-laptop-max){
+    #app {
+        grid-template-columns: 250px 4fr;
+    }
+}
+
+// Small Laptop
+@media (max-width: $breakpoint-small-laptop-max){
+    #app {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+    main {
+        min-width: 0;
+        * {
+            min-width: 0;
+        }
+    }
+}
 
 //Tablet
 @media (max-width: $breakpoint-tablet-max){
