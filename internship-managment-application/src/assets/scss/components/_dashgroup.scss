@@ -1,0 +1,105 @@
+.internshipstatusgroup {
+    background-color: $theme-light-gray;
+    padding: 0px 50px 0px 50px;
+    margin: 40px 100px;
+    .internshiptitle {
+        color: $theme-green;
+        text-align: left;
+        font-family: $theme-font-family;
+        font-weight: 900;
+        font-size: 36px;
+        border-bottom: 4px solid $theme-green;
+        text-transform: uppercase;
+        padding: 40px 10px 0px;
+        margin-bottom: 0;
+    }
+    .statusgroup {
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 40fr);
+        column-gap: 125px;
+        row-gap: 100px;
+        .internshipstatusblock {
+            color: $theme-green;
+            text-align: center;
+            font-size: 28px;
+            max-width: 350px;
+            justify-self: center;
+            .formtitle {
+                text-transform: uppercase;
+                font-family: $theme-font-family;
+                font-weight: 100;
+                min-height: 115px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+            .statusinfo {
+                transform: translate(0, -15px);
+                .status {
+                    font-weight: 100;
+                    text-transform: uppercase;
+                    border-bottom: 3px solid $theme-green;
+                    max-width: 250px;
+                    margin: 0 auto;
+                }
+                .formstatus {
+                    margin: 0;
+                    font-size: 20px;
+                    text-transform: lowercase;
+                }
+            }
+            .progressbar {
+                max-width: 250px;
+            }
+        }
+    }
+}
+
+// Large Laptop
+@media (max-width: $breakpoint-large-laptop-max){
+    .internshipstatusgroup {
+        .statusgroup {
+            grid-template-columns: repeat(2, 40fr);
+            column-gap: 150px;
+            row-gap: 20px;
+        }
+    }
+}
+
+// Small Laptop 
+@media (max-width: $breakpoint-small-laptop-max){
+    .internshipstatusgroup {
+        margin: 40px 50px;
+    }
+}
+
+// Tablet
+@media (max-width: $breakpoint-tablet-max){
+    .internshipstatusgroup {
+        padding: 0 20px;
+        margin: 40px 25px;
+        .statusgroup {
+            column-gap: 10px;
+        }
+    }
+
+}
+
+// Phone
+@media (max-width: $breakpoint-phone-max){
+    .internshipstatusgroup {
+        margin: 40px 20px;
+        padding: 10px;
+        .internshiptitle {
+            font-size: 32px;
+            margin-top: 0;
+            padding: 10px;
+        }
+        .statusgroup {
+            grid-template-columns: 100fr;
+            row-gap: 5px;
+        }
+    }
+}

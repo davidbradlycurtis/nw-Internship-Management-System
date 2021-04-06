@@ -39,12 +39,23 @@
             margin-right: 15px;
             margin-left: 10px;
             text-transform: uppercase;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         input {
             text-align: left;
             flex: 1;
+            box-sizing: border-box;
             &:focus {
                 border: 2px solid $theme-green;
+                outline: none;
+            }
+            &:required {
+                border: 2px solid $theme-red;
+                &:valid {
+                    border: 2px solid $theme-dark-gray;
+                }
             }
         }
     }
@@ -69,9 +80,16 @@
                 border: 2px solid $theme-green;
             }
     }
+      p {
+        text-align: left;
+    }
+    ul {
+        text-align: left;
+        li {
+            margin-top: 10px;
+        }
+    }
 }
-
-
 .customformgroup {
     p {
         color: $theme-green;
@@ -118,5 +136,67 @@
         margin-left: 6px;
         margin-top: -27px;
         margin-bottom: -10px;
+    li {
+        font-size: 20px;
+    }
+}
+
+//Large Laptop
+@media (max-width: $breakpoint-large-laptop-max){
+    .formgroup {
+        .formgrouptitle {
+            font-size: 90%;
+        }
+        .half-width, .full-width {
+            label {
+                font-size: 75%;
+            }
+            input {
+                font-size: 75%;
+            }
+        }
+        .note {
+            font-size: 80%;
+        }
+    }
+    p {
+        font-size: 70%;
+    }
+    ul {
+        font-size: 85%;
+    }
+}
+
+//Tablet
+@media (max-width: $breakpoint-tablet-max){
+    .formgroup {
+        padding: 20px;
+        .half-width, .full-width {
+            grid-column: 1 /span 2;
+            grid-template-columns: 28fr 70fr;
+            label {
+                float: none;
+                text-align: left;
+            }
+        }
+    }
+}
+
+//Phone
+@media (max-width: $breakpoint-phone-max){
+    .formgroup {
+        .half-width, .full-width {
+            grid-template-columns: 35fr 60fr;
+            label {
+                font-size: 18px;
+            }
+            input {
+                font-size: 18px;
+                padding: 3px;
+            }
+        }
+    }
+    .note, ul, p {
+        font-size: 105%;
     }
 }

@@ -1,30 +1,34 @@
 <template>
   <div id="app">
     <Sidebar/>
-    <router-view/>
+    <main>
+      <CustomHeader />
+      <router-view/>
+      <Footer />
+    </main>
   </div>
 </template>
 
 <script>
 import Sidebar from '@/components/Sidebar.vue'
+import CustomHeader from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+
 export default {
   components: {
-    Sidebar
+    CustomHeader,
+    Sidebar,
+    Footer
+  },
+  watch: {
+    '$route' (to, from) {
+      document.title = to.meta.title || 'NW Internship Management Application'
+    }
   }
 }
 </script>
 
 <style lang="scss">
-
-#app {
-  font-family: $theme-font-family;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: $theme-black;
-  display: grid;
-  grid-template-columns: 1.25fr 6.75fr;
-}
 
 #nav {
   padding: 30px;

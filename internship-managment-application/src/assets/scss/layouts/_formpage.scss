@@ -1,3 +1,39 @@
 .form {
-    margin: 5px 100px;
+    margin: 5px auto;
+    overflow: hidden;
+    min-width: 900px;
+    width: 85%;
+}
+.studentinternshipaddform {
+    width: 100%;
+}
+
+//Large Laptop
+@media (max-width: $breakpoint-large-laptop-max){
+    .form {
+        margin: 5px 50px;
+        min-width: 700px;
+    }
+}
+
+//Small Laptop
+@media (max-width: $breakpoint-small-laptop-max){
+    .form {
+        margin: 5px auto;
+        min-width: 0;
+        width: 90%;
+    }
+}
+//Tablet
+@media (max-width: $breakpoint-tablet-max){
+    .form {
+        margin: 30px;
+    }
+}
+
+//Phone
+@media (max-width: $breakpoint-phone-max){
+    .form {
+        margin: 15px;
+    }
 }

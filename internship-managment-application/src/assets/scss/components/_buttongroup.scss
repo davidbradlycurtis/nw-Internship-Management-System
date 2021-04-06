@@ -1,9 +1,39 @@
 .buttongroup {
     padding:40px;
+    display: grid;
+    grid-template-columns: auto auto;
     .formbutton{
-        margin-right: 100px;
+        margin: 10px 50px;
         &:last-of-type {
-            margin-right: 10px;
+           // margin-right: 10px;
+        }
+    }
+}
+
+//Smaller Laptop
+@media (max-width: $breakpoint-small-laptop-max){
+    .buttongroup {
+        .formbutton {
+        }
+    }
+}
+
+//Tablet
+@media (max-width: $breakpoint-tablet-max){
+    .buttongroup {
+        padding: 20px;
+        .formbutton {
+            margin: 10px;
+        }
+    }
+}
+
+//Phone
+@media (max-width: $breakpoint-phone-max){
+    .buttongroup {
+        .formbutton {
+            grid-column: 1 /span 2;
+           margin: 5px;
         }
     }
 }

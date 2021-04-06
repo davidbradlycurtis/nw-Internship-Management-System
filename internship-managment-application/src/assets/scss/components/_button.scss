@@ -9,9 +9,31 @@
     border: none;
     text-transform: uppercase;
     min-width: 300px;
-    margin: 5px 10px;
+    margin: 40px 10px;
     &:hover {
-        @include hover-animation;
-        background-color: $theme-dark-green;
+        @include hover-animation($theme-green);
+    }
+}
+
+//Smaller Laptop
+@media (max-width: $breakpoint-small-laptop-max){
+    .formbutton {
+        min-width: 250px;
+    }
+}
+
+//Tablet
+@media (max-width: $breakpoint-tablet-max){
+    .formbutton {
+        padding: 20px 15px;
+        min-width: 200px;
+    }
+}
+
+//Phone
+@media (max-width: $breakpoint-phone-max){
+    .formbutton {
+        padding: 20px 30px;
+        min-width: 350px;
     }
 }
