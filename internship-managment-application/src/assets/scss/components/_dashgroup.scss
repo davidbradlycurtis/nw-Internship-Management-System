@@ -29,7 +29,7 @@
                 text-transform: uppercase;
                 font-family: $theme-font-family;
                 font-weight: 100;
-                min-height: 70px;
+                min-height: 115px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -57,8 +57,8 @@
     }
 }
 
-// Smaller Laptop
-@media (max-width: $breakpoint-laptop){
+// Large Laptop
+@media (max-width: $breakpoint-large-laptop-max){
     .internshipstatusgroup {
         .statusgroup {
             grid-template-columns: repeat(2, 40fr);
@@ -68,8 +68,15 @@
     }
 }
 
+// Small Laptop 
+@media (max-width: $breakpoint-small-laptop-max){
+    .internshipstatusgroup {
+        margin: 40px 50px;
+    }
+}
+
 // Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     .internshipstatusgroup {
         padding: 0 20px;
         margin: 40px 25px;
@@ -81,7 +88,7 @@
 }
 
 // Phone
-@media (max-width: $breakpoint-phone){
+@media (max-width: $breakpoint-phone-max){
     .internshipstatusgroup {
         margin: 40px 20px;
         padding: 10px;

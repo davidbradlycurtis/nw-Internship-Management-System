@@ -116,7 +116,15 @@
         grid-column: 1/ span 2;
         grid-template-columns: 15fr 85fr;
     }
-    p {
+    .textarea {
+        white-space: pre-wrap;
+        font-size: 14px;
+        text-align: left;
+            &:focus {
+                border: 2px solid $theme-green;
+            }
+    }
+      p {
         text-align: left;
     }
     ul {
@@ -131,13 +139,80 @@
         color: $theme-green;
         font-size: 18px;
     }
+}
+.offerformgroup {
+    .offerletterp {
+        color: $theme-black;
+        font-size: 18px;
+        text-align: left;
+        margin-left: 22px;
+        margin-top: 0px;
+    }
+    .filetype {
+        color: $theme-dash-gray;
+        font-size: 20px;
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .dragdrop {
+        white-space: pre-wrap;
+        color: $theme-black;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 6px;
+        margin-top: 30px;
+    }
+    .or {
+        white-space: pre-wrap;
+        color: $theme-black;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 6px;
+        margin-right: 0px;
+        margin-top: -25px;
+    }
+    .browse {
+        white-space: pre-wrap;
+        color: $theme-green;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 6px;
+        margin-top: -27px;
+        margin-bottom: -10px;
     li {
         font-size: 20px;
     }
 }
 
+//Large Laptop
+@media (max-width: $breakpoint-large-laptop-max){
+    .formgroup {
+        .formgrouptitle {
+            font-size: 90%;
+        }
+        .half-width, .full-width {
+            label {
+                font-size: 75%;
+            }
+            input {
+                font-size: 75%;
+            }
+        }
+        .note {
+            font-size: 80%;
+        }
+    }
+    p {
+        font-size: 70%;
+    }
+    ul {
+        font-size: 85%;
+    }
+}
+
 //Tablet
-@media (max-width: $breakpoint-tablet){
+@media (max-width: $breakpoint-tablet-max){
     .formgroup {
         padding: 20px;
         .half-width, .full-width {
@@ -152,7 +227,7 @@
 }
 
 //Phone
-@media (max-width: $breakpoint-phone){
+@media (max-width: $breakpoint-phone-max){
     .formgroup {
         .half-width, .full-width {
             grid-template-columns: 35fr 60fr;

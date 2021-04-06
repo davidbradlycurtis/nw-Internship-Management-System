@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <h1>{{$route.name}}</h1>
+        <h1>{{$route.name.replaceAll('-', ' ')}}</h1>
     </div>
 </template>
 <script>
