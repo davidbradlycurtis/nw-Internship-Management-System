@@ -103,7 +103,8 @@ const routes = [
     name: '404 Error',
     component: () => import(/* webpackChunkName: "notFound" */'../views/NotFound.vue'),
     meta: {
-      title: '404 Error'
+      title: '404 Error',
+      visible: false
     }
   }
 ]
