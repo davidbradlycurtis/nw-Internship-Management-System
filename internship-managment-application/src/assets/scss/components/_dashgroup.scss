@@ -29,7 +29,7 @@
                 text-transform: uppercase;
                 font-family: $theme-font-family;
                 font-weight: 100;
-                min-height: 70px;
+                min-height: 115px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -57,14 +57,21 @@
     }
 }
 
-// Smaller Laptop
-@media (max-width: $breakpoint-small-laptop-max){
+// Large Laptop
+@media (max-width: $breakpoint-large-laptop-max){
     .internshipstatusgroup {
         .statusgroup {
             grid-template-columns: repeat(2, 40fr);
             column-gap: 150px;
             row-gap: 20px;
         }
+    }
+}
+
+// Small Laptop 
+@media (max-width: $breakpoint-small-laptop-max){
+    .internshipstatusgroup {
+        margin: 40px 50px;
     }
 }
 
