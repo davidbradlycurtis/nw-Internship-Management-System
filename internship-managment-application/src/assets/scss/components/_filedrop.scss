@@ -1,0 +1,110 @@
+/*.filedrop {
+    border: 3px dashed $theme-dash-gray;
+    border-radius: 10px;
+    outline-offset: -10px;
+    background: $theme-light-gray;
+    color: $theme-black;
+    padding: 55px 0px;
+    width: 1000px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    cursor: pointer;
+}*/                    //Old dashed border
+.top{
+    padding: 1px 0px;
+    width: 1000px;
+}
+.left {
+    float: left;
+    padding: 110px 3px;
+    margin-left: 8px;
+  }
+  .right {
+    float: right;
+    padding: 110px 1px;
+    margin-left: 8px;
+  }
+  .bottom{
+    padding: 1px 0px;
+    width: 100%;
+}
+.top.border1{
+    background-image: linear-gradient(to right, #707070 40%, rgba(255, 255, 255, 0) 20%);
+    background-position: top;
+    background-size: 22px 15px;
+    background-repeat: repeat-x;
+    margin-top: 0px;
+}
+.left.border2{
+    background-image: linear-gradient(to bottom, #707070 40%, rgba(255, 255, 255, 0) 20%);
+    background-size: 1.2px 20px;
+    background-repeat: repeat-y;
+    border-radius: 10px;
+    margin-left: 0px;
+}
+.right.border3{
+    background-image: linear-gradient(to bottom, #707070 40%, rgba(255, 255, 255, 0) 20%);
+    background-size: 1.2px 20px;
+    background-repeat: repeat-y;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right: -6px;
+}
+.bottom.border4{
+    background-image: linear-gradient(to right, #707070 40%, rgba(255, 255, 255, 0) 20%);
+    background-position: bottom;
+    background-size: 22px 2px;
+    background-repeat: repeat-x;
+    border-bottom-right-radius: 10px;
+    margin-top: 40px;
+}
+      .input-file {
+        opacity: 0;
+        width: 66.2%;
+        height: 30.5%;
+        margin-top: -88px;
+        margin-left: -33%;
+        position: absolute;
+        cursor: pointer;
+      }
+      .icon-arrow {
+          width: 6px;
+          height: 50px;
+          background-color: $theme-green;
+          position: relative;
+          top: 22px;
+          left: 492px;
+      }
+      .icon-arrow:after {
+          content: "";
+          display: inline-block;
+          width: 34px;
+          height: 6px;
+          background-color: $theme-green;
+          transform: rotate(45deg);
+          position: absolute;
+          right: -25px;
+          bottom: 36px;
+      }
+        .icon-arrow:before {
+          content: "";
+          display: inline-block;
+          width: 34px;
+          height: 6px;
+          background-color: $theme-green;
+          transform: rotate(-45deg);
+          position: absolute;
+          right: -4px;
+          bottom: 36px;
+      }
+      .icon-arrow2 {
+          width: 47px;
+          height: 6px;
+          background-color: $theme-green;
+          position: relative;
+          top: 16px;
+          left: 472px;
+      }

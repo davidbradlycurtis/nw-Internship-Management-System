@@ -37,6 +37,7 @@
             text-align: right;
             font-size: 14px;
             margin-right: 15px;
+            margin-left: 10px;
             text-transform: uppercase;
             overflow: hidden;
             white-space: nowrap;
@@ -44,6 +45,7 @@
         }
         input {
             text-align: left;
+            flex: 1;
             box-sizing: border-box;
             &:focus {
                 border: 2px solid $theme-green;
@@ -70,7 +72,15 @@
             color: $theme-red;
         }
     }
-    p {
+    .textarea {
+        white-space: pre-wrap;
+        font-size: 14px;
+        text-align: left;
+            &:focus {
+                border: 2px solid $theme-green;
+            }
+    }
+      p {
         text-align: left;
     }
     ul {
@@ -85,6 +95,47 @@
         color: $theme-green;
         font-size: 18px;
     }
+}
+.offerformgroup {
+    .offerletterp {
+        color: $theme-black;
+        font-size: 18px;
+        text-align: left;
+        margin-left: 22px;
+        margin-top: 0px;
+    }
+    .filetype {
+        color: $theme-dash-gray;
+        font-size: 20px;
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .dragdrop {
+        white-space: pre-wrap;
+        color: $theme-black;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 6px;
+        margin-top: 30px;
+    }
+    .or {
+        white-space: pre-wrap;
+        color: $theme-black;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 6px;
+        margin-right: 0px;
+        margin-top: -25px;
+    }
+    .browse {
+        white-space: pre-wrap;
+        color: $theme-green;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 6px;
+        margin-top: -27px;
+        margin-bottom: -10px;
     li {
         font-size: 20px;
     }
