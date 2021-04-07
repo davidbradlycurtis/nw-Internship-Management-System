@@ -11,6 +11,7 @@ import SNumberInput from '@/components/s-number-input.vue'
 import ListLabel from '@/components/vfg-field-listlabel.vue'
 import ClickToSign from '@/components/vfg-field-clicktosign.vue'
 import IntegratedInput from '@/components/vfg-field-integratedinput.vue'
+import OfferLetter from '@/components/vgf-field-offer-letter.vue'
 
 Vue.use(VueMoment)
 Vue.use(VueRouter)
@@ -22,6 +23,7 @@ Vue.component('field-s-number-input', SNumberInput)
 Vue.component('field-listlabel', ListLabel)
 Vue.component('field-clicktosign', ClickToSign)
 Vue.component('field-integratedinput', IntegratedInput)
+Vue.component('field-offerletter', OfferLetter)
 
 Vue.config.productionTip = false
 
