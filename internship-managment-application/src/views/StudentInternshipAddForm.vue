@@ -2,7 +2,6 @@
     <div class="studentinternshipaddform form">
         <form action="" @submit.prevent="sendInternship" >
           <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
-          <CustomFormGroupStudentAcknowledgment />
           <div class="buttongroup">
             <button class="formbutton" type="submit" @click="save()">Save Progress</button>
             <button class="formbutton" type="submit" @click="save(); submit()">Submit</button>
@@ -13,16 +12,11 @@
 <script>
 // Services
 import StudentService from '@/services/StudentService.js'
-// Components
-import CustomFormGroupStudentAcknowledgment from '@/components/CustomFormGroupStudentAcknowledgment.vue'
 // Schema
 import CourseAddFormSchema from '@/forms/CourseAddFormSchema.js'
 
 export default {
   name: 'StudentInternshipAddForm',
-  components: {
-    CustomFormGroupStudentAcknowledgment
-  },
   methods: {
     checkForm: function (event) {
       const inputs = document.querySelectorAll('input')
@@ -78,6 +72,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-</style>

@@ -1,39 +1,36 @@
 <template>
-    <div class="studentDash form">
-      <div v-if="!submitted">
-        <FormGroup  v-for="group in ApplicationForm" :key="group.group_name" v-bind:groupname="group.group_name" v-bind:input="group.inputs" v-bind:note="group.note" v-bind:textarea="group.textarea"/>
-        <OfferLetter />
+    <div class="studentinternshipapplication form">
+      <form action="">
+        <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
         <div class="buttongroup">
           <Button v-bind:buttontext="'Save Progress'"/>
           <Button v-bind:buttontext="'Submit Form'" @click.native="submitted = !submitted"/>
         </div>
-      </div>
-      <FormSubmittedPop v-if="submitted"/>
+      </form>
     </div>
 </template>
 
 <script>
 // Componenets
-import FormGroup from '@/components/FormGroup.vue'
 import Button from '@/components/Button.vue'
-import FormSubmittedPop from '@/components/FormSubmittedPop.vue'
-import OfferLetter from '@/components/OfferLetter.vue'
-// Data
-import ApplicationForm from '@/data/ApplicationForm.js'
+// Schema
+import InternshipApplicationFormSchema from '@/forms/InternshipApplicationFormSchema.js'
 
 export default {
   name: 'StudentInternshipApplication.vue',
   components: {
-    FormGroup,
-    Button,
-    FormSubmittedPop,
-    OfferLetter
+    Button
   },
   data () {
     return {
-      ApplicationForm: ApplicationForm,
-      ButtonList: ['Save Progress', 'Submit Form'].length,
-      submitted: false
+      model: {
+        student_street_line_1: ''
+      },
+      schema: InternshipApplicationFormSchema,
+      formOptions: {
+        validateAfterChanged: true
+      },
+      edit: false
     }
   }
 }
