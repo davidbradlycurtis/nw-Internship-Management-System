@@ -9,11 +9,20 @@ $theme-dark-gray: #b4b4b4;
 $theme-black: #000000;
 $theme-white: #ffff;
 $theme-red: #FF0000;
+$theme-dash-gray: #707070;
+$theme-hover-gray: #c0c0c0;
 
 //Fonts
 $theme-font-family: Futura, Arial, sans-serif;
 
-//Breakpoints 
-$breakpoint-laptop: 1824px;
-$breakpoint-tablet: 768px;
-$breakpoint-phone: 425px;
+//Breakpoints
+$breakpoint-large-laptop-max: 1200px;
+$breakpoint-small-laptop-max: 1024px;
+$breakpoint-tablet-max: 768px;
+$breakpoint-phone-max: 480px;
+
+$breakpoint-extra-large-laptop-min: 1201px;
+$breakpoint-large-laptop-min: 1025px;
+$breakpoint-small-laptop-min: 769px;
+$breakpoint-tablet-min: 481px;
+$breakpoint-phone-min: 320px;

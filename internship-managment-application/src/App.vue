@@ -30,17 +30,6 @@ export default {
 
 <style lang="scss">
 
-#app {
-  font-family: $theme-font-family;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: $theme-black;
-  display: grid;
-  grid-template-columns: 1.25fr 6.75fr;
-  grid-template-rows: auto;
-}
-
 #nav {
   padding: 30px;
 

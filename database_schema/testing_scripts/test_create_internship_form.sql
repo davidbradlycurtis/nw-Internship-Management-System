@@ -1,1 +1,1 @@
-CALL create_internship_form('Garmin', '10 Weeks', '2022-05-20', '2022-08-20', '123 Street', NULL, 'Kansas City', '66030', 'Aviation', 'Missouri', 'Mark Car', 'mark@garmin.com', '816-239-9800', NULL, NULL, NULL, '2021-03-12', '1', '1');
+CALL create_internship_form('Garmin', '10 Weeks', '2022-05-20', '2022-08-20', '123 Street', NULL, 'Kansas City', '66030', 'Aviation', 'Missouri', 'Mark Car', 'mark@garmin.com', '816-239-9800', NULL, NULL, NULL, '2021-03-12', '1', '1', '123 Street', NULL, 'Maryville', '64468', 'Missouri');

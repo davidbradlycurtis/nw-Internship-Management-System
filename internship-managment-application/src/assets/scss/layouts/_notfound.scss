@@ -1,0 +1,40 @@
+.notfound {
+  font-weight: 900;
+  height: 90vh;
+  text-align: center;
+  margin: 5px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  .imagewrapper {
+    flex-basis: 100%;
+    margin: 0;
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  * {
+    flex-basis: 100%;
+  }
+  p {
+    color: $theme-green;
+  }
+  div {
+    margin: 40px;
+    .formbutton {
+      a {
+        color: $theme-white;
+        text-decoration: none;
+      }
+      & > .router-link-exact-active {
+        background-color: $theme-dark-green;
+      }
+      & :hover{
+        @include hover-animation($theme-green);
+      }
+    }
+  }
+}
