@@ -1,13 +1,11 @@
 <template>
-  <div class="wrapper">
-    <div>
-      <p>{{this.schema.text}}</p>
-    </div>
+  <div class="wrapper attachfile">
+    <p class="infotext">{{this.schema.text}}</p>
     <div class="filedrop">
-      <input type="file" :accept="this.schema.filetype" class="input-file">
-      <p class="dragdrop">Drag and Drop here</p>
-      <p class="or"> Or </p>
-      <p class="browse"> Browse files </p>
+      <p>Drag and Drop here</p>
+      <p>Or</p>
+      <label :for="this.schema.model">Browse files</label>
+      <input type="file" :accept="this.schema.filetype" multiple="true" class="inputfile" :id="this.schema.model">
     </div>
     <p class="filetype">Accepted File Types: {{this.schema.filetype}}</p>
   </div>

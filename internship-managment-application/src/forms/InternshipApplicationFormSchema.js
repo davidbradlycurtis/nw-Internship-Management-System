@@ -148,7 +148,7 @@ export default {
           inputType: 'text',
           label: 'Street Line 2',
           model: 'business_street_line_2',
-          required: true,
+          required: false,
           validator: ['string', 'required'],
           styleClasses: 'half-width'
         },
@@ -167,7 +167,7 @@ export default {
           label: 'Zip Code',
           model: 'business_zip_code',
           required: true,
-          validator: ['string', 'required'],
+          validator: ['number', 'required'],
           styleClasses: 'half-width'
         },
         {
@@ -305,7 +305,9 @@ export default {
         {
           type: 'offerletter',
           text: 'If you have been given an offer letter from your Internship, please attach it down below',
-          filetype: '.pdf'
+          filetype: '.pdf',
+          model: 'offerletter',
+          styleClasses: 'full-width'
         }
       ]
     }
