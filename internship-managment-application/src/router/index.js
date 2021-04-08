@@ -30,7 +30,7 @@ const routes = [
     children: [
       {
         path: 'past-forms',
-        name: 'Internship Application Form- Past Form',
+        name: 'internship-application-form-past-forms',
         component: () => import('../views/StudentApplicationFormPast.vue'),
         meta: {
           title: 'Internship Application Form - Past Forms'
