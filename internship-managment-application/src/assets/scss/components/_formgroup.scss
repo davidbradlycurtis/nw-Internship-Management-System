@@ -98,26 +98,46 @@
             border-radius: 20px;
             width: 100%;
             padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             * {
                 text-align: center;
+                text-transform: none;
+                width: 100%;
+                font-size: 18px;
             }
             label {
                 width: 100%;
                 color: $theme-green;
                 padding: 6px 12px;
                 margin: 0;
+                text-decoration: underline;
             }
             input[type="file"]{
                 display: none;
+            }
+            .uploadsvg {
+                width: 60px;
+                margin: auto;
+            }
+            p {
+                margin: 0;
+                padding: 6px 12px;
             }
         }
         .infotext {
             width: 100%;
             text-transform: none;
         }
-        .filetype {
+        .filetype, .uploadedfiles {
             text-transform: none;
             color: $theme-dash-gray;
+            width: 100%;
+            margin: 5px;
+        }
+        .uploadedfiles {
+            
         }
     }
     .required::before{
