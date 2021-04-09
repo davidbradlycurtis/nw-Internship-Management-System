@@ -10,7 +10,7 @@ export default {
   },
 
   GetAddForms (information) {
-    return Api().get('/add-form-get-forms', information)
+    return Api().post('/add-form-get-forms', information)
   },
 
   InternshipFormCreate (information) {
