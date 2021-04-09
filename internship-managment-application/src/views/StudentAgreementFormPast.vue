@@ -1,53 +1,26 @@
 <template>
     <div class="pastform form">
       <PastFormNotice/>
-       <h1>Semester Date</h1>
-    <h2> Student Information</h2>
+    <h1>Semester Date</h1>
     <table border="1">
-    <tr>
-    <th>Student Name</th>
-    <th>{{ response.data[0].student_firstname }} {{ response.data[0].student_lastname }}</th>
-  </tr>
-  <tr>
-    <td>Home Address</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Telephone</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>S-Number</td>
-    <td></td>
-  </tr>
-</table>
-<h2>Buisness Information </h2>
-<table border="1">
-  <tr>
-    <th>Organization Name</th>
-    <th></th>
-  </tr>
-  <tr>
-    <td>Orgainization Address</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Sponsor/Supervisor</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Email</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Telephone</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Other Arrangements</td>
-    <td></td>
-  </tr>
-</table>
+    <thead>
+      <tr>
+        <th>Student First Name</th>
+        <th>Student Last Name</th>
+        <th>Student 919</th>
+        <th>Student Email</th>
+        <!-- and so on -->
+      </tr>
+    </thead>
+    <tbody>
+      <td>{{ response.data[0].student_firstname }}></td>
+      <td>{{ response.data[0].student_lastname }}></td>
+      <td>{{ response.data[0].student_id }}></td>
+      <td>{{ response.data[0].student_id }}></td>
+      <!-- and so on -->
+    </tbody>
+    </table>
+
   <div class="buttongroup">
   <button class="formbutton"  @click="pullForm()"> Edit </button>
   </div>
@@ -66,6 +39,9 @@ export default {
   components: {
     PastFormNotice
   },
+  data:{
+    response:''
+  },
   methods: {
     async pullInternship () {
       const response = await StudentService.GetAgreementForm(this.model)
@@ -74,6 +50,10 @@ export default {
     pullForm () {
       // rerouting to new form
       this.$router.push('/student-internship-agreement/new-form')
+      console.log('moving')
+    },
+    create (){
+      pullInternship()
     }
   }
 }
