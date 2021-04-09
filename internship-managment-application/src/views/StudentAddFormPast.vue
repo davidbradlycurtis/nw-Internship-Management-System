@@ -1,13 +1,39 @@
 <template>
     <div class="pastform">
+      <PastFormInfo />
     </div>
 </template>
 
 <script>
+// Schema
+import CourseAddFormSchema from '@/services/CourseAddFormSchema.js'
+// Services
+import StudentService from '@/services/StudentService.js'
+// Components
+import PastFormInfo from '@/components/PastFormInfo.vue'
 
 export default {
-  name: 'Internship Course Add Form - Past Forms',
+  name: 'InternshipCourseAddFormPastForms',
   components: {
+    PastFormInfo
+  },
+  created () {
+    this.getInternship()
+  },
+  methods: {
+    async getInternship () {
+      const response = await StudentService.GetAddForms(this.model)
+      console.log(response)
+    }
+  },
+  data () {
+    return {
+      model: {
+        // Hardcoded uid
+        student_id: 1
+      },
+      schema: CourseAddFormSchema
+    }
   }
 }
 </script>

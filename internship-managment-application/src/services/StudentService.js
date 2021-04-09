@@ -9,6 +9,10 @@ export default {
     return Api().post('/add-form-edit', information)
   },
 
+  GetAddForms (information) {
+    return Api().get('/add-form-get-forms', information)
+  },
+
   InternshipFormCreate (information) {
     return Api().post('/internship-form-create', information)
   },
