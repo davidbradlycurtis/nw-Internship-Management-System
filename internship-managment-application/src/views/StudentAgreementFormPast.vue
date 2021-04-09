@@ -34,13 +34,17 @@ import PastFormNotice from '@/components/PastFormNotice.vue'
 // Services
 import StudentService from '@/services/StudentService.js'
 
+
 export default {
   name: 'Internship Agreement - Past Forms',
   components: {
     PastFormNotice
   },
   data:{
-    response:''
+    return{
+      //Hardcoded value
+      student_id:1
+    }
   },
   methods: {
     async pullInternship () {
@@ -52,8 +56,8 @@ export default {
       this.$router.push('/student-internship-agreement/new-form')
       console.log('moving')
     },
-    create (){
-      pullInternship()
+    created (){
+      this.pullInternship()
     }
   }
 }
