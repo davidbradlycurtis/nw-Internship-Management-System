@@ -6,7 +6,7 @@
 
 <script>
 // Schema
-import CourseAddFormSchema from '@/services/CourseAddFormSchema.js'
+import CourseAddFormSchema from '@/forms/CourseAddFormSchema.js'
 // Services
 import StudentService from '@/services/StudentService.js'
 // Components

@@ -4,6 +4,6 @@
 </template>
 <script>
 export default {
-    name: 'PastFormInfo'
+  name: 'PastFormInfo'
 }
 </script>
