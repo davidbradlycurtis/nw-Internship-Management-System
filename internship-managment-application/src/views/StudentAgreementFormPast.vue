@@ -13,10 +13,10 @@
       </tr>
     </thead>
     <tbody>
-      <td>{{ response.data[0].student_firstname }}></td>
-      <td>{{ response.data[0].student_lastname }}></td>
-      <td>{{ response.data[0].student_id }}></td>
-      <td>{{ response.data[0].student_id }}></td>
+      <td>{{ this.response.data[0].student_firstname }}></td>
+      <td>{{ this.response.data[0].student_lastname }}></td>
+      <td>{{ this.response.data[0].student_id }}></td>
+      <td>{{ this.response.data[0].student_id }}></td>
       <!-- and so on -->
     </tbody>
     </table>
@@ -34,16 +34,17 @@ import PastFormNotice from '@/components/PastFormNotice.vue'
 // Services
 import StudentService from '@/services/StudentService.js'
 
-
 export default {
   name: 'Internship Agreement - Past Forms',
   components: {
     PastFormNotice
   },
-  data:{
-    return{
-      //Hardcoded value
-      student_id:1
+  data () {
+    return {
+      model: {
+      // Hardcoded value
+        student_id: 1
+      }
     }
   },
   methods: {
@@ -56,7 +57,7 @@ export default {
       this.$router.push('/student-internship-agreement/new-form')
       console.log('moving')
     },
-    created (){
+    created () {
       this.pullInternship()
     }
   }
