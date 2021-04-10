@@ -2,6 +2,7 @@ export default {
   groups: [
     {
       legend: 'Student Information',
+      infoDumpTitle: 'Student Information',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -44,6 +45,7 @@ export default {
     },
     {
       legend: 'Course Instructor Information',
+      infoDumpTitle: 'Faculty Information',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -95,6 +97,7 @@ export default {
     },
     {
       legend: 'Student Acknowledgment of Responsibility',
+      infoDumpTitle: 'Application Information',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -110,7 +113,9 @@ export default {
         },
         {
           type: 'clicktosign',
-          labelText: 'Requestor (Student) Signature'
+          label: 'Date Submitted',
+          labelText: 'Requestor (Student) Signature',
+          model: 'add_date_signed'
         }
       ]
     }

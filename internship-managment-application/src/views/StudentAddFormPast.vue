@@ -1,6 +1,6 @@
 <template>
-    <div class="pastform">
-      <PastFormInfo />
+    <div class="pastforms form">
+      <PastFormInfo :schema="schema" />
     </div>
 </template>
 

@@ -59,6 +59,7 @@ export default {
         faculty_first_name: '',
         faculty_last_name: '',
         faculty_email: '',
+        add_date_signed: (new Date()),
         submitted: 0,
         // Hardcoded uid will need to be changed
         uid: 1
