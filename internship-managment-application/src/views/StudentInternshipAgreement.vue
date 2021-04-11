@@ -17,6 +17,9 @@ import StudentService from '@/services/StudentService.js'
 // Schema
 import AgreementFormSchema from '@/forms/AgreementFormSchema.js'
 
+// Store
+import store from '@/store/index.js'
+
 export default {
   name: 'StudentInternshipAgreement',
   components: {
@@ -33,7 +36,6 @@ export default {
       }
     },
     submit () {
-      // This gets called on Save Progress???
       this.model.submitted = 1
     },
     save () {
@@ -61,8 +63,7 @@ export default {
         other_supervisor_agreements: null,
         other_university_agreements: null,
         submitted: 0,
-        // Hardcoded uid will need to be changed
-        uid: 1
+        uid: store.state.user_id
       },
       schema: AgreementFormSchema,
       formOptions: {

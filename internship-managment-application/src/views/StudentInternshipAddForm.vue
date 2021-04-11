@@ -14,6 +14,8 @@
 import StudentService from '@/services/StudentService.js'
 // Schema
 import CourseAddFormSchema from '@/forms/CourseAddFormSchema.js'
+// Store
+import store from '@/store/index.js'
 
 export default {
   name: 'StudentInternshipAddForm',
@@ -60,8 +62,7 @@ export default {
         faculty_last_name: '',
         faculty_email: '',
         submitted: 0,
-        // Hardcoded uid will need to be changed
-        uid: 1
+        uid: store.state.user_id
       },
       schema: CourseAddFormSchema,
       formOptions: {
