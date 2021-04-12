@@ -9,7 +9,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'First Name',
-          model: 'first_name',
+          model: 'student_firstname',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'half-width'
@@ -18,7 +18,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'Last Name',
-          model: 'last_name',
+          model: 'student_lastname',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'half-width'
@@ -27,7 +27,7 @@ export default {
           type: 'input',
           inputType: 'number',
           label: 'User ID (919#)',
-          model: 'u_num',
+          model: 'uid',
           required: true,
           validator: ['integer', 'required'],
           styleClasses: 'half-width'
@@ -36,7 +36,7 @@ export default {
           type: 'input',
           inputType: 'email',
           label: 'Student Email',
-          model: 'email',
+          model: 'student_email',
           required: true,
           validator: ['email', 'required'],
           styleClasses: 'half-width'
@@ -52,7 +52,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'First Name',
-          model: 'faculty_first_name',
+          model: 'faculty_firstname',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'half-width'
@@ -61,7 +61,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'Last Name',
-          model: 'faculty_last_name',
+          model: 'faculty_lastname',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'half-width'
@@ -115,7 +115,7 @@ export default {
           type: 'clicktosign',
           label: 'Date Submitted',
           labelText: 'Requestor (Student) Signature',
-          model: 'add_date_signed'
+          model: 'application_date'
         }
       ]
     }

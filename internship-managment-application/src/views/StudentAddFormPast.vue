@@ -1,6 +1,12 @@
 <template>
     <div class="pastforms form">
-      <PastFormInfo :schema="schema" />
+      <div v-if="formdata.length > 1">
+        <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.form_id"/>
+      </div>
+      <div v-else>
+        <UhOhNotice noticetext="It looks like you have not completed any INTERNSHIP COURSE ADD FORM's. To get started, click the link below."/>
+        <router-link to="/new-form" class="inpagelink">Start New Form</router-link>
+      </div>
     </div>
 </template>
 
@@ -11,19 +17,24 @@ import CourseAddFormSchema from '@/forms/CourseAddFormSchema.js'
 import StudentService from '@/services/StudentService.js'
 // Components
 import PastFormInfo from '@/components/PastFormInfo.vue'
+import UhOhNotice from '@/components/UhOhNotice.vue'
 
 export default {
   name: 'InternshipCourseAddFormPastForms',
   components: {
-    PastFormInfo
+    PastFormInfo,
+    UhOhNotice
   },
   created () {
-    this.getInternship()
+    this.formdata = this.getInternship()
+    console.log(this.formdata)
   },
   methods: {
     async getInternship () {
-      const response = await StudentService.GetAddForms(this.model)
-      console.log(response)
+      const response = await StudentService.GetAddForms(this.model).then((result) => {
+        this.formdata = result.data[0]
+      })
+      return response[0]
     }
   },
   data () {
@@ -32,7 +43,8 @@ export default {
         // Hardcoded uid
         student_id: 1
       },
-      schema: CourseAddFormSchema
+      schema: CourseAddFormSchema,
+      formdata: []
     }
   }
 }

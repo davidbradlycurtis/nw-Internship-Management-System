@@ -1,7 +1,7 @@
 .pastform {
     background-color: $theme-light-gray;
     padding: 30px 40px;
-    margin-top: 40px;
+    margin: 40px 0px;
     border: none;
     display: grid;
     grid-template-columns: auto auto;
@@ -46,5 +46,19 @@
                 padding: 5px;
             }
         }
+    }
+}
+.inpagelink {
+    color: $theme-green;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 40px;
+    width: 100%;
+    text-transform: uppercase;
+    &:active {
+        color: $theme-dark-green;
+    }
+    &::after {
+        content: ' >';
     }
 }
