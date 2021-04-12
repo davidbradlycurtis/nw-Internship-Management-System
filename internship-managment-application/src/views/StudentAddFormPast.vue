@@ -31,10 +31,10 @@ export default {
   },
   methods: {
     async getInternship () {
-      const response = await StudentService.GetAddForms(this.model).then((result) => {
+      await StudentService.GetAddForms(this.model).then((result) => {
         this.formdata = result.data[0]
       })
-      return response[0]
+      // return response[0]
     }
   },
   data () {
