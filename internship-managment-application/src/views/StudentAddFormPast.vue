@@ -26,15 +26,13 @@ export default {
     UhOhNotice
   },
   created () {
-    this.formdata = this.getInternship()
-    console.log(this.formdata)
+    this.getInternship()
   },
   methods: {
     async getInternship () {
       await StudentService.GetAddForms(this.model).then((result) => {
         this.formdata = result.data[0]
       })
-      // return response[0]
     }
   },
   data () {
