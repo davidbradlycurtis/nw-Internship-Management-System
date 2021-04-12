@@ -5,8 +5,8 @@
       </div>
       <div v-else>
         <UhOhNotice noticetext="It looks like you have not completed any INTERNSHIP COURSE ADD FORM's. To get started, click the link below."/>
-        <router-link to="/new-form" class="inpagelink">Start New Form</router-link>
       </div>
+      <router-link to="/new-form" class="inpagelink">Start New Form</router-link>
     </div>
 </template>
 
