@@ -25,8 +25,8 @@ export default {
     PastFormInfo,
     UhOhNotice
   },
-  created () {
-    this.getInternship()
+  async created () {
+    await this.getInternship()
   },
   methods: {
     async getInternship () {
