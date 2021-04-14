@@ -1,35 +1,25 @@
 <template>
-    <div class="pastform form">
-      <PastFormNotice/>
-    <h1>Semester Date</h1>
-    <table border="1">
-    <thead>
-      <tr>
-        <th>Student First Name</th>
-        <th>Student Last Name</th>
-        <th>Student 919</th>
-        <th>Student Email</th>
-        <!-- and so on -->
-      </tr>
-    </thead>
-    <tbody>
-      <td>{{ this.response.data[0].student_firstname }}></td>
-      <td>{{ this.response.data[0].student_lastname }}></td>
-      <td>{{ this.response.data[0].student_id }}></td>
-      <td>{{ this.response.data[0].student_id }}></td>
-      <!-- and so on -->
-    </tbody>
-    </table>
-
-  <div class="buttongroup">
-  <button class="formbutton"  @click="pullForm()"> Edit </button>
-  </div>
+<PastFormNotice/>
+  <div class="pastforms form">
+    <div v-if="formdata.length >= 1">
+      <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.form_id"/>
+    </div>
+    <div v-else>
+      <UhOhNotice noticetext="It looks like you have not completed any INTERNSHIP COURSE ADD FORM's. To get started, click the link below."/>
+    </div>
+    <div class="buttongroup">
+      <button class="formbutton"  @click="pullForm()"> Edit </button>
+    </div>
+    <router-link to="/student-internship-agreement-form/new-form" class="inpagelink">Start New Form</router-link>
   </div>
 </template>
 
 <script>
+// schema
+import AgreementFormSchema from '@/forms/AgreementFormSchema.js'
 // components
 import PastFormNotice from '@/components/PastFormNotice.vue'
+import UhOhNotice from '@/components/UhOhNotice.vue'
 
 // Services
 import StudentService from '@/services/StudentService.js'
@@ -44,13 +34,16 @@ export default {
       model: {
       // Hardcoded value
         student_id: 1
-      }
+      },
+      schema: AgreementFormSchema,
+      formdata: []
     }
   },
   methods: {
-    async pullInternship () {
-      const response = await StudentService.GetAgreementForm(this.model)
-      console.log(response.data)
+    async getInternship () {
+      await StudentService.GetAddForms(this.model).then((result) => {
+        this.formdata = result.data[0]
+      })
     },
     pullForm () {
       // rerouting to new form
