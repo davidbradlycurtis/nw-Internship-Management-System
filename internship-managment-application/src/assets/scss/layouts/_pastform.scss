@@ -1,0 +1,64 @@
+.pastform {
+    background-color: $theme-light-gray;
+    padding: 30px 40px;
+    margin: 40px 0px;
+    border: none;
+    display: grid;
+    grid-template-columns: auto auto;
+    .internshiptitle{
+        color: $theme-green;
+        text-transform: uppercase;
+        grid-column: 1 /span 2;
+        text-align: left;
+        float: left;
+        font-size: 24px;
+        margin: 0;
+        display: flex;
+        &::after {
+            content: '';
+            display: inline-block;
+            flex: 1;
+            overflow: hidden;
+            height: 0;
+            margin-top: 15px;
+            border: 2px solid $theme-green;
+        }
+    }
+    .infogroup {
+        grid-column: 1 /span 2;
+        text-align: left;
+        h4 {
+            margin: 20px 0px 5px;
+            color: $theme-green;
+            text-transform: uppercase;
+        }
+        table {
+            width: 100%;
+            .tablelabel {
+                background-color: $theme-green;
+                color: $theme-white;
+                text-transform: uppercase;
+                text-align: center;
+                width: 250px;
+            }
+            td {
+                background-color: $theme-white;
+                padding: 5px;
+            }
+        }
+    }
+}
+.inpagelink {
+    color: $theme-green;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 40px;
+    width: 100%;
+    text-transform: uppercase;
+    &:active, &:hover {
+        color: $theme-dark-green;
+    }
+    &::after {
+        content: ' >';
+    }
+}
