@@ -1,6 +1,6 @@
 <template>
     <div class="pastforms form">
-      <div v-if="formdata.length > 1">
+      <div v-if="formdata.length >= 1">
         <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.form_id"/>
       </div>
       <div v-else>
@@ -27,6 +27,7 @@ export default {
   },
   created () {
     this.getInternship()
+    console.log(this.formdata.length)
   },
   methods: {
     async getInternship () {
