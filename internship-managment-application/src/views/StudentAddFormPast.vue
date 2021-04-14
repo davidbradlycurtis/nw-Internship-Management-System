@@ -27,7 +27,6 @@ export default {
   },
   created () {
     this.getInternship()
-    console.log(this.formdata.length)
   },
   methods: {
     async getInternship () {
