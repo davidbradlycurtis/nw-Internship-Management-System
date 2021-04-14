@@ -21,6 +21,10 @@ export default {
     return Api().post('/internship-form-edit', information)
   },
 
+  GetInternshipForms (information) {
+    return Api().post('/agreement-form-get-forms', information)
+  },
+
   AgreementFormCreate (information) {
     return Api().post('/agreement-form-create', information)
   },
