@@ -219,7 +219,7 @@ app.get('/agreement-form-get-forms', (req, res) => {
 */
 app.post('/internship-form-create', (req, res) => {
     const connection = get_connection()
-    var query = `CALL create_internship_form('${req.body.orgName}', '${req.body.duration}', '${req.body.start_date}', '${req.body.end_date}', '${req.body.street_1}', '${req.body.street_2}', '${req.body.city}', '${req.body.zip}', '${req.body.department}', '${req.body.state}', '${req.body.supervisor_name}', '${req.body.supervisor_email}', '${req.body.site_phone}', '${req.body.int_phone}', '${req.body.notes}', '${req.body.offer}', '${req.body.app_date}', ${req.body.id}, ${req.body.submitted}, '${req.body.student_line_1}', '${req.body.student_line_2}', '${req.body.student_city}', '${req.body.student_zip}', '${req.body.student_state}');`
+    var query = `CALL create_internship_form('${req.body.employer_name}', '${req.body.duration}', '${req.body.start_date}', '${req.body.end_date}', '${req.body.street_line_1}', '${req.body.street_line_2}', '${req.body.city}', '${req.body.zip_code}', '${req.body.department}', '${req.body.state}', '${req.body.supervisor_name}', '${req.body.supervisor_email}', '${req.body.site_phone}', '${req.body.international_phone}', '${req.body.notes}', '${req.body.offer_letter}', '${req.body.date}', ${req.body.uid}, ${req.body.submitted}, '${req.body.student_line_1}', '${req.body.student_line_2}', '${req.body.student_city}', '${req.body.student_zip}', '${req.body.student_state}');`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {

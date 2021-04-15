@@ -28,11 +28,11 @@ export default {
   created () {
     this.getApplication()
   },
-  method: {
+  methods: {
     async getApplication () {
       await StudentService.GetInternshipForms(this.model).then((result) => {
         this.formdata = result.data[0]
-        console.log(this.formdata)
+        console.log(result[0])
       })
     }
   },

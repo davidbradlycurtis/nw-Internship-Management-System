@@ -28,7 +28,7 @@ export default {
           label: 'City',
           model: 'student_city',
           required: true,
-          validator: ['string', 'validator'],
+          validator: ['string', 'alpha'],
           styleClasses: 'half-width'
         },
         {
@@ -37,7 +37,7 @@ export default {
           label: 'Zip Code',
           model: 'student_zip',
           required: true,
-          validator: ['string', 'validator'],
+          validator: ['number', 'required'],
           styleClasses: 'half-width'
         },
         {
@@ -277,6 +277,7 @@ export default {
           inputType: 'date',
           label: 'Start Date',
           model: 'start_date',
+          format: 'YYYY-MM-DD',
           required: true,
           styleClasses: 'half-width'
         },
@@ -285,6 +286,7 @@ export default {
           inputType: 'date',
           label: 'End Date',
           model: 'end_date',
+          format: 'YYYY-MM-DD',
           required: true,
           styleClasses: 'half-width'
         },
