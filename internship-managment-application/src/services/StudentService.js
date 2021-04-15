@@ -14,11 +14,11 @@ export default {
   },
 
   InternshipFormCreate (information) {
-    return Api().post('/internship-form-create', information)
+    return Api().post('/internship-application-form-create', information)
   },
 
   EditInternshipForm (information) {
-    return Api().post('/internship-form-edit', information)
+    return Api().post('/internship-application-edit', information)
   },
 
   GetInternshipForms (information) {
