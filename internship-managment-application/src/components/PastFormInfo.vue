@@ -10,15 +10,25 @@
           </tr>
         </table>
       </div>
+      <div v-if="button" class="pastbuttonwrapper">
+        <button class="pastbutton"  @click="pullForm"> Edit </button>
+      </div>
     </div>
 </template>
 <script>
 export default {
   name: 'PastFormInfo',
-  props: ['schema', 'data'],
+  props: ['schema', 'data', 'button'],
   data () {
     return {
       internshiptitle: 'Spring 2021'
+    }
+  },
+  methods: {
+    pullForm () {
+      // rerouting to new form
+      this.$router.push('/student-internship-agreement/new-form')
+      console.log('moving')
     }
   },
   computed: {

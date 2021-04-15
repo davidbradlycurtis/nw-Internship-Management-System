@@ -2,10 +2,7 @@
   <div class="pastforms form">
   <PastFormNotice/>
     <div v-if="formdata.length >= 1">
-      <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.form_id"/>
-      <div class="buttongroup">
-        <button class="formbutton"  @click="pullForm()"> Edit </button>
-      </div>
+      <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.form_id" :button="true"/>
     </div>
     <div v-else>
       <UhOhNotice noticetext="It looks like you have not completed any INTERNSHIP COURSE ADD FORM's. To get started, click the link below."/>
@@ -39,11 +36,6 @@ export default {
       await StudentService.GetAgreementForm(this.model).then((result) => {
         this.formdata = result.data[0]
       })
-    },
-    pullForm () {
-      // rerouting to new form
-      this.$router.push('/student-internship-agreement/new-form')
-      console.log('moving')
     }
   },
   data () {
