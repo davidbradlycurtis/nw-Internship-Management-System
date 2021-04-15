@@ -27,6 +27,7 @@ export default {
     },
     {
       legend: 'Student Information',
+      infoDumpTitle: 'Student Information',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -75,6 +76,7 @@ export default {
     },
     {
       legend: 'Cooperating Business Information',
+      infoDumpTitle: 'Cooperating Business Information',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -132,6 +134,7 @@ export default {
     },
     {
       legend: 'The Student Agrees To:',
+      infoDumpTitle: 'Student Agrees To:',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -158,6 +161,7 @@ export default {
     },
     {
       legend: 'The Intern Sponser Agrees To:',
+      infoDumpTitle: 'Intern Sponser Agrees To:',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -182,6 +186,7 @@ export default {
     },
     {
       legend: 'The University Internship Supervisor Agrees To:',
+      infoDumpTitle: 'University Internship Supervisor Agrees To:',
       styleClasses: 'formgroup',
       fields: [
         {

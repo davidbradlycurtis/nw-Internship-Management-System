@@ -15,15 +15,14 @@
 </template>
 
 <script>
-// schema
+// Schema
 import AgreementFormSchema from '@/forms/AgreementFormSchema.js'
+// Services
+import StudentService from '@/services/StudentService.js'
 // components
 import PastFormNotice from '@/components/PastFormNotice.vue'
 import PastFormInfo from '@/components/PastFormInfo.vue'
 import UhOhNotice from '@/components/UhOhNotice.vue'
-
-// Services
-import StudentService from '@/services/StudentService.js'
 
 export default {
   name: 'InternshipAgreementPastForms',
