@@ -195,7 +195,7 @@ app.post('/agreement-form-change-status', (req, res) => {
 */
 app.post('/agreement-form-get-forms', (req, res) => {
     const connection = get_connection()
-    var query = `CALL get_agreement_forms_by_id('${req.body.student_id}');`
+    var query = `CALL get_student_agreement_forms_by_id('${req.body.student_id}');`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {
