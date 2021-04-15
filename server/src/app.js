@@ -1,5 +1,4 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const mysql = require('mysql')
@@ -9,7 +8,6 @@ app.use(morgan('combined'))
 app.use(express.json());
 
 app.use(cors())
-
 
 /**
 * Establishes a connection to the database
@@ -107,9 +105,9 @@ app.post('/add-form-change-status', (req, res) => {
 * @param    {req}            (json containing student_id)
 * @return   {String}         message
 */
-app.get('/add-form-get-forms', (req, res) => {
+app.post('/add-form-get-forms', (req, res) => {
     const connection = get_connection()
-    var query = `CALL get_add_forms_by_id('${req.body.student_id}');`
+    var query = `CALL get_student_add_forms_by_id('${req.body.student_id}');`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {

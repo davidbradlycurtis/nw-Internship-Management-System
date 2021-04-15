@@ -1,16 +1,22 @@
 <template>
-    <router-view></router-view>
+    <div class="studentinternshipaddform form">
+        <form action="" @submit.prevent="sendInternship" >
+          <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
+          <div class="buttongroup">
+            <button class="formbutton" type="submit" @click="save()">Save Progress</button>
+            <button class="formbutton" type="submit" @click="save(); submit()">Submit</button>
+          </div>
+        </form>
+    </div>
 </template>
 <script>
 // Services
 import StudentService from '@/services/StudentService.js'
 // Schema
 import CourseAddFormSchema from '@/forms/CourseAddFormSchema.js'
-// Store
-import store from '@/store/index.js'
 
 export default {
-  name: 'StudentInternshipAddForm',
+  name: 'StudentInternshipAddFormNew',
   methods: {
     checkForm: function (event) {
       const inputs = document.querySelectorAll('input')
@@ -53,8 +59,10 @@ export default {
         faculty_first_name: '',
         faculty_last_name: '',
         faculty_email: '',
+        add_date_signed: (new Date()),
         submitted: 0,
-        uid: store.state.user_id
+        // Hardcoded uid will need to be changed
+        uid: 1
       },
       schema: CourseAddFormSchema,
       formOptions: {

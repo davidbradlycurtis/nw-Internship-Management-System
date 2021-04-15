@@ -27,6 +27,9 @@
         text-transform: uppercase;
         border-bottom: none;
     }
+    label[for="date-submitted"]{
+        display: none;
+    }
 }
 
 // Large Laptop
