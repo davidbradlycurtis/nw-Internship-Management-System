@@ -77,6 +77,7 @@ const routes = [
     path: '/student-internship-add-form',
     name: 'internship-add-form',
     component: () => import('../views/StudentInternshipAddForm.vue'),
+    redirect: '/student-internship-add-form/past-forms',
     meta: {
       title: 'Internship Add Form'
     },
@@ -90,11 +91,11 @@ const routes = [
         }
       },
       {
-        path: 'start-new-form',
-        name: 'internship-add-start-new-form',
-        redirect: '/student-internship-add-form',
+        path: 'new-form',
+        name: 'internship-add-form-new-form',
+        component: () => import('../views/StudentAddFormNew.vue'),
         meta: {
-          title: 'Start New Form'
+          title: 'Internship Add Form - New Form'
         }
       }
     ]
