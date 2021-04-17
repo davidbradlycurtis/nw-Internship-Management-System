@@ -237,9 +237,9 @@ app.post('/internship-application-form-create', (req, res) => {
 * @param    {req}            (json containing student_id)
 * @return   {String}         message
 */
-app.get('/agreement-form-get-forms', (req, res) => {
+app.post('/internship-application-form-get-forms', (req, res) => {
     const connection = get_connection()
-    var query = `CALL get_internship_application_forms_by_id('${req.body.student_id}');`
+    var query = `CALL get_student_internship_application_forms_by_id('${req.body.student_id}');`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {

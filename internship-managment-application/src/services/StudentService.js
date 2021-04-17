@@ -22,7 +22,7 @@ export default {
   },
 
   GetInternshipForms (information) {
-    return Api().post('/agreement-form-get-forms', information)
+    return Api().post('/internship-application-form-get-forms', information)
   },
 
   AgreementFormCreate (information) {

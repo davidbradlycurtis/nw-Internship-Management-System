@@ -1,10 +1,10 @@
 <template>
     <div class="pastforms form">
-      <div >
-        <PastFormInfo :data="object" :shema="schema" v-for="object in formdata" :key="object.form_id"/>
+      <div v-if="formdata.length >= 1">
+        <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.form_id"/>
       </div>
-      <div >
-        <UhOhNotice noticetext="It looks like you have not completed an INTERNSHIP APPLICATION FORM yet. To get started on a new form, click the link below!"/>
+      <div v-else>
+        <UhOhNotice noticetext="It looks like you have not completed any INTERNSHIP APPLICATION FORM's. To get started, click the link below."/>
       </div>
       <router-link to="/student-internship-application/new-form" class="inpagelink">Start New Form</router-link>
     </div>
@@ -32,7 +32,7 @@ export default {
     async getApplication () {
       await StudentService.GetInternshipForms(this.model).then((result) => {
         this.formdata = result.data[0]
-        console.log(result[0])
+        console.log(this.formdata)
       })
     }
   },
