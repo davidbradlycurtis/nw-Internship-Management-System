@@ -1,6 +1,7 @@
 <template>
     <div class="pastforms form">
       <div v-if="formdata.length >= 1">
+        <PastFormNotice/>
         <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.application_id"/>
       </div>
       <div v-else>
@@ -16,6 +17,7 @@ import InternshipApplicationFormSchema from '@/forms/InternshipApplicationFormSc
 // Services
 import StudentService from '@/services/StudentService.js'
 // Components
+import PastFormNotice from '@/components/PastFormNotice.vue'
 import PastFormInfo from '@/components/PastFormInfo.vue'
 import UhOhNotice from '@/components/UhOhNotice.vue'
 
@@ -23,7 +25,8 @@ export default {
   name: 'Internship-Application-Form-Past-Forms',
   components: {
     PastFormInfo,
-    UhOhNotice
+    UhOhNotice,
+    PastFormNotice
   },
   created () {
     this.getApplication()

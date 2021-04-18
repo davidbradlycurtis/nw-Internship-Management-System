@@ -33,6 +33,12 @@ export default {
       internshiptitle: 'Spring 2021'
     }
   },
+  methods: {
+    pullForm () {
+      const oldpath = this.$route.path.split('/')
+      return this.$router.push('/' + oldpath[1] + '/new-form')
+    }
+  },
   mounted () {
     document.getElementsByClassName('start_date').forEach(element => {
       element.innerHTML = (element.innerHTML).slice(0, 10)

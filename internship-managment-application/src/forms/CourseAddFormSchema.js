@@ -97,7 +97,6 @@ export default {
     },
     {
       legend: 'Student Acknowledgment of Responsibility',
-      infoDumpTitle: 'Application Information',
       styleClasses: 'formgroup',
       fields: [
         {
