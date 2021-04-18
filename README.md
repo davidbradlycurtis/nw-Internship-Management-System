@@ -32,16 +32,6 @@ The main aim of this project is to develop a design and functional prototype of 
 * [Vue.js](https://vuejs.org/)
 
 
-
-<!-- USAGE EXAMPLES -->
-## Usage TODO
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -73,7 +63,7 @@ Project Link: [https://github.com/davidbradlycurtis/nw-Internship-Management-Sys
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements TODO
+## Acknowledgements
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
