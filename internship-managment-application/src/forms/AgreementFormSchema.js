@@ -1,6 +1,7 @@
 export default {
   groups: [
     {
+      infoDumpTitle: 'Application Information',
       styleClasses: 'formgroup paragraphformgroup',
       fields: [
         {
@@ -15,18 +16,21 @@ export default {
           cinputType: 'date',
           beforeText: 'This work experience will start on ',
           afterText: ', and will end on or before',
-          model: 'start_date'
+          model: 'start_date',
+          label: 'Start-Date'
         },
         {
           type: 'integratedinput',
           cinputType: 'date',
           afterText: ' unless the agreement becomes unsatisfactory to any party involved.',
-          model: 'end_date'
+          model: 'end_date',
+          label: 'End-Date'
         }
       ]
     },
     {
       legend: 'Student Information',
+      infoDumpTitle: 'Student Information',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -59,7 +63,7 @@ export default {
         {
           type: 'tel-input',
           label: 'Telephone',
-          model: 'student_phone_number',
+          model: 'student_phone',
           required: true,
           styleClasses: 'half-width'
         },
@@ -75,13 +79,14 @@ export default {
     },
     {
       legend: 'Cooperating Business Information',
+      infoDumpTitle: 'Cooperating Business Information',
       styleClasses: 'formgroup',
       fields: [
         {
           type: 'input',
           inputType: 'text',
           label: 'Organization Name',
-          model: 'business_name',
+          model: 'organization_name',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'full-width'
@@ -90,7 +95,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'Organization Address',
-          model: 'business_address',
+          model: 'organization_address',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'full-width'
@@ -116,14 +121,14 @@ export default {
         {
           type: 'tel-input',
           label: 'Telephone',
-          model: 'supervisor_phone_number',
+          model: 'organization_phone',
           required: true,
           styleClasses: 'half-width'
         },
         {
           type: 'textArea',
           label: 'Other Arrangements',
-          model: 'business_arrangements',
+          model: 'arrangements',
           rows: 10,
           validator: ['string'],
           styleClasses: 'full-textarea'
@@ -132,6 +137,7 @@ export default {
     },
     {
       legend: 'The Student Agrees To:',
+      infoDumpTitle: 'Student Agrees To:',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -149,7 +155,7 @@ export default {
         {
           type: 'textArea',
           label: 'Other',
-          model: 'other_student_agreements',
+          model: 'student_other',
           rows: 10,
           validator: ['string'],
           styleClasses: 'full-textarea'
@@ -158,6 +164,7 @@ export default {
     },
     {
       legend: 'The Intern Sponser Agrees To:',
+      infoDumpTitle: 'Intern Sponser Agrees To:',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -173,7 +180,7 @@ export default {
         {
           type: 'textArea',
           label: 'Other',
-          model: 'other_supervisor_agreements',
+          model: 'supervisor_other',
           rows: 10,
           validator: ['string'],
           styleClasses: 'full-textarea'
@@ -182,6 +189,7 @@ export default {
     },
     {
       legend: 'The University Internship Supervisor Agrees To:',
+      infoDumpTitle: 'University Internship Supervisor Agrees To:',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -196,7 +204,7 @@ export default {
         {
           type: 'textArea',
           label: 'Other',
-          model: 'other_university_agreements',
+          model: 'sponser_other',
           rows: 10,
           validator: 'string',
           styleClasses: 'full-textarea'

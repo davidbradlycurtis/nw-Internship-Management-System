@@ -27,5 +27,9 @@ export default {
 
   EditAgreementForm (information) {
     return Api().post('/agreement-form-edit', information)
+  },
+
+  GetAgreementForm (information) {
+    return Api().post('/agreement-form-get-forms', information)
   }
 }

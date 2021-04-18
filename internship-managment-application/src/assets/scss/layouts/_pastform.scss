@@ -47,6 +47,25 @@
             }
         }
     }
+    .pastbuttonwrapper {
+        grid-column: 1 /span 2;
+        .pastbutton {
+            background-color: $theme-green;
+            color: $theme-white;
+            font-family: $theme-font-family;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: none;
+            text-transform: uppercase;
+            min-width: 300px;
+            margin-top: 30px;
+            &:hover {
+                @include hover-animation($theme-green);
+            }
+        }
+    }
 }
 .inpagelink {
     color: $theme-green;
