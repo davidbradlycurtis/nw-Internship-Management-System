@@ -1,7 +1,7 @@
 <template>
   <div class="pastforms form">
-  <PastFormNotice/>
     <div v-if="formdata.length >= 1">
+      <PastFormNotice/>
       <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.form_id" :button="true"/>
     </div>
     <div v-else>
