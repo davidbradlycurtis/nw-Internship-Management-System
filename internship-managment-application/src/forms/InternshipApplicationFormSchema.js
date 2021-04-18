@@ -2,13 +2,14 @@ export default {
   groups: [
     {
       legend: 'Student Information',
+      infoDumpTitle: 'Student Information',
       styleClasses: 'formgroup',
       fields: [
         {
           type: 'input',
           inputType: 'text',
           label: 'Stree Line 1',
-          model: 'student_street_line_1',
+          model: 'student_line_1',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'full-width'
@@ -17,7 +18,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'Street Line 2',
-          model: 'student_street_line_2',
+          model: 'student_line_2',
           required: false,
           validator: ['string'],
           styleClasses: 'half-width'
@@ -28,16 +29,16 @@ export default {
           label: 'City',
           model: 'student_city',
           required: true,
-          validator: ['string', 'validator'],
+          validator: ['string', 'alpha'],
           styleClasses: 'half-width'
         },
         {
           type: 'input',
           inputType: 'number',
           label: 'Zip Code',
-          model: 'student_zip_code',
+          model: 'student_zip',
           required: true,
-          validator: ['string', 'validator'],
+          validator: ['number', 'required'],
           styleClasses: 'half-width'
         },
         {
@@ -114,13 +115,14 @@ export default {
     },
     {
       legend: 'Organization Information',
+      infoDumpTitle: 'Organization Information',
       styleClasses: 'formgroup',
       fields: [
         {
           type: 'input',
           inputType: 'text',
           label: 'Organization Name',
-          model: 'business_name',
+          model: 'employer_name',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'full-width'
@@ -129,7 +131,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'Department of Org',
-          model: 'business_department',
+          model: 'department',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'full-width'
@@ -138,7 +140,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'Street Line 1',
-          model: 'business_street_line_1',
+          model: 'street_line_1',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'half-width'
@@ -147,7 +149,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'Street Line 2',
-          model: 'business_street_line_2',
+          model: 'street_line_2',
           required: false,
           validator: ['string', 'required'],
           styleClasses: 'half-width'
@@ -156,7 +158,7 @@ export default {
           type: 'input',
           inputType: 'text',
           label: 'City',
-          model: 'business_city',
+          model: 'city',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'full-width'
@@ -165,7 +167,7 @@ export default {
           type: 'input',
           inputType: 'number',
           label: 'Zip Code',
-          model: 'business_zip_code',
+          model: 'zip_code',
           required: true,
           validator: ['number', 'required'],
           styleClasses: 'half-width'
@@ -173,7 +175,7 @@ export default {
         {
           type: 'select',
           label: 'State',
-          model: 'business_state',
+          model: 'state',
           values: [
             'N/A',
             'AL',
@@ -243,15 +245,15 @@ export default {
         {
           type: 'input',
           inputType: 'text',
-          label: 'International Country (NOT USA)',
-          model: 'business_country',
+          label: 'International Country',
+          model: 'international_phone',
           styleClasses: 'full-width'
         },
         {
           type: 'input',
           inputType: 'text',
           label: 'Site Supervisor Name',
-          model: 'business_supervisor_name',
+          model: 'supervisor_name',
           required: true,
           validator: ['string', 'required'],
           styleClasses: 'full-width'
@@ -260,7 +262,7 @@ export default {
           type: 'input',
           inputType: 'email',
           label: 'Site Supervisor Email',
-          model: 'business_supervisor_email',
+          model: 'supervisor_email',
           required: true,
           validator: ['email', 'required'],
           styleClasses: 'full-width'
@@ -268,7 +270,7 @@ export default {
         {
           type: 'tel-input',
           label: 'Site Phone',
-          model: 'business_phone_number',
+          model: 'site_phone',
           required: true,
           styleClasses: 'full-width'
         },
@@ -277,6 +279,7 @@ export default {
           inputType: 'date',
           label: 'Start Date',
           model: 'start_date',
+          format: 'YYYY-MM-DD',
           required: true,
           styleClasses: 'half-width'
         },
@@ -285,13 +288,14 @@ export default {
           inputType: 'date',
           label: 'End Date',
           model: 'end_date',
+          format: 'YYYY-MM-DD',
           required: true,
           styleClasses: 'half-width'
         },
         {
           type: 'textArea',
           label: 'Please list additional employer information',
-          model: 'business_additional_information',
+          model: 'notes',
           rows: 10,
           validator: ['string'],
           styleClasses: 'full-textarea'
@@ -300,13 +304,15 @@ export default {
     },
     {
       legend: 'Offer Letter',
+      infoDumpTitle: 'Offer Letter',
       styleClasses: 'formgroup',
       fields: [
         {
           type: 'offerletter',
+          label: 'File',
           text: 'If you have been given an offer letter from your Internship, please attach it down below',
           filetype: '.pdf',
-          model: 'offerletter',
+          model: 'offer_letter',
           styleClasses: 'full-width'
         }
       ]

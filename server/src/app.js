@@ -217,9 +217,9 @@ app.post('/agreement-form-get-forms', (req, res) => {
 * @param    {req}            (json containing form data)
 * @return   {String}         message
 */
-app.post('/internship-form-create', (req, res) => {
+app.post('/internship-application-form-create', (req, res) => {
     const connection = get_connection()
-    var query = `CALL create_internship_form('${req.body.orgName}', '${req.body.duration}', '${req.body.start_date}', '${req.body.end_date}', '${req.body.street_1}', '${req.body.street_2}', '${req.body.city}', '${req.body.zip}', '${req.body.department}', '${req.body.state}', '${req.body.supervisor_name}', '${req.body.supervisor_email}', '${req.body.site_phone}', '${req.body.int_phone}', '${req.body.notes}', '${req.body.offer}', '${req.body.app_date}', ${req.body.id}, ${req.body.submitted}, '${req.body.student_line_1}', '${req.body.student_line_2}', '${req.body.student_city}', '${req.body.student_zip}', '${req.body.student_state}');`
+    var query = `CALL create_internship_application_form('${req.body.employer_name}', '${req.body.duration}', '${req.body.start_date}', '${req.body.end_date}', '${req.body.street_line_1}', '${req.body.street_line_2}', '${req.body.city}', '${req.body.zip_code}', '${req.body.department}', '${req.body.state}', '${req.body.supervisor_name}', '${req.body.supervisor_email}', '${req.body.site_phone}', '${req.body.international_phone}', '${req.body.notes}', '${req.body.offer_letter}', '${req.body.date}', ${req.body.uid}, ${req.body.submitted}, '${req.body.student_line_1}', '${req.body.student_line_2}', '${req.body.student_city}', '${req.body.student_zip}', '${req.body.student_state}');`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {
@@ -228,7 +228,7 @@ app.post('/internship-form-create', (req, res) => {
         console.log(rows);
     })
     res.send({
-        message: `Internship Form was created`,
+        message: `Internship Application Form was created`,
     })
 })
 
@@ -237,9 +237,9 @@ app.post('/internship-form-create', (req, res) => {
 * @param    {req}            (json containing student_id)
 * @return   {String}         message
 */
-app.get('/agreement-form-get-forms', (req, res) => {
+app.post('/internship-application-form-get-forms', (req, res) => {
     const connection = get_connection()
-    var query = `CALL get_internship_forms_by_id('${req.body.student_id}');`
+    var query = `CALL get_student_internship_application_forms_by_id('${req.body.student_id}');`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {
@@ -255,9 +255,9 @@ app.get('/agreement-form-get-forms', (req, res) => {
 * @param    {req}            (json containing form data)
 * @return   {String}         message
 */
-app.post('/internship-form-change-status', (req, res) => {
+app.post('/internship-application-form-change-status', (req, res) => {
     const connection = get_connection()
-    var query = `CALL change_internship_form_status('${req.body.internship_id}', '${req.body.date}', '${req.body.approved_by}', '${req.body.status}');`
+    var query = `CALL change_internship_application_status('${req.body.internship_id}', '${req.body.date}', '${req.body.approved_by}', '${req.body.status}');`
     console.log("Database call: ",query)
     connection.query(query, (err, rows, fields) => {
         if (err) {
@@ -266,7 +266,7 @@ app.post('/internship-form-change-status', (req, res) => {
         console.log(rows);
     })
     res.send({
-        message: `Internship Form editted successfully`,
+        message: `Internship Application Form editted successfully`,
     })
 })
 
@@ -275,7 +275,7 @@ app.post('/internship-form-change-status', (req, res) => {
 * @param    {req}            (json containing form data)
 * @return   {String}         message
 */
-app.post('/internship-form-edit', (req, res) => {
+app.post('/internship-application-form-edit', (req, res) => {
     const connection = get_connection()
     var query = `CALL edit_internship_form('${req.body.internship_id}','${req.body.employer_name}', '${req.body.duration}', '${req.body.start_date}', '${req.body.end_date}', '${req.body.street_1}', '${req.body.street_2}', '${req.body.city}', '${req.body.zip}', '${req.body.department}', '${req.body.state}', '${req.body.supervisor_name}', '${req.body.supervisor_email}', '${req.body.site_phone}', '${req.body.int_phone}', '${req.body.notes}', '${req.body.offer}', '${req.body.app_date}', ${req.body.id}, ${req.body.submitted}, '${req.body.student_line_1}', '${req.body.student_line_2}', '${req.body.student_city}', '${req.body.student_zip}', '${req.body.student_state}');`
     console.log("Database call: ",query)
@@ -286,7 +286,7 @@ app.post('/internship-form-edit', (req, res) => {
         console.log(rows);
     })
     res.send({
-        message: `Internship Form was editted`,
+        message: `Internship Application Form was editted`,
     })
 })
 

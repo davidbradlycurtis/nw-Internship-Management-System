@@ -85,6 +85,7 @@
             height: 50px;
             width: 40px;
             z-index: 99;
+            background-color: $theme-green;
             &:hover {
                 cursor: pointer;
             }
@@ -140,7 +141,7 @@
             top: -400px;
             transition: all .5s;
             &.show {
-                top: 5px;
+                top: 30px;
             }
         }
     }
