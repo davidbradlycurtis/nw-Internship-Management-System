@@ -2,6 +2,7 @@ export default {
   groups: [
     {
       legend: 'Student Information',
+      infoDumpTitle: 'Student Information',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -114,6 +115,7 @@ export default {
     },
     {
       legend: 'Organization Information',
+      infoDumpTitle: 'Organization Information',
       styleClasses: 'formgroup',
       fields: [
         {
@@ -243,7 +245,7 @@ export default {
         {
           type: 'input',
           inputType: 'text',
-          label: 'International Country (NOT USA)',
+          label: 'International Country',
           model: 'international_phone',
           styleClasses: 'full-width'
         },
@@ -302,10 +304,12 @@ export default {
     },
     {
       legend: 'Offer Letter',
+      infoDumpTitle: 'Offer Letter',
       styleClasses: 'formgroup',
       fields: [
         {
           type: 'offerletter',
+          label: 'File',
           text: 'If you have been given an offer letter from your Internship, please attach it down below',
           filetype: '.pdf',
           model: 'offer_letter',

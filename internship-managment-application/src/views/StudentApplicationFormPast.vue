@@ -1,7 +1,7 @@
 <template>
     <div class="pastforms form">
       <div v-if="formdata.length >= 1">
-        <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.form_id"/>
+        <PastFormInfo :data="object" :schema="schema" v-for="object in formdata" :key="object.application_id"/>
       </div>
       <div v-else>
         <UhOhNotice noticetext="It looks like you have not completed any INTERNSHIP APPLICATION FORM's. To get started, click the link below."/>
@@ -32,7 +32,6 @@ export default {
     async getApplication () {
       await StudentService.GetInternshipForms(this.model).then((result) => {
         this.formdata = result.data[0]
-        console.log(this.formdata)
       })
     }
   },
